@@ -1,47 +1,46 @@
 This is BibTeX, Version 0.99d (TeX Live 2015/dev/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: document.aux
-I found no \bibdata command---while reading file document.aux
-I found no \bibstyle command---while reading file document.aux
-You've used 1 entry,
-            0 wiz_defined-function locations,
-            85 strings with 510 characters,
-and the built_in function-call counts, 0 in all, are:
-= -- 0
-> -- 0
+The style file: plain.bst
+Database file #1: document.bib
+You've used 3 entries,
+            2118 wiz_defined-function locations,
+            513 strings with 4554 characters,
+and the built_in function-call counts, 1090 in all, are:
+= -- 106
+> -- 58
 < -- 0
-+ -- 0
-- -- 0
-* -- 0
-:= -- 0
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
++ -- 24
+- -- 20
+* -- 96
+:= -- 192
+add.period$ -- 9
+call.type$ -- 3
+change.case$ -- 19
 chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 0
-format.name$ -- 0
-if$ -- 0
+cite$ -- 3
+duplicate$ -- 33
+empty$ -- 76
+format.name$ -- 20
+if$ -- 211
 int.to.chr$ -- 0
-int.to.str$ -- 0
-missing$ -- 0
-newline$ -- 0
-num.names$ -- 0
-pop$ -- 0
-preamble$ -- 0
-purify$ -- 0
+int.to.str$ -- 3
+missing$ -- 3
+newline$ -- 18
+num.names$ -- 6
+pop$ -- 13
+preamble$ -- 1
+purify$ -- 16
 quote$ -- 0
-skip$ -- 0
+skip$ -- 21
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
+substring$ -- 73
+swap$ -- 3
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 0
+type$ -- 12
 warning$ -- 0
-while$ -- 0
-width$ -- 0
-write$ -- 0
-(There were 2 error messages)
+while$ -- 12
+width$ -- 4
+write$ -- 35

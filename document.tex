@@ -53,21 +53,58 @@ Text  Text Text Text Text Text Text Text Text Text  Text Text Text Text Text Tex
 \end{abstract}
 
 \section{Introduction}
+There are three principal approaches to quantify nucleic acids. The fist is by 
+referencing the material to an external calibrator (qPCR), The standard approach 
+to quantify nucleic acids has been the quantitative real-time PCR (qPCR) so far \cite{pabinger_survey_2014}. 
+It is a well established and robust technology, which allows precise 
+quantification of DNA material in high throughput fashion at a reasonable price. 
+However, the quantification by qPCR is challenging at very low and very high 
+concentrations. At low concentration Monte Carlo effect play a major role and at 
+high concentration inhibition process start to dominate the qPCR. Thus, the qPCR 
+is only usable in the working range of the calibrator (Bustin-2005). The second 
+approach is to count the number of molecules (e.g., superSAGE or NanoStrings) 
+(Matsumura-2006-Nature-Methods, Waggott-2012-Bioinformatics). The third is to 
+analyze the number of positive reactions in relation to the number of total 
+reaction (dPCR). Since approximately ten year the digital PCR (dPCR) is gaining 
+entrance in the mainstream user-base. There is currently an intensive research 
+on qPCR platforms with the overall aim to make to technology broadly usable, 
+cheap, robust and to enable high sample throughput. The chemical basis of the 
+dPCR is identical to the qPCR, which includes master-mix preparation and thermal 
+cycling of the sample. In contrast to qPCR the amplification ration does not 
+take place in a single reaction chamber but is rather a process of clonal 
+amplification in small separate ``compartments'' (e.g., nl volume droplets of 
+water oil emulsions, chambers on micro structured chips). The quantification of 
+the amplification is not done by determining a Cq-value derived from an 
+amplification curve but applying a Poisson distribution based determination of 
+the concentration of the starting material. Therefore, the dPCR does not require 
+an external calibration.
 
-The standard approach to quantify nucleic acids has been the quantitative real-time PCR (qPCR) so far. It is a well established and robist technology which allows precise quantification of DNA material in high throughput fashion at a reasonable price. However the quantification by qPCR is challenging at very low and very high concentrations. At low concentration Monte Carlo effect play a major role and at high concentration inhibition process start to dominate the qPCR. Thus the qPCR is only usable in the working range of the calibrator. Since approximately ten year the digital PCR (dPCR) is gaining entrance in the mainstream user-base. There is currently an intensive research on qPCR platforms with the overall aim to make to technology broadly usable, cheap, robust and to enable high sample throughput. The chemical basis of the dPCR is identical to the qPCR which includes master-mix preparation and thermal cycling of the sample. However, in contrast to qPCR the amplification ration does not take place in a single reaction chamber but is rather a process of clonal amplification in small separate “compartments” (e.g., nl volume droplets of water oil emulsions, chambers on micro structured chips). The quantification of the amplification is not done by determining a Cq-value derived from an amplification curve but but applying a Poisson distribution based determination of the concentration of the starting material. Therefore the dPCR does not require an external calibration.
+A first proposal for digital PCR like approach and the use of the Poisson 
+distribution to quantify the number of molecules on a ``sample'' was shown by 
+Ruano et al. 1990 (PNAS) with the single molecule dilution (SMD) PCR. In 1999 
+Vogelstein et al. (PNAS) described the first true digital PCR \cite{morley_digital_2014}. Application of 
+the dPCR cover all applications of conventional qPCR, including investigation of 
+alleles, gene expression analysis and absolute quantification of PCR products. 
+For absolute quantification the qPCR relied on an external calibrator 
+(calibration curve) which was derived serial decadic dilution (e.g., 1:10 $\rightarrow$ 
+1:100 $\rightarrow$ 1:1000) of a known target input quantity. The real-time monitoring of 
+the PCR product formation enabled to determine quantification points (Cq). The 
+Cq are strictly related to the input quantity. A simple arithmetic operation 
+(after logarithmic transformation of the concentration) is sufficient to 
+determine any nucleic acid quantity.
 
 qPCR	dPCR
 Number of copies/DNA per volume (e.g., ng/µl, copies/µl)	total number of compartments * ln (...)
 
-A first proposal for digital PCR like approach and the use of the Poisson distribution to quantify the number of molecules on a “sample” was shown by Ruano et al. 1990 (PNAS) with the single molecule dilution (SMD) PCR. In 1999 Vogelstein et al. (PNAS) described the first true digital PCR. Application of the dPCR cover all applications of conventional qPCR, including investigation of alleles, gene expression analysis and absolute quantification of PCR products. For absolute quantification the qPCR relied on an external calibrator (calibration curve) which was derived serial decadic dilution (e.g., 1:10 → 1:100 → 1:1000) of a known target input quantity. The real-time monitoring of the PCR product formation enabled to determine quantification points (Cq). The Cq are strictly related to the input quantity. A simple arithmetic operation (after logarithmic transformation of the concentration) is sufficient to determine any nucleic acid quantity.
+A first proposal for digital PCR like approach and the use of the Poisson distribution to quantify the number of molecules on a ``sample'' was shown by Ruano et al. 1990 (PNAS) with the single molecule dilution (SMD) PCR. In 1999 Vogelstein et al. (PNAS) described the first true digital PCR. Application of the dPCR cover all applications of conventional qPCR, including investigation of alleles, gene expression analysis and absolute quantification of PCR products. For absolute quantification the qPCR relied on an external calibrator (calibration curve) which was derived serial decadic dilution (e.g., 1:10 $\rightarrow$ 1:100 $\rightarrow$ 1:1000) of a known target input quantity. The real-time monitoring of the PCR product formation enabled to determine quantification points (Cq). The Cq are strictly related to the input quantity. A simple arithmetic operation (after logarithmic transformation of the concentration) is sufficient to determine any nucleic acid quantity.
 
-The dPCR has some principle assumptions and fundamental properties. First of all the chemical reaction should be not affected by inhibitors. The distribution of the single molecule target regions follows a Poission distribution. The Poisson distribution appears like a normal distribution but without negative values and being zero the lowest. First a large number (n) of amplifications reactions as required to have a high statistical power. Therefore in practical terms a massive number of PCR reactions is needed. For Poission distributions an n of XY (get reference from table/text book form statistics/biostatistics?) is considered large. Second that the molecules required for the amplification amplifications reactions are randomly distributed in the compartments. Visual analysis, Ripley's K functions or ??? can be used to test for randomness of the reaction and thus to exclude the clustering of of positive reactions. A clustering of positive wells might be due to sample loading or analysis process (systematical error). The outcome of an amplification can be no amplification at all (less than 1 copy per volume), an unsaturated reaction with a binary/”multinary” amplification (usable to calculate the “concentration”) or a saturated reaction where virtually all compartments are positive.
+The dPCR has some principle assumptions and fundamental properties. First of all the chemical reaction should be not affected by inhibitors. The distribution of the single molecule target regions follows a Poission distribution. The Poisson distribution appears like a normal distribution but without negative values and being zero the lowest. First a large number (n) of amplifications reactions as required to have a high statistical power. Therefore in practical terms a massive number of PCR reactions is needed. For Poission distributions an n of XY (get reference from table/text book form statistics/biostatistics?) is considered large. Second that the molecules required for the amplification amplifications reactions are randomly distributed in the compartments. Visual analysis, Ripley's K functions or ??? can be used to test for randomness of the reaction and thus to exclude the clustering of of positive reactions. A clustering of positive wells might be due to sample loading or analysis process (systematical error). The outcome of an amplification can be no amplification at all (less than 1 copy per volume), an unsaturated reaction with a binary/``multinary'' amplification (usable to calculate the ``concentration'') or a saturated reaction where virtually all compartments are positive.
 
-Calculation of the “Concentration”
-Reference to “Supplement”
+Calculation of the ``Concentration''
+Reference to ``Supplement''
 
 Calculation of the uncertainty
-To determine the uncertainty of the calculations two approach have been proposed in the peer-review literature (Dube 2008, PLoS One, Bath …). The uncertainty is dependent on the number of PCR reactions (reference to \textit{\textit{dpcR}} functions). … Reference to “Supplement” and \textit{dpcR} functions.
+To determine the uncertainty of the calculations two approach have been proposed in the peer-review literature (Dube 2008, PLoS One, Bath …). The uncertainty is dependent on the number of PCR reactions (reference to \textit{\textit{dpcR}} functions). … Reference to ``Supplement'' and \textit{dpcR} functions.
 
 Aim of the study
 We developed the \textit{dpcR} package which is software suite for analysis of dPCR based on the open source statistical software R. The \textit{dpcR} includes to invitation to the scientific community to join and support the development of \textit{dpcR} (github?). The aim of the software is to provide the scientific community a tool for teaching purposes, data analysis, theoretical research (simulation) and to accelerate the development of new approaches to dPCR. We implemented all existing statistical methods for dPCR and suggest the introduction of a standardized nomenclature for qPCR. The package enables the simulations and predictions of Poisson distribution for dPCR scenarios, the analysis of previously run dPCRs.
@@ -93,9 +130,9 @@ small differences in sample quantities. The emulsion chambers are made of
 water-in-oil emulsions with similar sizes.
 
 We have chosen R because it is the \textit{lingua franca} in biostatistics and broadly 
-used in other disciplines. The are many packages in existence which enable the 
+used in other disciplines \cite{rodiger_r_2015}. The are many packages in existence which enable the 
 fast development of new methods and plotting facilities. The packages include 
-\textit{MASS}, \textit{minpack.lm}, \textit{pracma}, \textit{qpcR}, \textit{rgl}, \textit{robustbase}, \textit{shiny}.
+\textit{MASS}, \textit{minpack.lm}, \textit{pracma}, \textit{qpcR}, \textit{rgl}, \textit{robustbase}, \textit{shiny}, \textit{mbMCA} \cite{rodiger_surface_2013} and \textit{chipPCR} \cite{rodiger_chippcr_2015}.
 
 R has a rich set of tool to arrange data (reshape?) in order to prepare them for 
 the analysis. This is important when it comes to the question how experiments 
@@ -105,88 +142,16 @@ independently (effect on CI and uncertainty) or to pool/aggregate all reactions
 
 \section{Approach}
 
-Equation~(\ref{eq:01}) Text Text Text Text Text Text  Text Text Text Text Text Text Text Text Text  Text Text Text Text Text Text. Figure \ref{fig:02} shows that the above method  Text Text Text Text  Text Text Text Text Text Text  Text Text.  \citealp{Boffelli03} might want to know about  text text text text ??
-
 
 \begin{methods}
 \section{Methods}
 
-Text Text Text Text Text Text  Text Text Text Text Text Text Text Text Text  Text Text Text Text Text Text. Figure \ref{fig:02} shows that the above method  Text Text Text Text  Text Text Text Text Text Text  Text Text.  \citealp{Boffelli03} might want to know about  text text text text
-Text Text Text Text Text Text  Text Text Text Text Text Text Text Text Text  Text Text Text Text Text Text. Figure \ref{fig:02} shows that the above method  Text Text Text Text  Text Text Text Text Text Text  Text Text.  \citealp{Boffelli03} might want to know about  text text text text
-Text Text Text Text Text Text  Text Text Text Text Text Text Text Text Text  Text Text Text Text Text Text. Figure \ref{fig:02} shows that the above method  Text Text Text Text  Text Text Text Text Text Text  Text Text.  \citealp{Boffelli03} might want to know about  text text text text
 
-\begin{itemize}
-\item for bulleted list, use itemize
-\item for bulleted list, use itemize
-\item for bulleted list, use itemize
-\end{itemize}
-
-
-
-Text Text Text Text Text Text  Text Text Text Text Text Text Text Text Text  Text Text Text Text Text Text. Figure \ref{fig:02} shows that the above method  Text Text Text Text  Text Text Text Text Text Text  Text Text.  \citealp{Boffelli03} might want to know about  text text text text
-Text Text Text Text Text Text  Text Text Text Text Text Text Text Text Text  Text Text Text Text Text Text. Figure \ref{fig:02} shows that the above method  Text Text Text Text  Text Text Text Text Text Text  Text Text.  \citealp{Boffelli03} might want to know about  text text text text
-Text Text Text Text Text Text  Text Text Text Text Text Text Text Text Text  Text Text Text Text Text Text. Figure \ref{fig:02} shows that the above method  Text Text Text Text  Text Text Text Text Text Text  Text Text.  \citealp{Boffelli03} might want to know about  text text text text
-Text Text Text Text Text Text  Text Text Text Text Text Text Text Text Text  Text Text Text Text Text Text. Figure \ref{fig:02} shows that the above method  Text Text Text Text  Text Text Text Text Text Text  Text Text.  \citealp{Boffelli03} might want to know about  text text text text
-Text Text Text Text Text Text  Text Text Text Text Text Text Text Text Text  Text Text Text Text Text Text.
-
-
-Text Text Text Text Text Text  Text Text Text Text Text Text Text Text Text  Text Text Text Text Text Text. Figure \ref{fig:02} shows that the above method  Text Text Text Text  Text Text Text Text Text Text  Text Text.  \citealp{Boffelli03} might want to know about  text text text text
-Text Text Text Text Text Text  Text Text Text Text Text Text Text Text Text  Text Text Text Text Text Text. Figure \ref{fig:02} shows that the above method  Text Text Text Text  Text Text Text Text Text Text  Text Text.  \citealp{Boffelli03} might want to know about  text text text text
-Text Text Text Text Text Text  Text Text Text Text Text Text Text Text Text  Text Text Text Text Text Text. Figure \ref{fig:02} shows that the above method  Text Text Text Text  Text Text Text Text Text Text  Text Text.  \citealp{Boffelli03} might want to know about  text text text text
-
-
-
-Text Text Text Text Text Text  Text Text Text Text Text Text Text Text Text  Text Text Text Text Text Text. Figure \ref{fig:02} shows that the above method  Text Text Text Text  Text Text Text Text Text Text  Text Text.  \citealp{Boffelli03} might want to know about  text text text text
-Text Text Text Text Text Text  Text Text Text Text Text Text Text Text Text  Text Text Text Text Text Text. Figure \ref{fig:02} shows that the above method  Text Text Text Text  Text Text Text Text Text Text  Text Text.  \citealp{Boffelli03} might want to know about  text text text text
-Text Text Text Text Text Text  Text Text Text Text Text Text Text Text Text  Text Text Text Text Text Text. Figure \ref{fig:02} shows that the above method  Text Text Text Text  Text Text Text Text Text Text  Text Text.  \citealp{Boffelli03} might want to know about  text text text text
-
-
-Text Text Text Text Text Text  Text Text Text Text Text Text Text Text Text  Text Text Text Text Text Text. Figure \ref{fig:02} shows that the above method  Text Text Text Text  Text Text Text Text Text Text  Text Text.  \citealp{Boffelli03} might want to know about  text text text text
-Text Text Text Text Text Text  Text Text Text Text Text Text Text Text Text  Text Text Text Text Text Text. Figure \ref{fig:02} shows that the above method  Text Text Text Text  Text Text Text Text Text Text  Text Text.  \citealp{Boffelli03} might want to know about  text text text text
-Text Text Text Text Text Text  Text Text Text Text Text Text Text Text Text  Text Text Text Text Text Text. Figure \ref{fig:02} shows that the above method  Text Text Text Text  Text Text Text Text Text Text  Text Text.  \citealp{Boffelli03} might want to know about  text text text text
-
-
-
-\begin{table}[!t]
-\processtable{This is table caption\label{Tab:01}}
-{\begin{tabular}{llll}\toprule
-head1 & head2 & head3 & head4\\\midrule
-row1 & row1 & row1 & row1\\
-row2 & row2 & row2 & row2\\
-row3 & row3 & row3 & row3\\
-row4 & row4 & row4 & row4\\\botrule
-\end{tabular}}{This is a footnote}
-\end{table}
 
 \end{methods}
 
-\begin{figure}[!tpb]%figure1
-%\centerline{\includegraphics{fig01.eps}}
-\caption{Caption, caption.}\label{fig:01}
-\end{figure}
-
-\begin{figure}[!tpb]%figure2
-%\centerline{\includegraphics{fig02.eps}}
-\caption{Caption, caption.}\label{fig:02}
-\end{figure}
 
 \section{Discussion}
-
-Text Text Text Text Text Text  Text Text Text Text Text Text Text Text Text  Text Text Text Text Text Text. Figure \ref{fig:02} shows that the above method  Text Text Text Text  Text Text Text Text Text Text  Text Text.  \citealp{Boffelli03} might want to know about  text text text text
-Text Text Text Text Text Text  Text Text Text Text Text Text Text Text Text  Text Text Text Text Text Text. Figure \ref{fig:02} shows that the above method  Text Text Text Text  Text Text Text Text Text Text  Text Text.  \citealp{Boffelli03} might want to know about  text text text text
-Text Text Text Text Text Text  Text Text Text Text.
-
-
-
-
-Table~\ref{Tab:01} shows that Text Text Text Text Text  Text Text Text Text Text Text. Figure \ref{fig:02} shows that
-the above method Text Text. Text Text Text  Text Text Text Text Text Text. Figure \ref{fig:02} shows that
-the above method Text Text. Text Text Text  Text Text Text Text Text Text. Figure \ref{fig:02} shows that
-the above method Text Text.
-
-
-
-
 
 
 
@@ -206,40 +171,25 @@ the above method Text Text.
 
 \section{Conclusion}
 
-(Table~\ref{Tab:01}) Text Text Text Text Text Text  Text Text Text Text Text Text Text Text Text  Text Text Text Text Text Text. Figure \ref{fig:02} shows that the above method  Text Text Text Text  Text Text Text Text Text Text  Text Text.  \citealp{Boffelli03} might want to know about  text text text text
-Text Text Text Text Text Text  Text Text Text Text Text Text Text Text Text  Text Text Text Text Text Text. Figure \ref{fig:02} shows that the above method  Text Text Text Text  Text Text Text Text Text Text  Text Text.  \citealp{Boffelli03} might want to know about  text text text text
-Text Text Text Text Text Text  Text Text Text Text Text Text Text Text Text  Text Text Text Text Text Text. Figure \ref{fig:02} shows that the above method  Text Text Text Text  Text Text Text Text Text Text  Text Text.
-
-
-
-Text Text Text Text Text Text  Text Text Text Text Text Text Text Text Text  Text Text Text Text Text Text. Figure \ref{fig:02} shows that the above method  Text Text Text Text  Text Text Text Text Text Text  Text Text.  \citealp{Boffelli03} might want to know about  text text text text
-
-
-
-
-
-\begin{enumerate}
-\item this is item, use enumerate
-\item this is item, use enumerate
-\item this is item, use enumerate
-\end{enumerate}
-
-Text Text Text Text Text Text  Text Text Text Text Text Text Text Text Text  Text Text Text Text Text Text. Figure \ref{fig:02} shows that the above method  Text Text Text Text  Text Text Text Text Text Text  Text Text.  \citealp{Boffelli03} might want to know about  text text text text
-Text Text Text Text Text Text  Text Text Text Text Text Text Text Text Text  Text Text Text Text Text Text. Figure \ref{fig:02} shows that the above method  Text Text Text Text  Text Text Text Text Text Text  Text Text.  \citealp{Boffelli03} might want to know about  text text text text
-Text Text Text Text Text Text  Text Text Text Text Text Text Text Text Text  Text Text Text Text Text Text.
-
-
-
-
-
-
-Text Text Text Text Text Text  Text Text Text Text Text Text Text Text Text  Text Text Text Text Text Text. Figure \ref{fig:02} shows that the above method  Text Text Text Text
-
+We developed the dpcR package which is software suite for analysis of dPCR based 
+on the open source statistical software R. The dpcR includes to invitation to 
+the scientific community to join and support the development of dpcR (github?). 
+The aim of the software is to provide the scientific community a tool for 
+teaching purposes, data analysis, theoretical research (simulation) and to 
+accelerate the development of new approaches to dPCR. We implemented all 
+existing statistical methods for dPCR and suggest the introduction of a 
+standardized nomenclature for qPCR. The package enables the simulations and 
+predictions of Poisson distribution for dPCR scenarios, the analysis of 
+previously run dPCRs.
 
 \section*{Acknowledgement}
-Text Text Text Text Text Text  Text Text.  \citealp{Boffelli03} might want to know about  text text text text
 
-\paragraph{Funding\textcolon} Text Text Text Text Text Text  Text Text.
+Grateful thanks belong to the \textbf{R} community.
+
+\paragraph{Funding\textcolon} This work was funded by the Federal Ministry of Education and Research (BMBF)
+ InnoProfile--Transfer--Projekt 03 IPT 611X.
+
+\paragraph{Conflict of Interest\textcolon} none declared.
 
 %\bibliographystyle{natbib}
 %\bibliographystyle{achemnat}
@@ -247,40 +197,7 @@ Text Text Text Text Text Text  Text Text.  \citealp{Boffelli03} might want to kn
 %\bibliographystyle{abbrv}
 %\bibliographystyle{bioinformatics}
 %
-%\bibliographystyle{plain}
+\bibliographystyle{plain}
 %
-%\bibliography{Document}
-
-
-\begin{thebibliography}{}
-\bibitem[Bofelli {\it et~al}., 2000]{Boffelli03} Bofelli,F., Name2, Name3 (2003) Article title, {\it Journal Name}, {\bf 199}, 133-154.
-
-\bibitem[Bag {\it et~al}., 2001]{Bag01} Bag,M., Name2, Name3 (2001) Article title, {\it Journal Name}, {\bf 99}, 33-54.
-
-\bibitem[Yoo \textit{et~al}., 2003]{Yoo03}
-Yoo,M.S. \textit{et~al}. (2003) Oxidative stress regulated genes
-in nigral dopaminergic neurnol cell: correlation with the known
-pathology in Parkinson's disease. \textit{Brain Res. Mol. Brain
-Res.}, \textbf{110}(Suppl. 1), 76--84.
-
-\bibitem[Lehmann, 1986]{Leh86}
-Lehmann,E.L. (1986) Chapter title. \textit{Book Title}. Vol.~1, 2nd edn. Springer-Verlag, New York.
-
-\bibitem[Crenshaw and Jones, 2003]{Cre03}
-Crenshaw, B.,III, and Jones, W.B.,Jr (2003) The future of clinical
-cancer management: one tumor, one chip. \textit{Bioinformatics},
-doi:10.1093/bioinformatics/btn000.
-
-\bibitem[Auhtor \textit{et~al}. (2000)]{Aut00}
-Auhtor,A.B. \textit{et~al}. (2000) Chapter title. In Smith, A.C.
-(ed.), \textit{Book Title}, 2nd edn. Publisher, Location, Vol. 1, pp.
-???--???.
-
-\bibitem[Bardet, 1920]{Bar20}
-Bardet, G. (1920) Sur un syndrome d'obesite infantile avec
-polydactylie et retinite pigmentaire (contribution a l'etude des
-formes cliniques de l'obesite hypophysaire). PhD Thesis, name of
-institution, Paris, France.
-
-\end{thebibliography}
+\bibliography{document}
 \end{document}
