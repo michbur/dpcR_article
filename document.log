@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.4.21)  10 AUG 2015 00:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.4.21)  10 AUG 2015 00:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -373,17 +373,17 @@ Underfull \hbox (badness 1681) in paragraph at lines 40--59
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 66.
 
-Underfull \hbox (badness 1062) in paragraph at lines 67--92
+Underfull \hbox (badness 1062) in paragraph at lines 67--94
 \OT1/ptm/m/n/9 superSAGE or NanoStrings) (Matsumura-2006-Nature-Methods,
  []
 
-LaTeX Font Info:    Try loading font information for OMS+phv on input line 106.
+LaTeX Font Info:    Try loading font information for OMS+phv on input line 108.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsphv.fd
 File: omsphv.fd 
 )
 LaTeX Font Info:    Font shape `OMS/phv/m/n' in size <7> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 106.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 108.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
@@ -395,7 +395,7 @@ Missing character: There is no µ in font ptmr7t!
 Missing character: There is no Â in font ptmr7t!
 Missing character: There is no µ in font ptmr7t!
 
-Underfull \hbox (badness 1237) in paragraph at lines 110--127
+Underfull \hbox (badness 1237) in paragraph at lines 112--129
 \OT1/ptm/m/n/9 distributions an n of XY (get reference from table/text book
  []
 
@@ -406,36 +406,39 @@ Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ¦ in font ptmr7t!
 
-Underfull \hbox (badness 2012) in paragraph at lines 152--167
+Underfull \hbox (badness 2012) in paragraph at lines 154--169
 \OT1/ptm/m/n/9 may use (microfluidic)chambers or emulsion based chambers
  []
 
 
-Overfull \hbox (0.86887pt too wide) in paragraph at lines 152--167
+Overfull \hbox (0.86887pt too wide) in paragraph at lines 154--169
 \OT1/ptm/m/n/9 (QX200 $[]$(Bio-Rad), RainDrop $[]$System (RainDance)). Chamber
  []
 
 
-Underfull \hbox (badness 1490) in paragraph at lines 152--167
+Underfull \hbox (badness 1490) in paragraph at lines 154--169
 \OT1/ptm/m/n/9 time monitoring of the amplification reaction and subsequent
  []
 
 
-Underfull \hbox (badness 2875) in paragraph at lines 152--167
+Underfull \hbox (badness 2875) in paragraph at lines 154--169
 \OT1/ptm/m/n/9 Thus, such technologies enable easier trouble shooting and
  []
 
 
-Underfull \hbox (badness 2698) in paragraph at lines 152--167
+Underfull \hbox (badness 2698) in paragraph at lines 154--169
 \OT1/ptm/m/n/9 This results in a higher statistical power to quantify small
  []
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 168.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 170.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 LaTeX Font Info:    Font shape `OT1/phv/bx/it' in size <8> not available
-(Font)              Font shape `OT1/phv/b/it' tried instead on input line 242.
+(Font)              Font shape `OT1/phv/b/it' tried instead on input line 244.
 LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <8> not available
-(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 242.
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 244.
 
 Overfull \hbox (261.0pt too wide) has occurred while \output is active
 [][] 
@@ -450,7 +453,7 @@ Overfull \hbox (261.0pt too wide) has occurred while \output is active
  []
 
 [2]
-Underfull \hbox (badness 2057) in paragraph at lines 247--249
+Underfull \hbox (badness 2057) in paragraph at lines 249--251
  \OT1/ptm/m/it/9 Funding[][] \OT1/ptm/m/n/9 This work was funded by the Federal
  Ministry of
  []
@@ -488,26 +491,74 @@ cation
 )
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:10.0pt when 286.75772pt
+Extra height:21.51544pt when 315.75772pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:10.0pt when 287.75772pt
+Extra height:21.51544pt when 316.75772pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:10.0pt when 288.75772pt
+Extra height:21.51544pt when 317.75772pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:10.0pt when 289.75772pt
-Extra height:0.0pt when 290.75772pt
-(2)Left:290.75772pt Right:259.51544pt Output:290.75772pt
+Extra height:21.51544pt when 318.75772pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:21.51544pt when 319.75772pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:21.51544pt when 320.75772pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:10.0pt when 321.75772pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:10.0pt when 322.75772pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:10.0pt when 323.75772pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:10.0pt when 324.75772pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:10.0pt when 325.75772pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:10.0pt when 326.75772pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:10.0pt when 327.75772pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:10.0pt when 328.75772pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:10.0pt when 329.75772pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:10.0pt when 330.75772pt
+Extra height:0.0pt when 331.75772pt
+(2)Left:331.75772pt Right:293.51544pt Output:331.75772pt
 - LAST -
 Extra skip:0.0pt
-Left:290.75772pt
-Right:259.51544pt
-Output:290.75772pt
+Left:331.75772pt
+Right:293.51544pt
+Output:331.75772pt
 
 Overfull \hbox (261.0pt too wide) has occurred while \output is active
 [][] 
@@ -528,11 +579,11 @@ LaTeX Font Warning: Size substitutions with differences
 Here is how much of TeX's memory you used:
  3266 strings out of 495020
  41467 string characters out of 6181324
- 111311 words of memory out of 5000000
+ 112311 words of memory out of 5000000
  6385 multiletter control sequences out of 15000+600000
  47293 words of font info for 99 fonts, out of 8000000 for 9000
  18 hyphenation exceptions out of 8191
- 38i,11n,28p,284b,288s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,11n,28p,307b,288s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fon
@@ -545,7 +596,7 @@ c/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic
 xmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times
 /utmri8a.pfb>
-Output written on document.pdf (3 pages, 124108 bytes).
+Output written on document.pdf (3 pages, 124337 bytes).
 PDF statistics:
  63 PDF objects out of 1000 (max. 8388607)
  45 compressed objects within 1 object stream

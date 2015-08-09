@@ -6,7 +6,7 @@
 \firstpage{1}
 
 \title[dpcR]{dpcrR: an\textbf{R} package for the analysis of digital PCR}
-\author[Burdukiewicz \textit{et~al.}]{Micha\l{} Burdukiewicz\,$^{1}$, Jim Huggett\,$^2$, Bart K.M. Jacobs\,$^3$, Lieven Clement\,$^3$, Andrej-Nikolai Spiess\,$^4$, Peter Schierack\,$^5$, and Stefan R\"odiger\,$^{5}$\footnote{to whom correspondence should be addressed}}
+\author[Burdukiewicz \textit{et~al.}]{Micha\l{} Burdukiewicz\,$^{1}$, Jim Huggett\,$^2$, Bart K.M. Jacobs\,$^3$, Lieven Clement\,$^3$, Piotr Sobczyk\,$^{1}$, Andrej-Nikolai Spiess\,$^4$, Peter Schierack\,$^5$, and Stefan R\"odiger\,$^{5}$\footnote{to whom correspondence should be addressed}}
 \address{$^{1}$Department of Genomics, Faculty of Biotechnology, University of 
 Wroc\l{}aw, Wroc\l{}aw, Poland\\
 $^{2}$Molecular and Cell Biology Team, LGC, Teddington, United Kingdom\\
@@ -54,7 +54,7 @@ been integrated. Thus, the \textit{dpcR} package can be used by\textbf{R} novice
 graphical user interface or on expert level in R. The \textit{dpcR} package is 
 an open environment, which can be adopted to the growing knowledge in dPCR. The 
 \textit{dpcR} package can be used to build a custom-made analyzer according to 
-the wishes of the user. The source code is open source (GPL-2) and freely 
+the wishes of the user. The source code is open source (GPL-3 or later) and freely 
 available from CRAN.
 \section{Availability:}
 http://cran.r-project.org/web/packages/dpcR\\newline
@@ -66,29 +66,31 @@ Source code: https://github.com/michbur/dpcR\
 \section{Introduction}
 There are three principal approaches to quantify nucleic acids. The fist is by 
 referencing the material to an external calibrator (qPCR), The standard approach 
-to quantify nucleic acids has been the quantitative real-time PCR (qPCR) so far \cite{pabinger_survey_2014}. 
-It is a well established and robust technology, which allows precise 
-quantification of DNA material in high throughput fashion at a reasonable price. 
-However, the quantification by qPCR is challenging at very low and very high 
-concentrations. At low concentration Monte Carlo effect play a major role and at 
-high concentration inhibition process start to dominate the qPCR. Thus, the qPCR 
-is only usable in the working range of the calibrator. In addition, pre-processing and data analysis is a affected by numerous adverse effects \cite{spiess_impact_2015}. The second 
-approach is to count the number of molecules (e.g., superSAGE or NanoStrings) 
-(Matsumura-2006-Nature-Methods, Waggott-2012-Bioinformatics). The third is to 
-analyze the number of positive reactions in relation to the number of total 
-reaction (dPCR). Since approximately ten year the digital PCR (dPCR) is gaining 
-entrance in the mainstream user-base. There is currently an intensive research 
-on qPCR platforms with the overall aim to make to technology broadly usable, 
-cheap, robust and to enable high sample throughput. The chemical basis of the 
-dPCR is identical to the qPCR, which includes master-mix preparation and thermal 
-cycling of the sample. In contrast to qPCR the amplification ration does not 
-take place in a single reaction chamber but is rather a process of clonal 
-amplification in small separate ``compartments'' (e.g., nl volume droplets of 
-water oil emulsions, chambers on micro structured chips). The quantification of 
-the amplification is not done by determining a Cq-value derived from an 
-amplification curve but applying a Poisson distribution based determination of 
-the concentration of the starting material. Therefore, the dPCR does not require 
-an external calibration \cite{selck_increased_2013, rodiger_r_2015}.
+to quantify nucleic acids has been the quantitative real-time PCR (qPCR) so far 
+\cite{pabinger_survey_2014}. It is a well established and robust technology, 
+which allows precise quantification of DNA material in high throughput fashion 
+at a reasonable price. However, the quantification by qPCR is challenging at 
+very low and very high concentrations. At low concentration Monte Carlo effect 
+play a major role and at high concentration inhibition process start to dominate 
+the qPCR. Thus, the qPCR is only usable in the working range of the calibrator. 
+In addition, pre-processing and data analysis is a affected by numerous adverse 
+effects \cite{spiess_impact_2015}. The second approach is to count the number of 
+molecules (e.g., superSAGE or NanoStrings) (Matsumura-2006-Nature-Methods, 
+Waggott-2012-Bioinformatics). The third is to analyze the number of positive 
+reactions in relation to the number of total reaction (dPCR). Since 
+approximately ten year the digital PCR (dPCR) is gaining entrance in the 
+mainstream user-base. There is currently an intensive research on qPCR platforms 
+with the overall aim to make to technology broadly usable, cheap, robust and to 
+enable high sample throughput. The chemical basis of the dPCR is identical to 
+the qPCR, which includes master-mix preparation and thermal cycling of the 
+sample. In contrast to qPCR the amplification ration does not take place in a 
+single reaction chamber but is rather a process of clonal amplification in small 
+separate ``compartments'' (e.g., nl volume droplets of water oil emulsions, 
+chambers on micro structured chips). The quantification of the amplification is 
+not done by determining a Cq-value derived from an amplification curve but 
+applying a Poisson distribution based determination of the concentration of the 
+starting material. Therefore, the dPCR does not require an external calibration 
+\cite{selck_increased_2013, rodiger_r_2015}.
 
 A first proposal for digital PCR like approach and the use of the Poisson 
 distribution to quantify the number of molecules on a ``sample'' was shown by 
@@ -225,8 +227,8 @@ In conclusion, \textit{dpcR} provides means to understand how digital PCR works,
 to design, simulate and analyze experiments, and to verify their results (e.g., 
 confidence interval estimation), which should ultimately improve 
 reproducibility. We have built what we believe to be the first unified, 
-cross-platform, dMIQE compliant, open source (GPL-2) software frame-work for 
-analyzing digital PCR experiments. Our frame-work, designated dpcR [2], is 
+cross-platform, dMIQE compliant, open source (GPL-3 or later) software frame-work for 
+analyzing digital PCR experiments. Our frame-work, designated \textit{dpcR} , is 
 targeted at a broad user base including end users in clinics, academics, 
 developers, and educators. We implemented existing statistical methods for dPCR 
 and suggest the introduction of a standardized nomenclature for qPCR. Our 
