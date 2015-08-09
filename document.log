@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.4.21)  9 AUG 2015 15:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.4.21)  10 AUG 2015 00:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -269,125 +269,121 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 21.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 22.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <9> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 21.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 22.
 LaTeX Font Info:    Font shape `OT1/phv/bx/it' in size <9> not available
-(Font)              Font shape `OT1/phv/b/it' tried instead on input line 21.
+(Font)              Font shape `OT1/phv/b/it' tried instead on input line 22.
 LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <9> not available
-(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 21.
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 22.
 LaTeX Font Info:    Font shape `OT1/phv/bx/it' in size <19> not available
-(Font)              Font shape `OT1/phv/b/it' tried instead on input line 21.
+(Font)              Font shape `OT1/phv/b/it' tried instead on input line 22.
 LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <19> not available
-(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 21.
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 22.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <8> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 21.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 22.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <9> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 21.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 22.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <16> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 21.
-LaTeX Font Info:    Calculating math sizes for size <13> on input line 21.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 22.
+LaTeX Font Info:    Calculating math sizes for size <13> on input line 22.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <13> not available
-(Font)              size <12> substituted on input line 21.
+(Font)              size <12> substituted on input line 22.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <6.5> not available
-(Font)              size <6> substituted on input line 21.
+(Font)              size <6> substituted on input line 22.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <13> not available
-(Font)              size <12> substituted on input line 21.
+(Font)              size <12> substituted on input line 22.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <6.5> not available
-(Font)              size <6> substituted on input line 21.
+(Font)              size <6> substituted on input line 22.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <13> not available
-(Font)              size <12> substituted on input line 21.
+(Font)              size <12> substituted on input line 22.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <6.5> not available
-(Font)              size <6> substituted on input line 21.
+(Font)              size <6> substituted on input line 22.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 21.
+LaTeX Font Info:    Try loading font information for U+msa on input line 22.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 21.
+LaTeX Font Info:    Try loading font information for U+msb on input line 22.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Calculating math sizes for size <9.09996> on input line 21.
+LaTeX Font Info:    Calculating math sizes for size <9.09996> on input line 22.
 
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <4.54997> not available
-(Font)              size <5> substituted on input line 21.
+(Font)              size <5> substituted on input line 22.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <4.54997> not available
-(Font)              size <5> substituted on input line 21.
+(Font)              size <5> substituted on input line 22.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <4.54997> not available
-(Font)              size <5> substituted on input line 21.
+(Font)              size <5> substituted on input line 22.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <7.5> not available
-(Font)              size <7> substituted on input line 21.
+(Font)              size <7> substituted on input line 22.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <7.5> not available
-(Font)              size <7> substituted on input line 21.
+(Font)              size <7> substituted on input line 22.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <7.5> not available
-(Font)              size <7> substituted on input line 21.
+(Font)              size <7> substituted on input line 22.
 
 
-Underfull \hbox (badness 10000) detected at line 21
+Underfull \hbox (badness 10000) detected at line 22
 []
  []
 
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <8> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 25.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 26.
 
-Underfull \hbox (badness 1817) in paragraph at lines 39--52
+Underfull \hbox (badness 1817) in paragraph at lines 40--59
 \OT1/phv/b/n/8 Results: \OT1/phv/m/n/8 To cover all methods of dPCR we implemen
 ted all
  []
 
 
-Underfull \hbox (badness 1062) in paragraph at lines 39--52
-\OT1/phv/m/n/8 chamber based technologies. Functions included may be used
+Underfull \hbox (badness 1681) in paragraph at lines 40--59
+\OT1/phv/m/n/8 estimate the underlying Poisson process, methods from peer-
  []
 
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 60.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 66.
 
-Underfull \hbox (badness 1062) in paragraph at lines 61--86
+Underfull \hbox (badness 1062) in paragraph at lines 67--92
 \OT1/ptm/m/n/9 superSAGE or NanoStrings) (Matsumura-2006-Nature-Methods,
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-LaTeX Font Info:    Try loading font information for OMS+phv on input line 100.
-
+LaTeX Font Info:    Try loading font information for OMS+phv on input line 106.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsphv.fd
 File: omsphv.fd 
 )
 LaTeX Font Info:    Font shape `OMS/phv/m/n' in size <7> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 100.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 106.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
@@ -399,7 +395,7 @@ Missing character: There is no µ in font ptmr7t!
 Missing character: There is no Â in font ptmr7t!
 Missing character: There is no µ in font ptmr7t!
 
-Underfull \hbox (badness 1237) in paragraph at lines 106--107
+Underfull \hbox (badness 1237) in paragraph at lines 110--127
 \OT1/ptm/m/n/9 distributions an n of XY (get reference from table/text book
  []
 
@@ -410,45 +406,36 @@ Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ¦ in font ptmr7t!
 
-Underfull \hbox (badness 1215) in paragraph at lines 114--116
-\OT1/ptm/m/n/9 statistical software R. The \OT1/ptm/m/it/9 dpcR \OT1/ptm/m/n/9 
-includes to invitation to the
- []
-
-
-Underfull \hbox (badness 2050) in paragraph at lines 114--116
-\OT1/ptm/m/n/9 approaches to dPCR. We implemented all existing statistical
- []
-
-
-Underfull \hbox (badness 2012) in paragraph at lines 121--136
+Underfull \hbox (badness 2012) in paragraph at lines 152--167
 \OT1/ptm/m/n/9 may use (microfluidic)chambers or emulsion based chambers
  []
 
 
-Overfull \hbox (0.86887pt too wide) in paragraph at lines 121--136
+Overfull \hbox (0.86887pt too wide) in paragraph at lines 152--167
 \OT1/ptm/m/n/9 (QX200 $[]$(Bio-Rad), RainDrop $[]$System (RainDance)). Chamber
  []
 
 
-Underfull \hbox (badness 1490) in paragraph at lines 121--136
+Underfull \hbox (badness 1490) in paragraph at lines 152--167
 \OT1/ptm/m/n/9 time monitoring of the amplification reaction and subsequent
  []
 
 
-Underfull \hbox (badness 2875) in paragraph at lines 121--136
+Underfull \hbox (badness 2875) in paragraph at lines 152--167
 \OT1/ptm/m/n/9 Thus, such technologies enable easier trouble shooting and
  []
 
 
-Underfull \hbox (badness 2698) in paragraph at lines 121--136
+Underfull \hbox (badness 2698) in paragraph at lines 152--167
 \OT1/ptm/m/n/9 This results in a higher statistical power to quantify small
  []
 
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 168.
 LaTeX Font Info:    Font shape `OT1/phv/bx/it' in size <8> not available
-(Font)              Font shape `OT1/phv/b/it' tried instead on input line 197.
+(Font)              Font shape `OT1/phv/b/it' tried instead on input line 242.
 LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <8> not available
-(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 197.
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 242.
 
 Overfull \hbox (261.0pt too wide) has occurred while \output is active
 [][] 
@@ -463,34 +450,37 @@ Overfull \hbox (261.0pt too wide) has occurred while \output is active
  []
 
 [2]
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 200.
-
-Underfull \hbox (badness 2057) in paragraph at lines 202--204
+Underfull \hbox (badness 2057) in paragraph at lines 247--249
  \OT1/ptm/m/it/9 Funding[][] \OT1/ptm/m/n/9 This work was funded by the Federal
  Ministry of
  []
 
 (./document.bbl
-Underfull \hbox (badness 1038) in paragraph at lines 18--22
+Underfull \hbox (badness 1038) in paragraph at lines 23--27
 \OT1/ptm/m/n/7 model selection in quantitative real-time polymerase chain react
 ion analysis.
  []
 
 
-Underfull \hbox (badness 1527) in paragraph at lines 35--40
+Underfull \hbox (badness 1527) in paragraph at lines 34--39
 \OT1/ptm/m/n/7 Schierack.  R as an Environment for the Reproducible Analysis of
  DNA
  []
 
 
-Underfull \hbox (badness 1748) in paragraph at lines 42--47
-[]\OT1/ptm/m/n/7 Andrej-Nikolai Spiess, Claudia Deutschmann, Micha l? Burdukiew
-icz, Ralf
+Underfull \hbox (badness 3386) in paragraph at lines 47--52
+\OT1/ptm/m/n/7 Isothermal Amplification, and a Mobile Phone versus Real-Time Ki
+netic
  []
 
 
-Underfull \hbox (badness 1983) in paragraph at lines 42--47
+Underfull \hbox (badness 3158) in paragraph at lines 54--59
+[]\OT1/ptm/m/n/7 Andrej-Nikolai Spiess, Claudia Deutschmann, Micha l Burdukiewi
+cz, Ralf
+ []
+
+
+Underfull \hbox (badness 1983) in paragraph at lines 54--59
 \OT1/ptm/m/n/7 of Smoothing on Parameter Estimation in Quantitative DNA Amplifi
 cation
  []
@@ -498,80 +488,26 @@ cation
 )
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
+Extra height:10.0pt when 286.75772pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:30.51544pt when 182.75772pt
+Extra height:10.0pt when 287.75772pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
+Extra height:10.0pt when 288.75772pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:30.51544pt when 183.75772pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:30.51544pt when 184.75772pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:21.51544pt when 185.75772pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:21.51544pt when 186.75772pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:21.51544pt when 187.75772pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:21.51544pt when 188.75772pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:21.51544pt when 189.75772pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:21.51544pt when 190.75772pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:21.51544pt when 191.75772pt
-Extra height:0.0pt when 192.75772pt
-(2)Left:192.75772pt Right:174.51544pt Output:192.75772pt
+Extra height:10.0pt when 289.75772pt
+Extra height:0.0pt when 290.75772pt
+(2)Left:290.75772pt Right:259.51544pt Output:290.75772pt
 - LAST -
 Extra skip:0.0pt
-Left:192.75772pt
-Right:174.51544pt
-Output:192.75772pt
+Left:290.75772pt
+Right:259.51544pt
+Output:290.75772pt
 
 Overfull \hbox (261.0pt too wide) has occurred while \output is active
 [][] 
@@ -590,13 +526,13 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) 
 Here is how much of TeX's memory you used:
- 3264 strings out of 495020
- 41438 string characters out of 6181324
- 107282 words of memory out of 5000000
- 6383 multiletter control sequences out of 15000+600000
+ 3266 strings out of 495020
+ 41467 string characters out of 6181324
+ 111311 words of memory out of 5000000
+ 6385 multiletter control sequences out of 15000+600000
  47293 words of font info for 99 fonts, out of 8000000 for 9000
  18 hyphenation exceptions out of 8191
- 38i,11n,28p,1322b,288s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,11n,28p,284b,288s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fon
@@ -609,7 +545,7 @@ c/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic
 xmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times
 /utmri8a.pfb>
-Output written on document.pdf (3 pages, 121184 bytes).
+Output written on document.pdf (3 pages, 124108 bytes).
 PDF statistics:
  63 PDF objects out of 1000 (max. 8388607)
  45 compressed objects within 1 object stream
