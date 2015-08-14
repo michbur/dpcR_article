@@ -38,27 +38,27 @@ To cover all methods of dPCR we implemented all accessible peer-review methods
 and plots into the \textit{dpcR} \textbf{R} package with a plug-in like 
 architecture. \textbf{R} is a sophisticated statistical computing environment. 
 The software uses abstraction to make it usable for droplets and chamber based 
-technologies.
+technologies. We implemented functions with binding to the \textit{shiny} 
+\textbf{R} package \cite{shiny} to provide means to run it as interactive web 
+application.
 
 \section{Results:}
 \textit{dpcR} is versatile open source cross-platform software package, which 
 provides functions to process dPCR data. Our software can be used for data 
 analysis and presentation, as frame-work for novel technical developments and as 
-reference for statistical methods in dPCR analysis.
+reference for statistical methods in dPCR analysis. Features such as functions 
+to estimate the underlying Poisson process, methods from peer-reviewed 
+literature for calculating confidence intervals based on single samples as well 
+as on replicates, a novel Generalized Linear Model-based procedure to compare 
+digital PCR experiments and a spatial randomness test for assessing plate 
+effects have been integrated. 
 
- We implemented many functions with binding 
-to the \textit{shiny} \textbf{R} package \cite{shiny} to provide means to run it as 
-interactive web application. Features such as functions to estimate the 
-underlying Poisson process, methods from peer-reviewed literature for 
-calculating confidence intervals based on single samples as well as on 
-replicates, a novel Generalized Linear Model-based procedure to compare digital 
-PCR experiments and a spatial randomness test for assessing plate effects have 
-been integrated. Thus, the \textit{dpcR} package can be used by\textbf{R} novices in a 
-graphical user interface or on expert level in R. The \textit{dpcR} package is 
-an open environment, which can be adopted to the growing knowledge in dPCR. The 
+\section{Conclusion:}
+Thus, the \textit{dpcR} package can be used by\textbf{R} novices in a graphical 
+user interface or on expert level in R. The \textit{dpcR} package is an open 
+environment, which can be adopted to the growing knowledge in dPCR. The 
 \textit{dpcR} package can be used to build a custom-made analyzer according to 
 the wishes of the user.
-\section{Conclusion:}
 
 \section{Availability:}
 http://cran.r-project.org/web/packages/dpcR\\newline
