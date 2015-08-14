@@ -2,45 +2,45 @@ This is BibTeX, Version 0.99d (TeX Live 2015/dev/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: document.aux
 The style file: plain.bst
-Database file #1: document.bib
-You've used 16 entries,
+Database file #1: dpcr.bib
+You've used 15 entries,
             2118 wiz_defined-function locations,
-            588 strings with 7030 characters,
-and the built_in function-call counts, 6059 in all, are:
-= -- 619
-> -- 295
+            584 strings with 6886 characters,
+and the built_in function-call counts, 5764 in all, are:
+= -- 593
+> -- 272
 < -- 2
-+ -- 117
-- -- 100
-* -- 462
-:= -- 979
-add.period$ -- 48
-call.type$ -- 16
-change.case$ -- 96
++ -- 108
+- -- 92
+* -- 441
+:= -- 926
+add.period$ -- 45
+call.type$ -- 15
+change.case$ -- 90
 chr.to.int$ -- 0
-cite$ -- 16
-duplicate$ -- 226
-empty$ -- 423
-format.name$ -- 100
-if$ -- 1255
+cite$ -- 15
+duplicate$ -- 217
+empty$ -- 405
+format.name$ -- 92
+if$ -- 1198
 int.to.chr$ -- 0
-int.to.str$ -- 16
+int.to.str$ -- 15
 missing$ -- 14
-newline$ -- 83
-num.names$ -- 32
-pop$ -- 76
+newline$ -- 78
+num.names$ -- 30
+pop$ -- 69
 preamble$ -- 1
-purify$ -- 82
+purify$ -- 76
 quote$ -- 0
-skip$ -- 190
+skip$ -- 183
 stack$ -- 0
-substring$ -- 421
-swap$ -- 72
+substring$ -- 416
+swap$ -- 70
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 64
+type$ -- 60
 warning$ -- 0
-while$ -- 58
-width$ -- 18
-write$ -- 176
+while$ -- 56
+width$ -- 17
+write$ -- 166

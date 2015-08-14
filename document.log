@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.4.21)  13 AUG 2015 14:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.4.21)  14 AUG 2015 14:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -360,40 +360,57 @@ Underfull \hbox (badness 10000) detected at line 22
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <8> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 26.
 
-Underfull \hbox (badness 1817) in paragraph at lines 40--59
-\OT1/phv/b/n/8 Results: \OT1/phv/m/n/8 To cover all methods of dPCR we implemen
+Underfull \hbox (badness 1325) in paragraph at lines 26--35
+\OT1/phv/b/n/8 Motivation: \OT1/phv/m/n/8 The digital Polymerase Chain Reaction
+ (dPCR) is
+ []
+
+
+Underfull \hbox (badness 2837) in paragraph at lines 26--35
+\OT1/phv/m/n/8 reduced sensitivity to inhibitors. There are different technical
+
+ []
+
+
+Underfull \hbox (badness 1237) in paragraph at lines 36--42
+\OT1/phv/b/n/8 Methods: \OT1/phv/m/n/8 To cover all methods of dPCR we implemen
 ted all
  []
 
 
-Underfull \hbox (badness 1681) in paragraph at lines 40--59
-\OT1/phv/m/n/8 estimate the underlying Poisson process, methods from peer-
+Underfull \hbox (badness 1210) in paragraph at lines 36--42
+\OT1/phv/m/n/8 with a plug-in like architecture. \OT1/phv/b/n/8 R \OT1/phv/m/n/
+8 is a sophisticated statistical
+ []
+
+
+Underfull \hbox (badness 1067) in paragraph at lines 49--61
+\OT1/phv/m/n/8 Features such as functions to estimate the underlying Poisson
+ []
+
+
+Underfull \hbox (badness 2351) in paragraph at lines 49--61
+\OT1/phv/m/n/8 process, methods from peer-reviewed literature for calculating
  []
 
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 67.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 70.
 
-Underfull \hbox (badness 1137) in paragraph at lines 68--95
-\OT1/ptm/m/n/9 (qPCR), The standard approach to quantify nucleic acids has
+Underfull \hbox (badness 1097) in paragraph at lines 71--98
+\OT1/ptm/m/n/9 and robust technology, which allows precise quantification of
  []
 
 
-Underfull \hbox (badness 1087) in paragraph at lines 68--95
-\OT1/ptm/m/n/9 quantification of DNA material in high throughput fashion at
+Underfull \hbox (badness 1062) in paragraph at lines 71--98
+\OT1/ptm/m/n/9 superSAGE or NanoStrings) (Matsumura-2006-Nature-Methods,
  []
 
-
-Underfull \hbox (badness 1655) in paragraph at lines 68--95
-\OT1/ptm/m/n/9 a reasonable price. However, the quantification by qPCR is
- []
-
-LaTeX Font Info:    Try loading font information for OMS+phv on input line 109.
-
+LaTeX Font Info:    Try loading font information for OMS+phv on input line 99.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsphv.fd
 File: omsphv.fd 
 )
 LaTeX Font Info:    Font shape `OMS/phv/m/n' in size <7> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 109.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 99.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
@@ -405,7 +422,7 @@ Missing character: There is no µ in font ptmr7t!
 Missing character: There is no Â in font ptmr7t!
 Missing character: There is no µ in font ptmr7t!
 
-Underfull \hbox (badness 1237) in paragraph at lines 113--130
+Underfull \hbox (badness 1237) in paragraph at lines 116--133
 \OT1/ptm/m/n/9 distributions an n of XY (get reference from table/text book
  []
 
@@ -416,36 +433,44 @@ Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ¦ in font ptmr7t!
 
-Underfull \hbox (badness 2012) in paragraph at lines 155--170
+Underfull \hbox (badness 2012) in paragraph at lines 158--173
 \OT1/ptm/m/n/9 may use (microfluidic)chambers or emulsion based chambers
  []
 
 
-Overfull \hbox (0.86887pt too wide) in paragraph at lines 155--170
+Overfull \hbox (0.86887pt too wide) in paragraph at lines 158--173
 \OT1/ptm/m/n/9 (QX200 $[]$(Bio-Rad), RainDrop $[]$System (RainDance)). Chamber
  []
 
 
-Underfull \hbox (badness 1490) in paragraph at lines 155--170
+Underfull \hbox (badness 1490) in paragraph at lines 158--173
 \OT1/ptm/m/n/9 time monitoring of the amplification reaction and subsequent
  []
 
 
-Underfull \hbox (badness 2875) in paragraph at lines 155--170
+Underfull \hbox (badness 2875) in paragraph at lines 158--173
 \OT1/ptm/m/n/9 Thus, such technologies enable easier trouble shooting and
  []
 
 
-Underfull \hbox (badness 2698) in paragraph at lines 155--170
+Underfull \hbox (badness 2698) in paragraph at lines 158--173
 \OT1/ptm/m/n/9 This results in a higher statistical power to quantify small
  []
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 180.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 183.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 213.
+
+Underfull \hbox (badness 2027) in paragraph at lines 208--218
+[]\OT1/ptm/m/n/8 One basic design decision was to structure specific properties
+ of
+ []
+
 LaTeX Font Info:    Font shape `OT1/phv/bx/it' in size <8> not available
-(Font)              Font shape `OT1/phv/b/it' tried instead on input line 226.
+(Font)              Font shape `OT1/phv/b/it' tried instead on input line 238.
 LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <8> not available
-(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 226.
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 238.
 
 Overfull \hbox (261.0pt too wide) has occurred while \output is active
 [][] 
@@ -460,37 +485,83 @@ Overfull \hbox (261.0pt too wide) has occurred while \output is active
  []
 
 [2]
-Underfull \hbox (badness 2057) in paragraph at lines 266--268
+Underfull \hbox (badness 2057) in paragraph at lines 278--280
  \OT1/ptm/m/it/9 Funding[][] \OT1/ptm/m/n/9 This work was funded by the Federal
  Ministry of
  []
 
 (./document.bbl
-Underfull \hbox (badness 2042) in paragraph at lines 85--90
+Underfull \hbox (badness 2042) in paragraph at lines 80--85
 \OT1/ptm/m/n/7 Isothermal Amplification, and a Mobile Phone versus Real-Time Ki
 netic
  []
 
 
-Underfull \hbox (badness 1742) in paragraph at lines 92--97
+Underfull \hbox (badness 1742) in paragraph at lines 87--92
 []\OT1/ptm/m/n/7 Andrej-Nikolai Spiess, Claudia Deutschmann, Micha l Burdukiewi
 cz, Ralf
  []
 
 
-Underfull \hbox (badness 1024) in paragraph at lines 92--97
+Underfull \hbox (badness 1024) in paragraph at lines 87--92
 \OT1/ptm/m/n/7 of Smoothing on Parameter Estimation in Quantitative DNA Amplifi
 cation
  []
 
 )
-Extra height:0.0pt when 421.87894pt
-(2)Left:421.87894pt Right:404.75787pt Output:421.87894pt
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:38.51544pt when 434.87894pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:38.51544pt when 435.87894pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:38.51544pt when 436.87894pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:38.51544pt when 437.87894pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:38.51544pt when 438.87894pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:38.51544pt when 439.87894pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:20.51544pt when 440.87894pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:20.51544pt when 441.87894pt
+Extra height:0.0pt when 442.87894pt
+(2)Left:442.87894pt Right:420.75787pt Output:442.87894pt
 - LAST -
 Extra skip:0.0pt
-Left:421.87894pt
-Right:404.75787pt
-Output:421.87894pt
+Left:442.87894pt
+Right:420.75787pt
+Output:442.87894pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -510,13 +581,13 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) 
 Here is how much of TeX's memory you used:
- 3273 strings out of 495020
- 41579 string characters out of 6181324
- 118424 words of memory out of 5000000
- 6392 multiletter control sequences out of 15000+600000
- 47293 words of font info for 99 fonts, out of 8000000 for 9000
+ 3277 strings out of 495020
+ 41619 string characters out of 6181324
+ 118408 words of memory out of 5000000
+ 6394 multiletter control sequences out of 15000+600000
+ 50603 words of font info for 103 fonts, out of 8000000 for 9000
  18 hyphenation exceptions out of 8191
- 38i,11n,28p,307b,288s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,12n,28p,330b,288s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fon
@@ -529,7 +600,7 @@ c/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic
 xmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times
 /utmri8a.pfb>
-Output written on document.pdf (3 pages, 126553 bytes).
+Output written on document.pdf (3 pages, 126387 bytes).
 PDF statistics:
  63 PDF objects out of 1000 (max. 8388607)
  45 compressed objects within 1 object stream
