@@ -5,7 +5,7 @@
 \begin{document}
 \firstpage{1}
 
-\title[dpcR]{dpcrR: a Swiss-army knife for the analysis of digital PCR experiments}
+\title[dpcR]{dpcR: a Swiss-army knife for the analysis of digital PCR experiments}
 \author[Burdukiewicz \textit{et~al.}]{Micha\l{} Burdukiewicz\,$^{1}$, Jim Huggett\,$^2$, Alexandra Whale\,$^2$, Bart K.M. Jacobs\,$^3$, Lieven Clement\,$^3$, Piotr Sobczyk\,$^{1}$, Andrej-Nikolai Spiess\,$^4$, Peter Schierack\,$^5$, and Stefan R\"odiger\,$^{5}$\footnote{to whom correspondence should be addressed}}
 \address{$^{1}$Department of Genomics, Faculty of Biotechnology, University of 
 Wroc\l{}aw, Wroc\l{}aw, Poland\\
@@ -24,41 +24,42 @@ Cottbus--Senftenberg, Germany}
 \begin{abstract}
 
 \section{Motivation:}
+
 The digital Polymerase Chain Reaction (dPCR) is emerging in all research areas, 
-such as life-sciences and diagnostics. dPCR is likely to have the same impact in 
-nucleic acids quantification as real-time quantitative PCR. Advantages over 
-conventional qPCR include the possibility of absolute quantification and the 
-drastically reduced sensitivity to inhibitors. There are different technical 
-approaches (e.g., droplets, nano-structured chambers) and different approaches 
-for statistical analysis were proposed. However, a unified open software package 
-is not available.
+such as life-sciences and diagnostics since it enables an absolute 
+quantification of nucleic acids. Different approaches for statistical 
+analysis were proposed. However, most software is provide by the vendor, which 
+makes it harder to compare results, such as the confidence interval estimates. An 
+unified open software framework for reproducible research is not available.
 
 \section{Methods:}
-To cover all methods of dPCR we implemented all accessible peer-review methods 
-and plots into the \textit{dpcR} \textbf{R} package with a plug-in like 
-architecture. \textbf{R} is a sophisticated statistical computing environment. 
-The software uses abstraction to make it usable for droplets and chamber based 
-technologies. We implemented functions with binding to the \textit{shiny} 
-\textbf{R} package \cite{shiny} to provide means to run it as interactive web 
-application.
+
+To cover fundamental methods of dPCR we implemented peer-review statistical 
+methods and plots into the \textit{dpcR} package, based on the sophisticated 
+statistical computing environment \textbf{R}. We use a plug-in like 
+architecture. The software uses abstraction to make it usable for droplets and 
+chamber based technologies. \textit{dpcR} was implemented with interfaces to the 
+command-line, graphical user interfaces and interactive web application.
 
 \section{Results:}
+
 \textit{dpcR} is versatile open source cross-platform software package, which 
-provides functions to process dPCR data. Our software can be used for data 
-analysis and presentation, as frame-work for novel technical developments and as 
-reference for statistical methods in dPCR analysis. Features such as functions 
-to estimate the underlying Poisson process, methods from peer-reviewed 
-literature for calculating confidence intervals based on single samples as well 
-as on replicates, a novel Generalized Linear Model-based procedure to compare 
-digital PCR experiments and a spatial randomness test for assessing plate 
-effects have been integrated. 
+provides functions to process dPCR data independent of the hardware. Our 
+software can be used for data analysis and presentation, as frame-work for novel 
+technical developments and as reference for statistical methods in dPCR 
+analysis. Features such as functions to estimate the underlying Poisson process, 
+calculation of confidence intervals based on single samples as well as on 
+replicates, a novel Generalized Linear Model-based procedure to compare digital 
+PCR experiments and a spatial randomness test for assessing plate effects have 
+been integrated. 
 
 \section{Conclusion:}
-Thus, the \textit{dpcR} package can be used by\textbf{R} novices in a graphical 
-user interface or on expert level in R. The \textit{dpcR} package is an open 
-environment, which can be adopted to the growing knowledge in dPCR. The 
-\textit{dpcR} package can be used to build a custom-made analyzer according to 
-the wishes of the user.
+
+\textit{dpcR} can be used by novices in a graphical user interface or by experts 
+via a command-line interface. The \textit{dpcR} package can be used to build a 
+custom-made analyser according to the wishes of the user. The \textit{dpcR} 
+package is an open environment, which can be adopted to the growing knowledge in 
+dPCR. 
 
 \section{Availability:}
 http://cran.r-project.org/web/packages/dpcR\\newline
@@ -83,23 +84,25 @@ molecules (e.g., superSAGE or NanoStrings) (Matsumura-2006-Nature-Methods,
 Waggott-2012-Bioinformatics). The third is to analyze the number of positive 
 reactions in relation to the number of total reaction (dPCR). Since 
 approximately ten year the digital PCR (dPCR) is gaining entrance in the 
-mainstream user-base. There is currently an intensive research on qPCR platforms 
-with the overall aim to make to technology broadly usable, cheap, robust and to 
-enable high sample throughput. The chemical basis of the dPCR is identical to 
-the qPCR, which includes master-mix preparation and thermal cycling of the 
-sample. In contrast to qPCR the amplification ration does not take place in a 
-single reaction chamber but is rather a process of clonal amplification in small 
-separate ``compartments'' (e.g., nl volume droplets of water oil emulsions, 
-chambers on micro structured chips). The quantification of the amplification is 
-not done by determining a Cq-value derived from an amplification curve but 
-applying a Poisson distribution based determination of the concentration of the 
-starting material. Therefore, the dPCR does not require an external calibration 
-\cite{selck_increased_2013, rodiger_r_2015}.
+mainstream user-base and will likely to have the same impact in nucleic acids 
+quantification as real-time quantitative PCR \cite{huggett_qpcr_2015, morley_digital_2014, 
+rodiger_r_2015}. There is currently an intensive research 
+on qPCR platforms with the overall aim to make to technology broadly usable, 
+cheap, robust and to enable high sample throughput. The chemical basis of the 
+dPCR is identical to the qPCR, which includes master-mix preparation and thermal 
+cycling of the sample. In contrast to qPCR the amplification ration does not 
+take place in a single reaction chamber but is rather a process of clonal 
+amplification in small separate ``compartments'' (e.g., nl volume droplets of 
+water oil emulsions, chambers on micro structured chips). The quantification of 
+the amplification is not done by determining a Cq-value derived from an 
+amplification curve but applying a Poisson distribution based determination of 
+the concentration of the starting material. Therefore, the dPCR does not require 
+an external calibration \cite{selck_increased_2013, rodiger_r_2015}.
 
 A first proposal for digital PCR like approach and the use of the Poisson 
 distribution to quantify the number of molecules on a ``sample'' was shown by 
-Ruano et al. 1990 (PNAS) with the single molecule dilution (SMD) PCR. In 1999 
-Vogelstein et al. (PNAS) described the first true digital PCR \cite{morley_digital_2014}. Application of 
+Ruano et al. 1990 (PNAS) with the single molecule dilution (SMD) PCR \cite{ruano_haplotype_1990}. In 1999 
+Vogelstein et al. (PNAS) described the first true digital PCR \cite{vogelstein_digital_1999}. Application of 
 the dPCR cover all applications of conventional qPCR, including investigation of 
 alleles, gene expression analysis and absolute quantification of PCR products. 
 For absolute quantification the qPCR relied on an external calibrator 
@@ -136,7 +139,7 @@ Reference to ``Supplement''
 
 Calculation of the uncertainty
 To determine the uncertainty of the calculations two approach have been proposed 
-in the peer-review literature (Dube 2008, PLoS One, Bath …). The uncertainty is 
+in the peer-review literature (Dube 2008, PLoS One, Bath …) \cite. The uncertainty is 
 dependent on the number of PCR reactions (reference to \textit{\textit{dpcR}} 
 functions). … Reference to ``Supplement'' and \textit{dpcR} functions.
 
