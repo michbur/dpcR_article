@@ -35,7 +35,7 @@ unified open software framework for reproducible research is not available.
 \section{Methods:}
 
 To cover fundamental methods of dPCR we implemented peer-review statistical 
-methods and plots into the \textit{dpcR} package, based on the sophisticated 
+methods and plots into the \textit{dpcR} framework, based on the sophisticated 
 statistical computing environment \textbf{R}. We use a plug-in like 
 architecture. The software uses abstraction to make it usable for droplets and 
 chamber based technologies. \textit{dpcR} was implemented with interfaces to the 
@@ -43,9 +43,9 @@ command-line, graphical user interfaces and interactive web application.
 
 \section{Results:}
 
-\textit{dpcR} is versatile open source cross-platform software package, which 
+\textit{dpcR} is versatile open source cross-platform software framework, which 
 provides functions to process dPCR data independent of the hardware. Our 
-software can be used for data analysis and presentation, as frame-work for novel 
+software can be used for data analysis and presentation, as framework for novel 
 technical developments and as reference for statistical methods in dPCR 
 analysis. Features such as functions to estimate the underlying Poisson process, 
 calculation of confidence intervals based on single samples as well as on 
@@ -56,9 +56,9 @@ been integrated.
 \section{Conclusion:}
 
 \textit{dpcR} can be used by novices in a graphical user interface or by experts 
-via a command-line interface. The \textit{dpcR} package can be used to build a 
+via a command-line interface. The \textit{dpcR} framework can be used to build a 
 custom-made analyser according to the wishes of the user. The \textit{dpcR} 
-package is an open environment, which can be adopted to the growing knowledge in 
+framework is an open environment, which can be adopted to the growing knowledge in 
 dPCR. 
 
 \section{Availability:}
@@ -69,35 +69,34 @@ Source code: https://github.com/michbur/dpcR\
 \end{abstract}
 
 \section{Introduction}
-There are three principal approaches to quantify nucleic acids. The fist is by 
-referencing the material to an external calibrator (qPCR), The standard approach 
-to quantify nucleic acids has been the real-time quantitative PCR (qPCR) so far 
-\cite{pabinger_survey_2014}. It is a well established and robust technology, 
-which allows precise quantification of DNA material in high throughput fashion 
-at a reasonable price. However, the quantification by qPCR is challenging at 
-very low and very high concentrations. At low concentration Monte Carlo effect 
-play a major role and at high concentration inhibition process start to dominate 
-the qPCR . Thus, the qPCR is only usable in the working range of the calibrator. 
-In addition, pre-processing and data analysis is a affected by numerous adverse 
-effects \cite{spiess_impact_2015}. The second approach is to count the number of 
-molecules (e.g., superSAGE or NanoStrings) (Matsumura-2006-Nature-Methods, 
-Waggott-2012-Bioinformatics). The third is to analyze the number of positive 
-reactions in relation to the number of total reaction (dPCR). Since 
-approximately ten year the digital PCR (dPCR) is gaining entrance in the 
-mainstream user-base and will likely to have the same impact in nucleic acids 
-quantification as real-time quantitative PCR \cite{huggett_qpcr_2015, morley_digital_2014, 
-rodiger_r_2015}. There is currently an intensive research 
-on qPCR platforms with the overall aim to make to technology broadly usable, 
-cheap, robust and to enable high sample throughput. The chemical basis of the 
-dPCR is identical to the qPCR, which includes master-mix preparation and thermal 
-cycling of the sample. In contrast to qPCR the amplification ration does not 
-take place in a single reaction chamber but is rather a process of clonal 
-amplification in small separate ``compartments'' (e.g., nl volume droplets of 
-water oil emulsions, chambers on micro structured chips). The quantification of 
-the amplification is not done by determining a Cq-value derived from an 
-amplification curve but applying a Poisson distribution based determination of 
-the concentration of the starting material. Therefore, the dPCR does not require 
-an external calibration \cite{selck_increased_2013, rodiger_r_2015}.
+
+Real-time quantitative PCR (qPCR) is the standard approach to quantify nucleic 
+acids \cite{pabinger_survey_2014}. The quantification of the amplification is 
+not done by determining a Cq-value derived from an amplification curve. qPCR is 
+a well established and robust technology, which allows precise quantification of 
+DNA material in high throughput fashion. However, the quantification by qPCR is 
+challenging at very low and very high concentrations. At low DNA concentration 
+Monte Carlo effect play a role and at high concentration inhibition processes 
+start to dominate the qPCR. Thus, the qPCR is only usable in the working range 
+of the calibrator. In addition, pre-processing and data analysis is a affected 
+by numerous adverse effects \cite{ruijter_2013, spiess_impact_2015}.
+
+The digital PCR (dPCR) is an alternative method to quantify nucleic acids. The 
+chemical basis of the dPCR is similar to the qPCR, which includes master-mix 
+preparation and thermal cycling of the sample. In contrast to qPCR the 
+amplification reaction does not take place in a single reaction chamber. Rather 
+its a process of clonal amplification in small separate ``partitions'' (e.g., nl 
+volume droplets of water oil emulsions, chambers on micro structured chips). The 
+number of positive partition in relation to the number of total partitions. By 
+applying Poisson statistics it is possible to determine the number of the 
+starting material in given volume. Therefore, the dPCR does not require an 
+external calibration \cite{selck_increased_2013, rodiger_r_2015}. Since 
+approximately ten years the digital PCR (dPCR) is gaining momentum in the 
+mainstream user-base. dPCR will likely have the same impact as qPCR in the 
+nucleic acid methodology \cite{huggett_qpcr_2015, morley_digital_2014, 
+rodiger_r_2015}. There is an intensive research on dPCR platforms with the 
+overall aim to make to technology broadly usable, cheap, robust and to enable 
+high sample throughput. 
 
 A first proposal for digital PCR like approach and the use of the Poisson 
 distribution to quantify the number of molecules on a ``sample'' was shown by 
@@ -139,20 +138,11 @@ Reference to ``Supplement''
 
 Calculation of the uncertainty
 To determine the uncertainty of the calculations two approach have been proposed 
-in the peer-review literature (Dube 2008, PLoS One, Bath …) \cite. The uncertainty is 
+in the peer-review literature \cite{dube_mathematical_2008, bhat_single_2009}. The uncertainty is 
 dependent on the number of PCR reactions (reference to \textit{\textit{dpcR}} 
 functions). … Reference to ``Supplement'' and \textit{dpcR} functions.
 
-We developed the \textit{dpcR} package which is software suite for analysis of 
-dPCR based on the open source statistical software R. The \textit{dpcR} includes 
-to invitation to the scientific community to join and support the development of 
-\textit{dpcR} (github?). The aim of the software is to provide the scientific 
-community a tool for teaching purposes, data analysis, theoretical research 
-(simulation) and to accelerate the development of new approaches to dPCR. We 
-implemented all existing statistical methods for dPCR and suggest the 
-introduction of a standardized nomenclature for qPCR. The package enables the 
-simulations and predictions of Poisson distribution for dPCR scenarios, the 
-analysis of previously run dPCRs.
+
 
 Interactive use and graphical representation with \textit{shiny} \cite{shiny}.
 
@@ -228,6 +218,17 @@ The GUI employs advanced plots based on \textit{ggplot2} \cite{kahle_wickham_201
 
 \section{Discussion}
 
+We developed the \textit{dpcR} package, which is a software framework for analysis of 
+dPCR based on the open source statistical software \textbf{R}. \textit{dpcR} provides the scientific 
+community a broadly applicable tool for teaching purposes, data analysis and theoretical research based on simulations. 
+
+To accelerate the development of new approaches to dPCR. 
+
+We implemented all existing statistical methods for dPCR and suggest the 
+introduction of a standardized nomenclature for qPCR. The package enables the 
+simulations and predictions of Poisson distribution for dPCR scenarios, the 
+analysis of previously run dPCRs.
+
 Functions included may be used to simulate dPCRs, perform statistical data 
 analysis, plotting of the results and simple report generation. 
 
@@ -241,12 +242,12 @@ in other disciplines \cite{rodiger_r_2015}.
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-%     please remove the " % " symbol from \centerline{\includegraphics{fig01.eps}}
-%     as it may ignore the figures.
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  %
+  %     please remove the " % " symbol from \centerline{\includegraphics{fig01.eps}}
+  %     as it may ignore the figures.
+  %
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -259,20 +260,24 @@ In conclusion, \textit{dpcR} provides means to understand how digital PCR works,
 to design, simulate and analyze experiments, and to verify their results (e.g., 
 confidence interval estimation), which should ultimately improve 
 reproducibility. We have built what we believe to be the first unified, 
-cross-platform, dMIQE compliant, open source (GPL-3 or later) software frame-work for 
-analyzing digital PCR experiments. Our frame-work, designated \textit{dpcR} , is 
+cross-platform, dMIQE compliant, open source (GPL-3 or later) software framework for 
+analyzing digital PCR experiments. Our framework, designated \textit{dpcR} , is 
 targeted at a broad user base including end users in clinics, academics, 
 developers, and educators. We implemented existing statistical methods for dPCR 
 and suggest the introduction of a standardized nomenclature for qPCR. Our 
-frame-work is suitable for teaching and includes references for an elaborated 
+framework is suitable for teaching and includes references for an elaborated 
 set of methods for dPCR statistics. Our software can be used for (I) data 
-analysis and visualization in research, (II) as software frame-work for novel 
+analysis and visualization in research, (II) as software framework for novel 
 technical developments, (III) as platform for teaching this new technology and 
 (IV) as reference for statistical methods with a standardized nomenclature for 
-dPCR experiments. The package enables the simulations and predictions of Poisson 
+dPCR experiments. The framework enables the simulations and predictions of Poisson 
 distribution for dPCR scenarios, the analysis of previously run dPCRs. Due to 
 the plug-in structure of the software it is possible to build custom-made 
 analyzers.
+
+The \textit{dpcR} includes 
+to invitation to the scientific community to join and support the development of 
+\textit{dpcR} (github?).
 
 \section*{Acknowledgement}
 
