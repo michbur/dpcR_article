@@ -14,16 +14,15 @@
 \title{\textit{dpcR} a Swiss-army knife for the analysis of digital PCR experiments}
 
 \author{%
-Micha\l{} Burdukiewicz\,$^{1}$,
+Micha\l{} Burdukiewicz\,$^{1,5}$,
 Jim Huggett\,$^{2}$,
 Alexandra Whale\,$^{2}$,
 Bart K.M. Jacobs\,$^{3}$,
 Lieven Clement\,$^{3}$,
 Piotr Sobczyk\,$^{1}$,
 Andrej-Nikolai Spiess\,$^{4}$,
-Peter Schierack,\,$^{5}$,
-Stefan R\"odiger\,$^{5,*}$,
-\footnote{To whom correspondence should be addressed.
+Peter Schierack\,$^{5}$,
+Stefan R\"odiger\,$^{5,}$\footnote{To whom correspondence should be addressed.
 Tel: +49 357385936; Fax: +49 357385801; Email: stefan.roediger@b-tu.de}}
 
 \address{%
@@ -49,35 +48,35 @@ Accepted March 1, 2009}
 \maketitle
 
 \begin{abstract}
+
 The digital Polymerase Chain Reaction (dPCR) is emerging in all research areas, 
 such as life-sciences and diagnostics since it enables an absolute 
-quantification of nucleic acids. Different approaches for statistical 
-analysis were proposed. However, most software is provide by the vendor, which 
-makes it harder to compare results, such as the confidence interval estimates. An 
-unified open software framework for reproducible research is not available.
+quantification of nucleic acids. Different approaches for statistical analysis 
+were proposed. However, most analysis is done in closed source software as 
+provided by the vendors. This makes it harder to compare results, such as the 
+confidence interval estimates. An unified open software framework for 
+reproducible research is not available.
 
-To cover fundamental methods of dPCR we implemented peer-review statistical 
-methods and plots into the \textit{dpcR} framework, based on the sophisticated 
-statistical computing environment \textbf{R}. We use a plug-in like 
-architecture. The software uses abstraction to make it usable for droplets and 
-chamber based technologies. \textit{dpcR} was implemented with interfaces to the 
-command-line, graphical user interfaces and interactive web application.
+To perform dPCR analysis we implemented peer-review statistical methods and 
+plots into the \textit{dpcR} framework, based on the sophisticated statistical 
+computing environment \textbf{R}. \textit{dpcR} is versatile open source 
+cross-platform software framework, which provides functions to process dPCR data 
+independent of the hardware. Our software can be used for data analysis and 
+presentation, as framework for novel technical developments and as reference for 
+statistical methods in dPCR analysis. Features such as functions to estimate the 
+underlying Poisson process, calculation of confidence intervals based on single 
+samples as well as on replicates, a novel Generalized Linear Model-based 
+procedure to compare digital PCR experiments and a spatial randomness test for 
+assessing plate effects have been integrated. We use a plug-in like architecture 
+and abstraction layers to make the framework usable for droplets and (real-time) 
+chamber based technologies.
 
-\textit{dpcR} is versatile open source cross-platform software framework, which 
-provides functions to process dPCR data independent of the hardware. Our 
-software can be used for data analysis and presentation, as framework for novel 
-technical developments and as reference for statistical methods in dPCR 
-analysis. Features such as functions to estimate the underlying Poisson process, 
-calculation of confidence intervals based on single samples as well as on 
-replicates, a novel Generalized Linear Model-based procedure to compare digital 
-PCR experiments and a spatial randomness test for assessing plate effects have 
-been integrated. 
-
-\textit{dpcR} can be used by novices in a graphical user interface or by experts 
-via a command-line interface. The \textit{dpcR} framework can be used to build a 
-custom-made analyser according to the wishes of the user. The \textit{dpcR} 
-framework is an open environment, which can be adopted to the growing knowledge in 
-dPCR. 
+\textit{dpcR} was implemented with interfaces to the command-line, graphical 
+user interfaces and interactive web application. \textit{dpcR} can be used by 
+novices in a graphical user interface or by experts via a command-line 
+interface. The \textit{dpcR} framework can be used to build a custom-made 
+analyser according to the wishes of the user. The \textit{dpcR} framework is an 
+open environment, which can be adopted to the growing knowledge in dPCR. 
 
 \end{abstract}
 
@@ -237,6 +236,16 @@ and data set of different dPCR systems are listed in Table XY. Further
 dependencies to 3rd party packages include \textit{pracma}, ... (see Figure \ref{dpcR_implementation_1}). See the vignette for 
 details.
 
+The workflow is shown Figure \ref{workflow}.
+
+\begin{figure*}[t]
+\begin{center}
+\includegraphics[width=17cm]{workflow.png}
+\end{center}
+\caption{\textit{dpcR} workflow. Show steps in dPCR data analysis.} 
+\label{workflow}
+\end{figure*}
+
 The GUI employs advanced plots based on \textit{ggplot2} \cite{kahle_wickham_2013}.
 
 \begin{figure}[t]
@@ -264,6 +273,7 @@ function were B) preprocessed (baselined, smoothed) with functions from the
 \textit{qpcr2pp} (qPCR to Poisson process) function from the \textit{dpcR} package.} 
 \label{dpcR_implementation_1}
 \end{figure}
+
 \subsubsection{Materials subsubsection one.}
 
 \begin{align}
@@ -295,6 +305,17 @@ Text.
 \label{GUI_RKWard_1}
 \end{figure*}
 
+\subsection{Materials subsection Statistical power - Monte Carlo simulations}
+
+The proposed framework was evaluated in three Monte Carlo experiments (2000 times repetitions each) with accordingly 1000, 5000 (results not shown) and 10k partitions. During each repetition of the Monte Carlo scheme, a set of partitions was randomly generated~\cite{dube_mathematical_2008} with a determined number of molecules ('Base number of molecules' on X-axis). The set was copied and a number of molecules ('Added number of molecules' on Y-axis) was added to randomly chosen partitions. Two obtained arrays were compared using the proposed method. The mean p-values alongside with their standard deviation are presented in the chart below.
+
+\begin{figure}[t]
+\begin{center}
+\includegraphics[width=9cm]{mc_figures-1.pdf}
+\end{center}
+\caption{Our method, based on GLM, predicts estimated means copies per partitions using Poisson or binomial regression. Afterwards, estimates are compared against themselves using t-test. Obtained p-values and confidence intervals do not require further correction, because the familywise error is controlled through the whole analysis.}
+\label{mc_figures-1}
+\end{figure}
 
 \section{RESULTS}
 
