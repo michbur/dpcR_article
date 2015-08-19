@@ -285,6 +285,10 @@ function were B) preprocessed (baselined, smoothed) with functions from the
 
 \subsection{Materials subsection two}
 
+We aimed for a form factor (e.g., smart phone, tablet, desktop PCR) and 
+operating system independent implementation of a graphical user interface. 
+
+Moreover, there exit several GUI technologies for \textbf{R} \cite{rodiger_rkward_2012}.
 (see Figure \ref{GUI_RKWard_1}).
 
 Text.
@@ -319,51 +323,43 @@ The proposed framework was evaluated in three Monte Carlo experiments (2000 time
 
 \section{RESULTS}
 
-\subsection{Results subsection one}
+\subsection{Reading or importing data}
 
-
+(see Table \ref{table_formats}).
 
 \begin{table}[b]
 \tableparts{%
-\caption{This is a table caption}
-\label{table:01}%
+\caption{Structured export data formats handled by \textit{dpcR}~v.~0.5 and later.}
+\label{table_formats}%
 }{%
-\begin{tabular*}{\columnwidth}{@{}lllll@{}}
+\begin{tabular*}{\columnwidth}{@{}llll@{}}
 \toprule
-Col. head 1 & Col. head 2 & Col. head 3 & Col. head 4 & Col. head 5
-\\
-& (\%) & (s$^{-1}$) & (\%) & (s$^{-1}$)
+Vendor & System & Format & Type
 \\
 \colrule
-Row 1 & Row 1 & Row 1 & -- & --
+Bio-Rad & QX100 \& QX200 & CSV & Summary export
 \\
-Row 2 & Row 2 & Row 2 & Row 2 & Row 2
+Fluidigm & BioMark & CSV & Summary export
 \\
 \botrule
 \end{tabular*}%
 }
-{This is a table footnote}
-\end{table}
+{The number of structured export data formats handled by \textit{dpcR} is growing. Numerous data 
+formats can be processed with the functionality provided by the \textbf{R} 
+environment (see \cite{rodiger_r_2015}). CSV, comma separated values.
+} \end{table}
+
+\subsection{Public data sets}
+
+\textit{dpcR} includes data sets or refers to additional R packages for testing 
+purposes. The data originate from different dPCR and qPCR systems and were 
+either published previously \cite{whale_comparison_2012, 
+rodiger_chippcr_2015,rodiger_r_2015} or \textit{de novo} generated.
 
 
 \subsection{Results subsection two}
 
-(see Table \ref{table:01}).
-
-(see Figure \ref{NAR-fig2}a).
-
-Text.
-
-% \begin{figure*}[t]
-% \begin{center}
-% \includegraphics{NAR-fig2.eps}
-% \end{center}
-% \caption{Caption for wide figure over two columns.
-% \textbf{(a)} Left figure.
-% \textbf{(b)} Right figure (see (a)).
-% }
-% \label{NAR-fig2}
-% \end{figure*}
+(see Table \ref{table_formats}).
 
 
 \subsection{Availability}
@@ -436,9 +432,11 @@ to invitation to the scientific community to join and support the development of
 
 \section{ACKNOWLEDGEMENTS}
 
-Grateful thanks belong to the \textbf{R} community. This work was funded by the Federal Ministry of Education and Research (BMBF)
- InnoProfile--Transfer--Projekt 03 IPT 611X.
+Grateful thanks belong to the \textbf{R} community.
 
+\section{Funding}
+This work was funded by the Federal Ministry of Education and Research (BMBF) InnoProfile--Transfer--Projekt 03 IPT 611X.
+ 
 \subsubsection{Conflict of interest statement.} None declared.
 \newpage
 
