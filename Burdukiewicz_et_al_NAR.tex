@@ -120,8 +120,8 @@ high sample throughput.
 
 A first proposal for digital PCR like approach and the use of the Poisson 
 distribution to quantify the number of molecules on a ``sample'' was shown by 
-Ruano et al. 1990 (PNAS) with the single molecule dilution (SMD) PCR \cite{ruano_haplotype_1990}. In 1999 
-Vogelstein et al. (PNAS) described the first true digital PCR \cite{vogelstein_digital_1999}. Application of 
+Ruano \textit{et al.} 1990 (PNAS) with the single molecule dilution (SMD) PCR \cite{ruano_haplotype_1990}. In 1999 
+Vogelstein \textit{et al.} (PNAS) described the first true digital PCR \cite{vogelstein_digital_1999}. Application of 
 the dPCR cover all applications of conventional qPCR, including investigation of 
 alleles, gene expression analysis and absolute quantification of PCR products. 
 For absolute quantification the qPCR relied on an external calibrator 
@@ -221,9 +221,6 @@ independently (effect on CI and uncertainty) or to pool/aggregate all reactions
 \section{MATERIALS AND METHODS}
 
 \subsection{Materials subsection one}
-
-The source code is open source (GPL-3 or later) and hosted at \textit{github.com}. The stable package is freely 
-available from Bioconductor.
 
 One basic design decision was to structure specific properties of digital PCR 
 systems (dropet vs. chamber) in auxiliary functions and to perform central 
@@ -341,6 +338,8 @@ Bio-Rad & QX100 \& QX200 & CSV & Summary export
 \\
 Fluidigm & BioMark & CSV & Summary export
 \\
+Formulatrix & Constellation Digital PCR & CSV & Summary export
+\\
 \botrule
 \end{tabular*}%
 }
@@ -356,7 +355,6 @@ purposes. The data originate from different dPCR and qPCR systems and were
 either published previously \cite{whale_comparison_2012, 
 rodiger_chippcr_2015,rodiger_r_2015} or \textit{de novo} generated.
 
-
 \subsection{Results subsection two}
 
 (see Table \ref{table_formats}).
@@ -364,8 +362,11 @@ rodiger_chippcr_2015,rodiger_r_2015} or \textit{de novo} generated.
 
 \subsection{Availability}
 
-http://cran.r-project.org/web/packages/dpcR\\newline
-Source code: https://github.com/michbur/dpcR\
+The \textit{dpcR} framework is available as open source software package as part 
+of the Bioconductor project \cite{gentleman_2004}. The source code is open 
+source (GPL-3 or later). The stable version is hosted at 
+http://cran.r-project.org/web/packages/dpcR and the source code is available 
+from  https://github.com/michbur/dpcR.
 
 \section{DISCUSSION}
 
