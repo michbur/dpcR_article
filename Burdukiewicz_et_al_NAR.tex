@@ -411,6 +411,13 @@ mutual exclusive to alternative platforms (e.g., droplet vs. chamber-based). We
 have chosen \textbf{R} because it is the \textit{lingua franca} in biostatistics and broadly used 
 in other disciplines \cite{rodiger_r_2015}.
 
+We decided to implement no algorithm for clustering and rain definition of 
+droplet dPCR data. This is because, there are several \textbf{R} packages from 
+flow-cytometer research. implementations range from manual to automatic 
+clustering \cite{le_meur_computational_2013, Malek15022015}. Moreover, 
+discussion with our peers and the literature suggest that a consensus of an 
+appropriate method for dPCR is not available.
+
 \subsection{Discussion subsection one}
 
 Text.
@@ -430,11 +437,11 @@ In conclusion, \textit{dpcR} provides means to understand how digital PCR works,
 to design, simulate and analyze experiments, and to verify their results (e.g., 
 confidence interval estimation), which should ultimately improve 
 reproducibility. We have built what we believe to be the first unified, 
-cross-platform, dMIQE compliant, open source (GPL-3 or later) software framework for 
-analyzing digital PCR experiments. Our framework, designated \textit{dpcR} , is 
+cross-platform, dMIQE compliant, open source software framework for 
+analyzing dPCR experiments. Our \textit{dpcR} framework is 
 targeted at a broad user base including end users in clinics, academics, 
 developers, and educators. We implemented existing statistical methods for dPCR 
-and suggest the introduction of a standardized nomenclature for qPCR. Our 
+and suggest the introduction of a standardized dPCR nomenclature. Our 
 framework is suitable for teaching and includes references for an elaborated 
 set of methods for dPCR statistics. Our software can be used for (I) data 
 analysis and visualization in research, (II) as software framework for novel 
