@@ -162,7 +162,9 @@ in the peer-review literature \cite{dube_mathematical_2008, bhat_single_2009}. T
 dependent on the number of PCR reactions (reference to \textit{\textit{dpcR}} 
 functions). … Reference to ``Supplement'' and \textit{dpcR} functions.
 
-
+Recently, Mathew \textit{et al.} published the open access bioinformatic 
+pipeline, designated \textbf{definetherain} \cite{jones_low_2014}. The tool is 
+coded in JavaScript and has been made available for free in a web browser.
 
 Interactive use and graphical representation with \textit{shiny} \cite{shiny}.
 
@@ -204,13 +206,6 @@ recursive dependencies. Core packages \textit{qpcR} \cite{ritz_qpcr_2008},
 \textit{chipPCR} \cite{rodiger_chippcr_2015} and further packages as shown in 
 the dependency graph (Supplement XYZ).
 
- 
-
-\textbf{R} has a rich set of tool to arrange data (reshape?) in order to prepare them for 
-the analysis. This is important when it comes to the question how experiments 
-should be treated. It is possible to analyze the PCR reaction the panels 
-independently (effect on CI and uncertainty) or to pool/aggregate all reactions 
-(effect on CI and uncertainty) to achieve higher sensitivity/certainty.
 
 % **************************************************************
 % Keep this command to avoid text of first page running into the
@@ -323,6 +318,13 @@ The proposed framework was evaluated in three Monte Carlo experiments (2000 time
 
 \subsection{Reading or importing data}
 
+\textbf{R} has a rich set of tool to arrange data (reshape?) in order to prepare them for 
+the analysis. This is important when it comes to the question how experiments 
+should be treated. It is possible to analyze the PCR reaction the panels 
+independently (effect on CI and uncertainty) or to pool/aggregate all reactions 
+(effect on CI and uncertainty) to achieve higher sensitivity/certainty.
+
+
 (see Table \ref{table_formats}).
 
 \begin{table}[b]
@@ -349,15 +351,26 @@ formats can be processed with the functionality provided by the \textbf{R}
 environment (see \cite{rodiger_r_2015}). CSV, comma separated values.
 } \end{table}
 
+\subsection{\textit{De novo} creation of dpcR objects from raw data}
+
+In experimental setups user have the need to transform their raw data in a 
+processable format. Since the \textbf{R} environment is cross-platform an 
+ubiquitously used we aimed to ease this creation. In particular, this is 
+relevant for reproducible research. The \textit{dpcR} framework covers the types 
+typically used in laboratories.
+
 \subsection{Public data sets}
 
 \textit{dpcR} includes data sets or refers to additional R packages for testing 
 purposes. The data originate from different dPCR and qPCR systems and were 
 either published previously \cite{whale_comparison_2012, 
-rodiger_chippcr_2015,rodiger_r_2015} or \textit{de novo} generated.
+rodiger_chippcr_2015, white_digital_2009, rodiger_r_2015} or \textit{de novo} generated.
 
-\subsection{Results subsection two}
-  
+\subsection{Export of analysis results}
+
+Since \textit{dpcR} is based on the \textbf{R} environment all facilities for a 
+report generation are usable as described before \cite{rodiger_r_2015}.
+
 (see Table \ref{table_formats}).
 
 
