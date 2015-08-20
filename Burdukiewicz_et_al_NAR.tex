@@ -318,18 +318,19 @@ The proposed framework was evaluated in three Monte Carlo experiments (2000 time
 
 \subsection{Reading or importing data}
 
-\textbf{R} has a rich set of tool to arrange data (reshape?) in order to prepare them for 
-the analysis. This is important when it comes to the question how experiments 
-should be treated. It is possible to analyze the PCR reaction the panels 
-independently (effect on CI and uncertainty) or to pool/aggregate all reactions 
-(effect on CI and uncertainty) to achieve higher sensitivity/certainty.
+\textbf{R} has a rich set of tool to arrange data (reshape \cite{Wickham_2007}) 
+in order to prepare them for the analysis. This is important when it comes to 
+the question how experiments should be treated. It is possible to analyze the 
+PCR reaction the panels independently (effect on CI and uncertainty) or to 
+pool/aggregate all reactions (effect on CI and uncertainty) to achieve higher 
+sensitivity/certainty.
 
 
 (see Table \ref{table_formats}).
 
 \begin{table}[b]
 \tableparts{%
-\caption{Structured export data formats handled by \textit{dpcR}~v.~0.5 and later.}
+\caption{Structured vendor export data formats handled by \textit{dpcR}~v.~0.5 and later.}
 \label{table_formats}%
 }{%
 \begin{tabular*}{\columnwidth}{@{}llll@{}}
