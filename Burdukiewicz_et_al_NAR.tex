@@ -95,22 +95,22 @@ of the calibrator. In addition, pre-processing and data analysis is a affected
 by numerous adverse effects \cite{ruijter_2013, spiess_impact_2015}.
 
 
-The digital PCR (dPCR) is an alternative method to quantify nucleic acids. The 
-chemical basis of the dPCR is similar to the qPCR, which includes master-mix 
-preparation and thermal cycling of the sample. In contrast to qPCR the 
-amplification reaction does not take place in a single reaction chamber. Rather 
-its a process of clonal amplification in small separate ``partitions'' (e.g., nl 
-volume droplets of water oil emulsions, chambers on micro structured chips). The 
-number of positive partition in relation to the number of total partitions. By 
-applying Poisson statistics it is possible to determine the number of the 
-starting material in given volume. Therefore, the dPCR does not require an 
-external calibration \cite{selck_increased_2013, rodiger_r_2015}. Since 
-approximately ten years the digital PCR (dPCR) is gaining momentum in the 
-mainstream user-base. dPCR will likely have the same impact as qPCR in the 
-nucleic acid methodology \cite{huggett_qpcr_2015, morley_digital_2014, 
-rodiger_r_2015}. There is an intensive research on dPCR platforms with the 
-overall aim to make to technology broadly usable, cheap, robust and to enable 
-high sample throughput.
+The digital PCR (dPCR) is a promising contender for precise nucleic acids 
+quantifications. The chemical basis of the dPCR is similar to the qPCR, which 
+includes master-mix preparation and thermal cycling of the sample. In contrast 
+to qPCR the amplification reaction does not take place in a single reaction 
+chamber. Rather its a process of clonal amplification in small separate 
+``partitions'' (e.g., nl volume droplets of water oil emulsions, chambers on 
+micro structured chips). The number of positive partition in relation to the 
+number of total partitions. By applying Poisson statistics it is possible to 
+determine the number of the starting material in given volume. Therefore, the 
+dPCR does not require an external calibration \cite{selck_increased_2013, 
+rodiger_r_2015}. Since approximately ten years the digital PCR (dPCR) is gaining 
+momentum in the mainstream user-base. dPCR will likely have the same impact as 
+qPCR in the nucleic acid methodology \cite{huggett_qpcr_2015, 
+morley_digital_2014, rodiger_r_2015}. There is an intensive research on dPCR 
+platforms with the overall aim to make to technology broadly usable, cheap, 
+robust and to enable high sample throughput.
 
 % **************************************************************
 % Keep this command to avoid text of first page running into the
@@ -131,9 +131,6 @@ the PCR product formation enabled to determine quantification points (Cq). The
 Cq are strictly related to the input quantity. A simple arithmetic operation 
 (after logarithmic transformation of the concentration) is sufficient to 
 determine any nucleic acid quantity \cite{huggett_considerations_2014}.
-
-qPCR	dPCR
-Number of copies/DNA per volume (e.g., ng/µl, copies/µl)	total number of compartments * ln (...)
 
 The dPCR has some principle assumptions and fundamental properties. First of all 
 the chemical reaction should be not affected by inhibitors. The distribution of 
@@ -171,7 +168,7 @@ Interactive use and graphical representation with \textit{shiny} \cite{shiny}.
 Import and export of results figures and data.
 
 There are currently two technical approaches to dPCR. dPCRs may use		%  (e.g., QuantStudio$\circledR$ 12K Flex (Life Technologies), BioMark\texttrademarkTM  EP1TM (Fluidigm))
-(microfluidic)chambers or emulsion based chambers 
+(microfluidic)chambers or emulsion based droplets 
 (QX200 \texttrademark (Bio-Rad), RainDrop \texttrademark System (RainDance)). 
 Chamber based dPCR systems have fixed geometries, including the volume of the 
 reaction chambers. Despite the fact that dPCRs is an endpoint analysis the 
@@ -186,26 +183,15 @@ number of compartments. This results in a higher statistical power to quantify
 small differences in sample quantities. The emulsion chambers are made of 
 water-in-oil emulsions with similar sizes.
 
-
-Two-sided exact tests and matching confidence intervals for discrete data \cite{fay_2010}
-
-Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing \cite{benjamini_1995}
-
-Interval Estimation for a Binomial Proportion \cite{brown_2001}
-
-There is a need for an vendor independent data analysis. For example others 
-\cite{strain_highly_2013} have written task custom software for data analysis in 
-\textbf{Mathematica} (Wolfram Research). However, we have chosen \textbf{R} 
-because it is the \textit{lingua franca} in biostatistics and broadly used in 
-other disciplines \cite{rodiger_r_2015}. The are many packages in existence 
-which enable the fast development of new methods and plotting facilities. As 
-most \textbf{R} packages depend on one or more other packages \cite{ooms_2013} 
-depends \textit{dpcR} on other packages, resulting in a complex network of 
-recursive dependencies. Core packages \textit{qpcR} \cite{ritz_qpcr_2008}, 
-\textit{shiny} \cite{shiny}, \textit{MBmca} \cite{rodiger_surface_2013}, 
-\textit{chipPCR} \cite{rodiger_chippcr_2015} and further packages as shown in 
-the dependency graph (Supplement XYZ).
-
+There is a need for an vendor independent data analysis. For example, others 
+have written custom made scripts for data analysis in \textbf{Mathematica} 
+(Wolfram Research), \textbf{MS EXCEL} (Microsoft) or \textbf{R} 
+\cite{strain_highly_2013, dreo_optimising_2014, trypsteen_ddpcrquant_2015, 
+dobnik_multiplex_2015}. However, this is of limited use, since the solutions are 
+tied to a specific dPCR platform (e.g., droplet dPCR by Bio-Rad), operating 
+system platform for data analysis and only usable for a single task. Moreover, 
+we found no software packages with GUIs and bindings to a sophisticated 
+statistical computing environment for reproducible research. 
 
 % **************************************************************
 % Keep this command to avoid text of first page running into the
@@ -218,16 +204,27 @@ the dependency graph (Supplement XYZ).
 
 \subsection{Materials subsection one}
 
+We have chosen \textbf{R} because it is the \textit{lingua franca} in 
+biostatistics and broadly used in other disciplines. Since all software is open 
+source it is possible to track numerical errors \cite{rodiger_r_2015}. The are 
+many packages in existence which enable the fast development of new methods and 
+plotting facilities. As most \textbf{R} packages depend on one or more other 
+packages \cite{ooms_2013} depends \textit{dpcR} on other packages, resulting in 
+a complex network of recursive dependencies. Core packages \textit{qpcR} 
+\cite{ritz_qpcr_2008}, \textit{shiny} \cite{shiny}, \textit{MBmca} 
+\cite{rodiger_surface_2013}, \textit{chipPCR} \cite{rodiger_chippcr_2015} and 
+further packages as shown in the dependency graph (Supplement XYZ).
+
 One basic design decision was to structure specific properties of digital PCR 
 systems (dropet vs. chamber) in auxiliary functions and to perform central 
 calculation specific to Poisson statistics in independent main functions. 
 Chamber digital PCR systems fundamentally rely on the proper preprocessing of 
 qPCR data. We have chosen to implement the core functionality by a dependency to 
-the \textit{qpcR} \textbf{R} package \cite{ritz_qpcr_2008}. The main functions (e.g., for analysis, 
-simulations, plotting), several auxiliary helper functions (e.g., data import) 
-and data set of different dPCR systems are listed in Table XY. Further 
-dependencies to 3rd party packages include \textit{pracma}, ... (see Figure \ref{dpcR_implementation_1}). See the vignette for 
-details.
+the \textit{qpcR} \textbf{R} package \cite{ritz_qpcr_2008}. The main functions 
+(e.g., for analysis, simulations, plotting), several auxiliary helper functions 
+(e.g., data import) and data set of different dPCR systems are listed in Table 
+XY. Further dependencies to 3rd party packages include \textit{pracma}, ... (see 
+Figure \ref{dpcR_implementation_1}). See the vignette for details.
 
 The workflow is shown Figure \ref{workflow}.
 
@@ -235,7 +232,8 @@ The workflow is shown Figure \ref{workflow}.
 \begin{center}
 \includegraphics[width=17cm]{workflow.png}
 \end{center}
-\caption{\textit{dpcR} workflow. Show steps in dPCR data analysis.} 
+\caption{\textit{dpcR} workflow. The diagram shows main functions available at 
+each step of a dPCR data analysis.}
 \label{workflow}
 \end{figure*}
 
@@ -269,30 +267,28 @@ function were B) preprocessed (baselined, smoothed) with functions from the
 
 \subsubsection{Materials subsubsection one.}
 
-\begin{align}
-\mathrm{LD}^r = \frac{\mathrm{LD}}{A_\mathrm{iso}}
-= 1.5 S \left( 3 \cos^2 \alpha_i - 1 \right)
-\end{align}
+
+qPCR	dPCR
+Number of copies/DNA per volume (e.g., ng/µl, copies/µl)	total number of compartments * ln (...)
 
 
 
-\subsection{Materials subsection two}
+Two-sided exact tests and matching confidence intervals for discrete data \cite{fay_2010}
+
+Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing \cite{benjamini_1995}
+
+Interval Estimation for a Binomial Proportion \cite{brown_2001}
+
+\subsection{Integration in third party software}
 
 We aimed for a form factor (e.g., smart phone, tablet, desktop PCR) and 
 operating system independent implementation of a graphical user interface. 
-
-Moreover, there exit several GUI technologies for \textbf{R} \cite{rodiger_rkward_2012}.
-(see Figure \ref{GUI_RKWard_1}).
-
-Text.
-
-\begin{equation*}
-\mathrm{LD} \left( t \right) =
-\sum\limits_i
-a_i \exp \left( \frac{-t}{\tau_i} \right)
-\end{equation*}
-
-Text.
+Moreover, there exit several GUI technologies for \textbf{R} 
+\cite{rodiger_rkward_2012}. An interesting feature of the \textit{shiny} 
+technology is the automatic integration in environments, which support 
+\texttt{HTML5} and \texttt{ECMAScript}. This can be a modern web~browser or an 
+\textbf{R} IDE/GUI such as \textbf{RKWard} (Figure~\ref{GUI_RKWard_1}) or 
+\textbf{RStudio}.
 
 \begin{figure*}[t]
 \begin{center}
@@ -346,11 +342,11 @@ Formulatrix & Constellation Digital PCR & CSV & Summary export
 \\
 \botrule
 \end{tabular*}%
-}
-{The number of structured export data formats handled by \textit{dpcR} is growing. Numerous data 
-formats can be processed with the functionality provided by the \textbf{R} 
-environment (see \cite{rodiger_r_2015}). CSV, comma separated values.
-} \end{table}
+} {The number of structured export data formats handled by \textit{dpcR} is 
+growing. Numerous data formats can be processed with the functionality provided 
+by the \textbf{R} environment (see \cite{rodiger_r_2015}). CSV, comma separated 
+values.}
+\end{table}
 
 \subsection{\textit{De novo} creation of dpcR objects from raw data}
 
@@ -386,51 +382,41 @@ from  https://github.com/michbur/dpcR.
 \subsection{Documentation}
 
 All functions of the \textit{dpcR} package have its own documentation package, 
-which specifies the input types, classes, parameters and output formats.
+which specifies the input types, classes, parameters and output formats. The 
+documentation is available as standard \textbf{R} package reference manual and 
+as vignette.
 
 \section{DISCUSSION}
 
-We developed the \textit{dpcR} package, which is a software framework for analysis of 
-dPCR based on the open source statistical software \textbf{R}. \textit{dpcR} provides the scientific 
-community a broadly applicable tool for teaching purposes, data analysis and theoretical research based on simulations. 
+Currently, there exist different dPCR analysis software solutions provided by 
+the vendors. But most of the software packages are designed black boxes, which 
+prevent deep insight into the data processing step. Other and we think that 
+scientific software should be open \cite{morin_shining_2012, ince_case_2012, 
+rodiger_r_2015}. In addition, most of the software solutions are aimed to be 
+used in very specific scenarios and a mutual exclusive to alternative platforms 
+(e.g., droplet vs. chamber-based). We have chosen \textbf{R} because it is the 
+\textit{lingua franca} in biostatistics and broadly used in other disciplines 
+\cite{rodiger_r_2015}. We developed the \textit{dpcR} package, which is a 
+software framework for analysis of dPCR. \textit{dpcR} provides the scientific 
+community a broadly applicable tool for teaching purposes, data analysis and 
+theoretical research based on simulations. Our software framework can be used to 
+accelerate the development of new approaches to dPCR. 
 
-To accelerate the development of new approaches to dPCR. 
-
-We implemented all existing statistical methods for dPCR and suggest the 
-introduction of a standardized nomenclature for qPCR. The package enables the 
-simulations and predictions of Poisson distribution for dPCR scenarios, the 
-analysis of previously run dPCRs.
+We implemented numerous statistical methods for dPCR and suggest the 
+introduction of a standardized nomenclature for dPCR. The package enables the 
+simulations and predictions of dPCR reactions and the analysis of previously run dPCRs.
 
 Functions included may be used to simulate dPCRs, perform statistical data 
 analysis, plotting of the results and simple report generation. 
 
-There are currently different software solutions for dPCR analysis such as the 
-OpenArray software (Life Technologies) or XYZ (Bio-Rad). Most of the are black 
-boxes which prevent deep insight into the data processing step. In addition most 
-of the software solutions are aimed to be used in very specific scenarios and a 
-mutual exclusive to alternative platforms (e.g., droplet vs. chamber-based). We 
-have chosen \textbf{R} because it is the \textit{lingua franca} in biostatistics and broadly used 
-in other disciplines \cite{rodiger_r_2015}.
+
 
 We decided to implement no algorithm for clustering and rain definition of 
 droplet dPCR data. This is because, there are several \textbf{R} packages from 
-flow-cytometer research. implementations range from manual to automatic 
-clustering \cite{le_meur_computational_2013, Malek15022015}. Moreover, 
+flow-cytometer research. Implementations range from manual to automatic 
+clustering \cite{le_meur_computational_2013, Malek15022015, trypsteen_ddpcrquant_2015}. Moreover, 
 discussion with our peers and the literature suggest that a consensus of an 
 appropriate method for dPCR is not available.
-
-\subsection{Discussion subsection one}
-
-Text.
-
-
-\subsection{Discussion subsection two}
-
-Text.
-
-
-\subsection{Discussion subsection three}
-
 
 \section{CONCLUSION}
 
@@ -453,14 +439,13 @@ distribution for dPCR scenarios, the analysis of previously run dPCRs. Due to
 the plug-in structure of the software it is possible to build custom-made 
 analyzers.
 
-The \textit{dpcR} includes 
-to invitation to the scientific community to join and support the development of 
-\textit{dpcR} (github?).
+Our open framework includes to invitation to the scientific community to join and 
+support the development of \textit{dpcR}.
 
 
 \section{ACKNOWLEDGEMENTS}
 
-Grateful thanks belong to the \textbf{R} community.
+Grateful thanks belong to the \textbf{R} community and the \textbf{RStudio} developers.
 
 \section{Funding}
 This work was funded by the Federal Ministry of Education and Research (BMBF) InnoProfile--Transfer--Projekt 03 IPT 611X.
