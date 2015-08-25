@@ -71,12 +71,12 @@ assessing plate effects have been integrated. We use a plug-in like architecture
 and abstraction layers to make the framework usable for droplets and (real-time) 
 chamber based technologies.
 
-\textit{dpcR} was implemented with interfaces to the command-line, graphical 
-user interfaces and interactive web application. \textit{dpcR} can be used by 
+\textit{dpcR} is implemented with interfaces to the command-line, graphical 
+user interfaces and interactive web application. Therefore, it can be used by 
 novices in a graphical user interface or by experts via a command-line 
 interface. The \textit{dpcR} framework can be used to build a custom-made 
-analyser according to the wishes of the user. The \textit{dpcR} framework is an 
-open environment, which can be adopted to the growing knowledge in dPCR. 
+analyser according to the user requirements. \textit{dpcR} is an 
+open framework, which can be easily adapted to the growing knowledge in dPCR. 
 
 \end{abstract}
 
@@ -95,27 +95,28 @@ of the calibrator. In addition, pre-processing and data analysis is a affected
 by numerous adverse effects \cite{ruijter_2013, spiess_impact_2015}.
 
 
-The digital PCR (dPCR) is a promising contender for precise nucleic acids 
+The digital PCR (dPCR) is an important contender for precise nucleic acids 
 quantifications. The chemical basis of the dPCR is similar to the qPCR, which 
-includes master-mix preparation and thermal cycling of the sample. In contrast 
-to qPCR the amplification reaction does not take place in a single reaction 
-chamber. Rather its a process of clonal amplification in small separate 
-``partitions'' (e.g., nl volume droplets of water oil emulsions, chambers on 
-micro structured chips). The number of positive partition in relation to the 
-number of total partitions. By applying Poisson statistics it is possible to 
-determine the number of the starting material in given volume. Therefore, the 
-dPCR does not require an external calibration \cite{selck_increased_2013, 
-rodiger_r_2015}. Since approximately ten years the digital PCR (dPCR) is gaining 
-momentum in the mainstream user-base. dPCR will likely have the same impact as 
-qPCR in the nucleic acid methodology \cite{huggett_qpcr_2015, 
-morley_digital_2014, rodiger_r_2015}. There is an intensive research on dPCR 
-platforms with the overall aim to make to technology broadly usable, cheap, 
-robust and to enable high sample throughput.
+includes master-mix preparation and thermal cycling of the sample. Though, 
+appraoches based on isothermal amplification were also developed 
+\cite{rodiger_r_2015}. In contrast to qPCR, the amplification reaction does not 
+take place in a single reaction chamber. Rather its a process of clonal 
+amplification in small separate ``partitions'' (e.g., nl volume droplets of 
+water oil emulsions, chambers on micro structured chips). The number of positive 
+partition in relation to the number of total partitions. By applying Poisson 
+statistics it is possible to determine the number of the starting material in 
+given volume. Therefore, the dPCR does not require an external calibration 
+\cite{selck_increased_2013, rodiger_r_2015}. Since approximately ten years the 
+digital PCR (dPCR) is gaining momentum in the mainstream user-base. dPCR will 
+likely have the same impact as qPCR in the nucleic acid methodology 
+\cite{huggett_qpcr_2015, morley_digital_2014, rodiger_r_2015}. There is an 
+intensive research on dPCR platforms with the overall aim to make to technology 
+broadly usable, cheap, robust and to enable high sample throughput.
 
 % **************************************************************
 % Keep this command to avoid text of first page running into the
 % first page footnotes
-\enlargethispage{-65.1pt}
+%\enlargethispage{-65.1pt}
 % **************************************************************
 
 A first proposal for digital PCR like approach and the use of the Poisson 
@@ -212,7 +213,7 @@ plotting facilities. As most \textbf{R} packages depend on one or more other
 packages \cite{ooms_2013} depends \textit{dpcR} on other packages, resulting in 
 a complex network of recursive dependencies. Core packages \textit{qpcR} 
 \cite{ritz_qpcr_2008}, \textit{shiny} \cite{shiny}, \textit{MBmca} 
-\cite{rodiger_surface_2013}, \textit{chipPCR} \cite{rodiger_chippcr_2015} and 
+\cite{rodiger_surface_2013}, \textit{chipPCR} \cite{roediger2015chippcr} and 
 further packages as shown in the dependency graph (Supplement XYZ).
 
 One basic design decision was to structure specific properties of digital PCR 
@@ -256,9 +257,9 @@ of functionality.}
 \begin{center}
 \includegraphics[width=9cm]{qpcr2pp_1.png}
 \end{center}
-\caption{Uncover characteristics of dPCR data with the \textit{dpcR} and \textit{chipPCR} packages. 
-Selected dPCR platforms are real-time platforms. The function \textit{qpcr2pp} uses the 
-real-time data and interprets them as dPCR (Poisson process). A) Raw data of The 
+\caption{Uncover characteristics of dPCR data. 
+Selected dPCR platforms are qPCR platforms at the same time. The function \textit{qpcr2pp} uses the 
+qPCR amplification curve data and interprets them as dPCR (Poisson process). A) Raw data of The 
 function were B) preprocessed (baselined, smoothed) with functions from the 
 \textit{chipPCR} package and C) finally analyzed (Cq calculation $\rightarrow$ binarize) with the 
 \textit{qpcr2pp} (qPCR to Poisson process) function from the \textit{dpcR} package.} 
@@ -361,7 +362,7 @@ typically used in laboratories.
 \textit{dpcR} includes data sets or refers to additional R packages for testing 
 purposes. The data originate from different dPCR and qPCR systems and were 
 either published previously \cite{whale_comparison_2012, 
-rodiger_chippcr_2015, white_digital_2009, rodiger_r_2015} or \textit{de novo} generated.
+roediger2015chippcr, white_digital_2009, rodiger_r_2015} or \textit{de novo} generated.
 
 \subsection{Export of analysis results}
 
@@ -411,7 +412,7 @@ analysis, plotting of the results and simple report generation.
 
 
 
-We decided to implement no algorithm for clustering and rain definition of 
+We decided not to implement algorithms for clustering and ``rain'' (positive droplets) definition of 
 droplet dPCR data. This is because, there are several \textbf{R} packages from 
 flow-cytometer research. Implementations range from manual to automatic 
 clustering \cite{le_meur_computational_2013, Malek15022015, trypsteen_ddpcrquant_2015}. Moreover, 
