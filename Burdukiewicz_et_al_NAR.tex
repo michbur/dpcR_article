@@ -14,15 +14,16 @@
 \title{\textit{dpcR} a Swiss-army knife for the analysis of digital PCR experiments}
 
 \author{%
-Micha\l{} Burdukiewicz\,$^{1,5}$,
+Micha\l{} Burdukiewicz\,$^{1,6}$,
 Jim Huggett\,$^{2}$,
 Alexandra Whale\,$^{2}$,
 Bart K.M. Jacobs\,$^{3}$,
 Lieven Clement\,$^{3}$,
 Piotr Sobczyk\,$^{1}$,
 Andrej-Nikolai Spiess\,$^{4}$,
-Peter Schierack\,$^{5}$,
-Stefan R\"odiger\,$^{5,}$\footnote{To whom correspondence should be addressed.
+Val\'{e}rie Taly\,$^{5}$
+Peter Schierack\,$^{6}$,
+Stefan R\"odiger\,$^{6,}$\footnote{To whom correspondence should be addressed.
 Tel: +49 357385936; Fax: +49 357385801; Email: stefan.roediger@b-tu.de}}
 
 \address{%
@@ -34,7 +35,9 @@ $^{3}$Department of Applied Mathematics, Computer Science and Statistics, Ghent 
 and
 $^{4}$University Medical Center Hamburg-Eppendorf, Hamburg, Germany
 and
-$^{5}$Faculty of Natural Sciences, Brandenburg University of Technology Cottbus--Senftenberg, Gro\ss{}enhainer Str. 57, 01968, Senftenberg, Germany
+$^{5}$Universit\'{e} Paris Sorbonne Cit\'{e}, Paris, France
+and
+$^{6}$Faculty of Natural Sciences, Brandenburg University of Technology Cottbus--Senftenberg, Gro\ss{}enhainer Str. 57, 01968, Senftenberg, Germany
 }
 % Affiliation must include:
 % Department name, institution name, full road and district address,
@@ -181,7 +184,8 @@ packages \cite{ooms_2013} depends \textit{dpcR} on other packages, resulting in
 a complex network of recursive dependencies. Core packages \textit{qpcR} 
 \cite{ritz_qpcr_2008}, \textit{shiny} \cite{shiny}, \textit{MBmca} 
 \cite{rodiger_surface_2013}, \textit{chipPCR} \cite{roediger2015chippcr} and 
-further packages as shown in the dependency graph (Supplement XYZ).
+further packages as shown in the dependency graph (Supplement XYZ). The naming 
+convention of \textit{dpcR} is \texttt{underscore\_sep} \cite{Baaaath_2012}.
 
 Figure \ref{dpcR_framework} illustrates the implementation of the \textit{dpcR} 
 package. The function \textit{read\_dpcr}, \textit{qpcr2pp} and 
@@ -224,10 +228,29 @@ available at each step of a dPCR data analysis.}
 \label{workflow}
 \end{figure*}
 
+Figure~\ref{workflow} provides an overview of important functions available at 
+each step of a dPCR analysis. The first step is to import sample data into the 
+\textbf{R} session. \textit{dpcR} accepts various data structures. This includes 
+matrices of raw data and predefined structures provided by the different vendors 
+(see Table \ref{table_formats}). Moreover, \textit{dpcR} accepts objects from 
+the \textbf{R} workspace, which are converted via the \textit{read\_dpcr} 
+function. Novel raw data structures are processed outside \textit{dpcR} using 
+tools as described elsewhere. The data input to \textit{dpcR} should be raw data 
+preferable, rather than gated summary data. The reasoning it to keep as much 
+control over information drain for reproducible research.
+
+\subsection{Documentation}
+
+All functions of the \textit{dpcR} package have its own documentation package, 
+which specifies the input types, classes, parameters and output formats. The 
+documentation is available as standard \textbf{R} package reference manual and 
+as vignette.
+
 \subsection{Calculation of the ``Concentration''}
 Reference to ``Supplement''
 
 \subsection{Calculation of the uncertainty}
+
 To determine the uncertainty of the calculations two approach have been proposed 
 in the peer-review literature \cite{dube_mathematical_2008, bhat_single_2009}. 
 The uncertainty is dependent on the number of PCR reactions (reference to 
@@ -246,14 +269,15 @@ The GUI employs advanced plots based on \textit{ggplot2} \cite{kahle_wickham_201
 
 \subsubsection{Converting qPCRs to dPCRs}
 
-qPCR is a well established and robust 
-technology, which allows precise quantification of DNA material in high 
-throughput fashion. Such systems can be used for dPCR applications. The real-time monitoring of the PCR product formation enables to determine 
-quantification points (Cq). The Cq are strictly related to the input quantity. A 
-simple arithmetic operation (after logarithmic transformation of the 
-concentration) is sufficient to determine any nucleic acid quantity 
-\cite{huggett_considerations_2014}. The quantification of the amplification is not done by determining a Cq 
-value derived from an amplification curve. However, the quantification by qPCR is challenging at very 
+qPCR is a well established and robust technology, which allows precise 
+quantification of DNA material in high throughput fashion. Such systems can be 
+used for dPCR applications. The real-time monitoring of the PCR product 
+formation enables to determine quantification points (Cq). The Cq are strictly 
+related to the input quantity. A simple arithmetic operation (after logarithmic 
+transformation of the concentration) is sufficient to determine any nucleic acid 
+quantity \cite{huggett_considerations_2014}. The quantification of the 
+amplification is not done by determining a Cq value derived from an 
+amplification curve. However, the quantification by qPCR is challenging at very 
 low and very high concentrations. At low DNA concentration Monte Carlo effect 
 play a role and at high concentration inhibition processes start to dominate the 
 qPCR. Thus, the qPCR is only usable in the working range of the calibrator. In 
@@ -274,6 +298,15 @@ function were B) preprocessed (baselined, smoothed) with functions from the
 \textit{qpcr2pp} (qPCR to Poisson process) function from the \textit{dpcR} package.} 
 \label{qpcr2pp_1}
 \end{figure}
+
+As described in \cite{ritz_qpcr_2008, perkins_readqpcr_2012, 
+pabinger_survey_2014, rodiger_r_2015}, there numerous methods to import 
+amplification curve data into the \textbf{R} workspace. Prior processing the 
+data for dPCR analysis it is recommended to use dedicated \textbf{R} packages, 
+such as \textit{chipPCR} \cite{roediger2015chippcr}, \textit{MBmca} 
+\cite{rodiger_surface_2013}, \textit{qpcR} \cite{ritz_qpcr_2008}, to 
+pre-process (e.g., removal of missing values, smoothing 
+\cite{spiess_impact_2015}) the raw data.
 
 \subsubsection{Materials subsubsection one.}
 
@@ -379,7 +412,10 @@ report generation are usable as described before \cite{rodiger_r_2015}.
 (see Table \ref{table_formats}).
 
 
+
 \section{RESULTS}
+
+In the following section we show two case studies for the use of the \textit{dpcR} package.
 
 \subsection{Availability}
 
@@ -387,13 +423,6 @@ The \textit{dpcR} framework is available as open source software package (GPL-3
 or later) as part of the Bioconductor project \cite{gentleman_2004}. The stable 
 version is hosted at http://cran.r-project.org/web/packages/dpcR and the source 
 code is available from  https://github.com/michbur/dpcR.
-
-\subsection{Documentation}
-
-All functions of the \textit{dpcR} package have its own documentation package, 
-which specifies the input types, classes, parameters and output formats. The 
-documentation is available as standard \textbf{R} package reference manual and 
-as vignette.
 
 \section{DISCUSSION}
 
