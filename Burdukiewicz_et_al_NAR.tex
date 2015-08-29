@@ -191,9 +191,9 @@ by \textit{dpcR} functions (e.g., reading/writing).
 
 \begin{figure}[t]
 \begin{center}
-\includegraphics[width=8.5cm]{dpcR_framework.png}
+\includegraphics[page = 2, trim = 0cm 8cm 0cm 0cm, clip, width=8.5cm]{dpcR_analysis.pdf}
 \end{center}
-\caption{Implementation of \textit{dpcR} package.}
+\caption{Implementation of the \textit{dpcR} package.}
 \label{dpcR_framework}
 \end{figure}
 
@@ -212,7 +212,7 @@ The workflow is shown Figure \ref{workflow}.
 
 \begin{figure*}[t]
 \begin{center}
-\includegraphics[width=17cm]{workflow.png}
+\includegraphics[page = 1, trim = 0cm 10cm 0cm 0cm, clip, width=17cm]{dpcR_analysis.pdf}
 \end{center}
 \caption{\textit{dpcR} workflow. The diagram shows main functions available at 
 each step of a dPCR data analysis.}
@@ -284,7 +284,6 @@ function were B) preprocessed (baselined, smoothed) with functions from the
 \end{figure}
 
 \subsubsection{Materials subsubsection one.}
-
 
 qPCR	dPCR
 Number of copies/DNA per volume (e.g., ng/µl, copies/µl)	total number of compartments * ln (...)
@@ -392,11 +391,10 @@ report generation are usable as described before \cite{rodiger_r_2015}.
 
 \subsection{Availability}
 
-The \textit{dpcR} framework is available as open source software package as part 
-of the Bioconductor project \cite{gentleman_2004}. The source code is open 
-source (GPL-3 or later). The stable version is hosted at 
-http://cran.r-project.org/web/packages/dpcR and the source code is available 
-from  https://github.com/michbur/dpcR.
+The \textit{dpcR} framework is available as open source software package (GPL-3 
+or later) as part of the Bioconductor project \cite{gentleman_2004}. The stable 
+version is hosted at http://cran.r-project.org/web/packages/dpcR and the source 
+code is available from  https://github.com/michbur/dpcR.
 
 \subsection{Documentation}
 
@@ -427,8 +425,6 @@ simulations and predictions of dPCR reactions and the analysis of previously run
 
 Functions included may be used to simulate dPCRs, perform statistical data 
 analysis, plotting of the results and simple report generation. 
-
-
 
 We decided not to implement algorithms for clustering and ``rain'' (positive droplets) definition of 
 droplet dPCR data. This is because, there are several \textbf{R} packages from 
