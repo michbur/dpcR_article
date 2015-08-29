@@ -189,13 +189,18 @@ package. The function \textit{read\_dpcr}, \textit{qpcr2pp} and
 This class manages details of the dPCR analysis that are subsequently processed 
 by \textit{dpcR} functions (e.g., reading/writing).
 
-\begin{figure}[t]
+\begin{figure*}[t]
 \begin{center}
-\includegraphics[page = 2, trim = 0cm 8cm 0cm 0cm, clip, width=8.5cm]{dpcR_analysis.pdf}
+\includegraphics[page = 2, trim = 0cm 1cm 0cm 0cm, clip, width=17cm]{dpcR_analysis.pdf}
 \end{center}
-\caption{Implementation of the \textit{dpcR} package.}
+\caption{Implementation of the \textit{dpcR} package. \textbf{(B)} Modular software 
+framework structure. \textit{dpcR} is typically run from a desktop computer or a 
+server. The software can be operated by an GUI/IDE application such as 
+\textbf{RStudio} or \textbf{RKWard}. The \textit{dpcR} package has dependencies 
+to other \textbf{R} packages (middle layer). The functionality shared between 
+the packages enables repaid addition and expansion of functionality.}
 \label{dpcR_framework}
-\end{figure}
+\end{figure*}
 
 One basic design decision was to structure specific properties of digital PCR 
 systems (dropet vs. chamber) in auxiliary functions and to perform central 
@@ -206,7 +211,7 @@ the \textit{qpcR} \textbf{R} package \cite{ritz_qpcr_2008}. The main functions
 (e.g., for analysis, simulations, plotting), several auxiliary helper functions 
 (e.g., data import) and data set of different dPCR systems are listed in Table 
 XY. Further dependencies to 3rd party packages include \textit{pracma}, ... (see 
-Figure \ref{dpcR_implementation_1}). See the vignette for details.
+Figure \ref{dpcR_framework}). See the vignette for details.
 
 The workflow is shown Figure \ref{workflow}.
 
@@ -214,8 +219,8 @@ The workflow is shown Figure \ref{workflow}.
 \begin{center}
 \includegraphics[page = 1, trim = 0cm 10cm 0cm 0cm, clip, width=17cm]{dpcR_analysis.pdf}
 \end{center}
-\caption{\textit{dpcR} workflow. The diagram shows main functions available at 
-each step of a dPCR data analysis.}
+\caption{\textit{dpcR} workflow. The diagram shows main functions 
+available at each step of a dPCR data analysis.}
 \label{workflow}
 \end{figure*}
 
@@ -238,19 +243,6 @@ coded in JavaScript and has been made available for free in a web browser.
 Interactive use and graphical representation with \textit{shiny} \cite{shiny}.
 
 The GUI employs advanced plots based on \textit{ggplot2} \cite{kahle_wickham_2013}.
-
-\begin{figure}[t]
-\begin{center}
-\includegraphics[width=9cm]{dpcR_implementation_1.png}
-\end{center}
-\caption{Modular software framework structure. \textit{dpcR} is typically run from a 
-desktop computer or a server. The software can be operated by an GUI/IDE 
-application such as \textbf{RStudio} or \textbf{RKWard}. The \textit{dpcR} 
-package has dependencies to other \textbf{R} packages (middle layer). The 
-functionality shared between the packages enables repaid addition and expansion 
-of functionality.} 
-\label{dpcR_implementation_1}
-\end{figure}
 
 \subsubsection{Converting qPCRs to dPCRs}
 
