@@ -364,15 +364,33 @@ high-performing simulation in assumptions similar to Dube~\textit{et al.}~2008.
 
 \subsubsection[]{Generalized Linear Models -- GLM}
 
+Generalized Linear Models (GLM) are linear models for data, where the response variables may have non-normal distributions (as binomially distributed positive partitions in digital PCR experiments). We propose a model reflecting relationships in results of digital PCR as given by:
+\begin{equation}
+\log{Y} = \beta^T X
+\end{equation}
+where $Y$ are counts, $X$ are experiments names (categorical data) and $\beta$ are linear model coefficients for every experiment. Moreover, $\exp{\beta} = \lambda$.   
+Estimated means copies per partitions obtained from the model are compared each other using multiple t-test~\citep{bretz_2010}.
+
+
+
 \subsubsection[]{Multiple testing}
 
-The uncertainty is dependent on the number of PCR reactions (reference to 
-\textit{\textit{dpcR}} functions). … Reference to ``Supplement'' and 
-\textit{dpcR} functions.
+The dPCR experimentes are compared pairwise using the uniformly most powerful (UMP) ratio test~\citep{fay_2010}. Furthermore, computed p-values are adjusted using Benjamini & Hochberg correction~\citep{benjamini_1995} to control family-wise error rate.
 
-Two-sided exact tests and matching confidence intervals for discrete data \cite{fay_2010}
+The UMP ratio test has following null-hypothesis:
+\begin{equation}
+H_0: \frac{\lambda_1}{\lambda_2} = 1
+\end{equation}
 
-Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing \cite{benjamini_1995}
+
+The Wilson's confidence intervals~\citep{brown_2001} are calculated independently for every dPCR experiment and adjusted using Dunn~--~\v{S}id\'{a}k correction, where:
+
+\begin{equation}
+\alpha_{\text{adj}} = 1 - (1 - \alpha)^\frac{1}{T}
+\end{equation}
+
+Such intervals are wider then usual, but ensure that confidence intervals simultaneously contain true value of lambda.
+
 
 \subsubsection{Materials subsection Statistical power - Monte Carlo simulations}
 
