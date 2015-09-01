@@ -244,62 +244,18 @@ which specifies the input types, classes, parameters and output formats. The
 documentation is available as standard \textbf{R} package reference manual and 
 as vignette.
 
-\subsection{Calculation of the uncertainty}
+According to the dMIQE guidelines \cite{huggett_digital_2013} we used following notation:
 
-To determine the uncertainty of the calculations two approach have been proposed 
-in the peer-review literature \cite{dube_mathematical_2008, bhat_single_2009}. 
-The uncertainty is dependent on the number of PCR reactions (reference to 
-\textit{\textit{dpcR}} functions). … Reference to ``Supplement'' and 
-\textit{dpcR} functions.
+\begin{itemize}
+ \item $\lambda$: average molecule numbers per partition,
+ \item $k$: number of molecules per partition,
+ \item $m$: total number of the molecules.
+\end{itemize}
 
-It is possible to analyze the PCR reaction the panels independently (effect on 
-CI and uncertainty) or to pool/aggregate all reactions (effect on CI and 
-uncertainty) to achieve higher sensitivity/certainty.
+The following convention was kept, both in the documentation and in the 
+package source code.
 
-\subsection{Graphical user interface}
-
-Interactive use and graphical representation with \textit{shiny} \cite{shiny}.
-
-The GUI employs advanced plots based on \textit{ggplot2} \cite{kahle_wickham_2013}.
-
-\subsection{Integration in third party software}
-
-We aimed for a form factor (e.g., smart phone, tablet, desktop PCR) and 
-operating system independent implementation of a graphical user interface. 
-\textit{dpcReport} is based on \textit{shiny} technology and offers an intuitive 
-user interface, which can be accessed by browsers (e.g., Google Chrome, Mozilla 
-Firefox).  An interesting feature of the \textit{shiny} technology is the 
-automatic integration in environments, which support \texttt{HTML5} and 
-\texttt{ECMAScript}. This can be a modern web~browser or an \textbf{R} IDE/GUI 
-such as \textbf{RKWard} (Figure~\ref{GUI_RKWard_1}) \cite{rodiger_rkward_2012} 
-or \textbf{RStudio}. \textit{dpcReport} is a GUI tool for dPCR data mining and 
-report generation. User can interact via a poin-and-click interface on different 
-tabs, which contain widgets such as sliders, input fields and check boxes. The 
-tabs cover relevant analysis steps for the report generation.  An important 
-feature of \textit{dpcReport} is that the source code used for the report 
-generation is provided to the user.
-
-\begin{figure*}[t]
-\begin{center}
-\includegraphics[width=17cm]{GUI_RKWard_1.png}
-\end{center}
-\caption{\textit{dpcrReport()} function running in the graphical user interface and integrated development environment \textbf{RKWard}.}
-\label{GUI_RKWard_1}
-\end{figure*}
-
-\subsection{Materials subsection Statistical power - Monte Carlo simulations}
-
-The proposed framework was evaluated in three Monte Carlo experiments (2.000 times repetitions each) with accordingly 1.000, 5.000 (results not shown) and 10.000 partitions. During each repetition of the Monte Carlo scheme, a set of partitions was randomly generated~\cite{dube_mathematical_2008} with a determined number of molecules ('Base number of molecules' on X-axis). The set was copied and a number of molecules ('Added number of molecules' on Y-axis) was added to randomly chosen partitions. Two obtained arrays were compared using the proposed method. The mean p-values alongside with their standard deviation are presented in the chart below.
-
-\begin{figure}[t]
-\begin{center}
-\includegraphics[width=9cm]{mc_figures-1.pdf}
-\end{center}
-\caption{Our method, based on GLM, predicts estimated means copies per partitions using Poisson or binomial regression. Afterwards, estimates are compared against themselves using t-test. Obtained p-values and confidence intervals do not require further correction, because the familywise error is controlled through the whole analysis.}
-\label{mc_figures-1}
-\end{figure}
-
-\subsection{Import and export of results figures and data}.
+\subsection{Import and export of results figures and data}
 
 \subsubsection{Reading or importing data}
 
@@ -368,18 +324,82 @@ our default format. \texttt{RData} works across all \textbf{R} environments and
 saves the variable names along the content of multiple variables, which can be 
 restored in any workspace.
 
+\subsection{Calculation of the uncertainty}
 
-\subsection{Calculation of the ``Concentration''}
-Reference to ``Supplement''
+To determine the uncertainty of the estimated $\lambda$ we employ two previously 
+published peer-reviewed methods \cite{dube_mathematical_2008, bhat_single_2009}.
 
-qPCR	dPCR
-Number of copies/DNA per volume (e.g., ng/µl, copies/µl)	total number of compartments * ln (...)
+$PUTDUBEANDBHATEQUATIONSHERE$
+
+\subsection{Poisson distribution}
+
+
+\subsubsection{Moments}
+It is assumed that results from the dPCR reaction follow the Poisson 
+distribution. We implemented several functions for computation of the four first 
+moments (mean, variance, skewness, kurtosis) of the distribution from which the 
+data is sampled. They can be calculated empirically from the sample data or as 
+functions of the estimated $\lambda$.
+
+\subsubsection{Binomial approximation}
+Since dPCR data contain binarized Poisson 
+counts (all counts than zero are grouped together) it is possible to use methods 
+appropriate for Binomial distribution. We employ several methods of computing 
+confidence intervals (CI) for $\lambda$ value (e.g., Wilson method, 
+Agresti-Coull method). They especially advantageous when $k$ is considerably 
+smaller than $m$. They are beneficial for uncertainty calculation, because 
+yielded CI's are not oscillating in such scenarios \cite{brown_2001}.
+
+\subsection{Simulation}
+
+The package covers two Simulation methods as described elsewhere in 
+peer-reviewed publications. The method proposed by Dube~\textit{et al.}~2008 
+\cite{dube_mathematical_2008} is based on distributing template molecules over 
+partitions. The procedure in Jacobs~\textit{et al.}~2014 \cite{jacobs_2014} is 
+more sophisticated and returns the fluorescence value obtains from droplet dPCR 
+experiment including such phenomena as ``rain''. We also added streamlined and 
+high-performing simulation in assumptions similar to Dube~\textit{et al.}~2008.
+
+\subsection{Comparison of dPCR experiments}
+
+\subsubsection[]{Generalized Linear Models -- GLM}
+
+\subsubsection[]{Multiple testing}
+
+The uncertainty is dependent on the number of PCR reactions (reference to 
+\textit{\textit{dpcR}} functions). … Reference to ``Supplement'' and 
+\textit{dpcR} functions.
 
 Two-sided exact tests and matching confidence intervals for discrete data \cite{fay_2010}
 
 Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing \cite{benjamini_1995}
 
-Interval Estimation for a Binomial Proportion \cite{brown_2001}
+\subsubsection{Materials subsection Statistical power - Monte Carlo simulations}
+
+The proposed framework was evaluated in three Monte Carlo experiments (2.000 
+times repetitions each) with accordingly 1.000, 5.000 (results not shown) and 
+10.000 partitions. During each repetition of the Monte Carlo scheme, a set of 
+partitions was randomly generated~\cite{dube_mathematical_2008} with a 
+determined number of molecules ('Base number of molecules' on X-axis). The set 
+was copied and a number of molecules ('Added number of molecules' on Y-axis) was 
+added to randomly chosen partitions. Two obtained arrays were compared using the 
+proposed method. The mean p-values alongside with their standard deviation are 
+presented in the chart below.
+
+\begin{figure}[t]
+\begin{center}
+\includegraphics[width=9cm]{mc_figures-1.pdf}
+\end{center}
+\caption{Our method, based on GLM, predicts estimated means copies per 
+partitions using Poisson or binomial regression. Afterwards, estimates are 
+compared against themselves using t-test. Obtained p-values and confidence 
+intervals do not require further correction, because the familywise error is 
+controlled through the whole analysis.}
+\label{mc_figures-1}
+\end{figure}
+
+
+\subsection{Spatial distribution}
 
 \subsection{Converting qPCRs to dPCRs}
 
@@ -426,6 +446,52 @@ pre-process (e.g., removal of missing values, smoothing
 
 In the following section we show two case studies for the use of the \textit{dpcR} package.
 
+We implemented numerous statistical methods for dPCR and suggest the 
+introduction of a standardized nomenclature for dPCR. The package enables the 
+simulations and predictions of dPCR reactions and the analysis of previously run 
+dPCRs.
+
+\subsection{Evaluation methods of comparing dPCR experiments}
+
+\subsection{Simultaneous confidence intervals}
+
+\subsection{Graphical user interface}
+
+Interactive use and graphical representation with \textit{shiny} \cite{shiny}.
+
+The GUI employs advanced plots based on \textit{ggplot2} \cite{kahle_wickham_2013}.
+
+\subsection{Integration in third party software}
+
+We aimed for a form factor (e.g., smart phone, tablet, desktop PCR) and 
+operating system independent implementation of a graphical user interface. 
+\textit{dpcReport} is based on \textit{shiny} technology and offers an intuitive 
+user interface, which can be accessed by browsers (e.g., Google Chrome, Mozilla 
+Firefox).  An interesting feature of the \textit{shiny} technology is the 
+automatic integration in environments, which support \texttt{HTML5} and 
+\texttt{ECMAScript}. This can be a modern web~browser or an \textbf{R} IDE/GUI 
+such as \textbf{RKWard} (Figure~\ref{GUI_RKWard_1}) \cite{rodiger_rkward_2012} 
+or \textbf{RStudio}. \textit{dpcReport} is a GUI tool for dPCR data mining and 
+report generation. User can interact via a poin-and-click interface on different 
+tabs, which contain widgets such as sliders, input fields and check boxes. The 
+tabs cover relevant analysis steps for the report generation.  An important 
+feature of \textit{dpcReport} is that the source code used for the report 
+generation is provided to the user.
+
+\begin{figure*}[t]
+\begin{center}
+\includegraphics[width=17cm]{GUI_RKWard_1.png}
+\end{center}
+\caption{\textit{dpcrReport()} function running in the graphical user interface and integrated development environment \textbf{RKWard}.}
+\label{GUI_RKWard_1}
+\end{figure*}
+
+\subsection{Automatic report generation}
+
+In \cite{rodiger_r_2015} we gave an example where we re-analyze droplet dPCR 
+data from a Bio-Rad QX100 system with an early implementation of the 
+\textit{dpcR} package.
+
 \subsection{Availability}
 
 The \textit{dpcR} framework is available as open source software package (GPL-3 
@@ -449,23 +515,8 @@ community a broadly applicable tool for teaching purposes, data analysis and
 theoretical research based on simulations. Our software framework can be used to 
 accelerate the development of new approaches to dPCR.
 
-In \cite{rodiger_r_2015} we gave an example where we re-analyze droplet dPCR 
-data from a Bio-Rad QX100 system with an early implementation of the 
-\textit{dpcR} package.
-
-We implemented numerous statistical methods for dPCR and suggest the 
-introduction of a standardized nomenclature for dPCR. The package enables the 
-simulations and predictions of dPCR reactions and the analysis of previously run dPCRs.
-
 Functions included may be used to simulate dPCRs, perform statistical data 
 analysis, plotting of the results and simple report generation. 
-
-We decided not to implement algorithms for clustering and ``rain'' (positive droplets) definition of 
-droplet dPCR data. This is because, there are several \textbf{R} packages from 
-flow-cytometer research. Implementations range from manual to automatic 
-clustering \cite{le_meur_computational_2013, Malek15022015, trypsteen_ddpcrquant_2015}. Moreover, 
-discussion with our peers and the literature suggest that a consensus of an 
-appropriate method for dPCR is not available.
 
 \section{CONCLUSION}
 
@@ -487,6 +538,14 @@ dPCR experiments. The framework enables the simulations and predictions of Poiss
 distribution for dPCR scenarios, the analysis of previously run dPCRs. Due to 
 the plug-in structure of the software it is possible to build custom-made 
 analyzers.
+
+We decided not to implement algorithms for clustering and ``rain'' (positive 
+droplets) definition of droplet dPCR data. This is because, there are several 
+\textbf{R} packages from flow-cytometer research. Implementations range from 
+manual to automatic clustering \cite{le_meur_computational_2013, Malek15022015, 
+trypsteen_ddpcrquant_2015}. Moreover, discussion with our peers and the 
+literature suggest that a consensus of an appropriate method for dPCR is not 
+available.
 
 Our open framework includes to invitation to the scientific community to join and 
 support the development of \textit{dpcR}.
