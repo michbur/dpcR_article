@@ -181,25 +181,24 @@ reproducible research (e.g.,  \textit{rctrack}) \cite{liu_r_2014, rodiger_r_2015
 We have chosen \textbf{R} because it is cross-platform and the \textit{lingua 
 franca} in applied statistical bioinformatics. Since all software is open source 
 it is possible to track numerical errors \cite{rodiger_rkward_2012, 
-rodiger_r_2015}. The naming convention of \textit{dpcR} is 
-\texttt{underscore\_sep} \cite{Baaaath_2012}. Most \textbf{R} packages depend on 
-other packages \cite{ooms_2013}. The same holds true for \textit{dpcR}. This 
-results in a complex network of recursive dependencies 
-(Figure~\ref{dpcR_framework}A). Core packages include \textit{qpcR} 
-\cite{ritz_qpcr_2008}, \textit{shiny} \cite{shiny}, \textit{MBmca} 
-\cite{rodiger_surface_2013}, \textit{chipPCR} \cite{roediger2015chippcr}. A 
-basic design decision was to structure specific properties of dPCR systems 
-(dropet vs. chamber) in auxiliary functions. Selected chamber dPCR systems rely 
-on the proper preprocessing of qPCR data. This functionality is inherited from 
-the \textit{qpcR} \textbf{R} package.
+rodiger_r_2015}. Most \textbf{R} packages depend on other packages 
+\cite{ooms_2013}. The same holds true for \textit{dpcR}. This results in a 
+complex network of recursive dependencies (Figure~\ref{dpcR_framework}A). Core 
+packages include \textit{qpcR} \cite{ritz_qpcr_2008}, \textit{shiny} 
+\cite{shiny}, \textit{MBmca} \cite{rodiger_surface_2013}, \textit{chipPCR} 
+\cite{roediger2015chippcr}. A basic design decision was to structure specific 
+properties of dPCR systems (dropet vs. chamber) in auxiliary functions. Selected 
+chamber dPCR systems rely on the proper preprocessing of qPCR data. This 
+functionality is inherited from the \textit{qpcR} \textbf{R} package.
 
-The main \textit{dpcR} functions (e.g., for analysis, simulations, plotting), 
-several auxiliary functions (e.g., data import) and datasets of different 
-dPCR systems are shown in the workflow of Figure \ref{workflow}. 
-Figure~\ref{dpcR_framework}B illustrates the implementation of the \textit{dpcR} 
-package. The function \textit{read\_dpcr}, \textit{qpcr2pp} and 
-\textit{sim\_dpcr}, sets the input for all objects in the \texttt{dpcr} class. 
-Central calculation specific to Poisson statistics in are performed 
+The naming convention of \textit{dpcR} is \texttt{underscore\_sep} 
+\cite{Baaaath_2012}. The main \textit{dpcR} functions (e.g., for analysis, 
+simulations, plotting), several auxiliary functions (e.g., data import) and 
+datasets of different dPCR systems are shown in the workflow of Figure 
+\ref{workflow}. Figure~\ref{dpcR_framework}B illustrates the implementation of 
+the \textit{dpcR} package. The function \textit{read\_dpcr}, \textit{qpcr2pp} 
+and \textit{sim\_dpcr}, sets the input for all objects in the \texttt{dpcr} 
+class. Central calculation specific to Poisson statistics in are performed 
 independently in main functions. This class manages details of the dPCR analysis 
 that are subsequently processed by \textit{dpcR} functions (e.g., 
 reading/writing). Further details are explained in the supplementary 
@@ -235,8 +234,8 @@ matrices of raw data and predefined structures provided by the different vendors
 the \textbf{R} workspace, which are converted via the \textit{read\_dpcr} 
 function. Novel raw data structures are processed outside \textit{dpcR} using 
 tools as described elsewhere. The data input to \textit{dpcR} should be raw data 
-preferable, rather than gated summary data. The reasoning it to keep as much 
-control over information drain for reproducible research.
+preferable, rather than gated summary data. The reasoning it to keep control 
+over information loss for reproducible research.
 
 \subsection{Documentation}
 
@@ -244,9 +243,6 @@ All functions of the \textit{dpcR} package have its own documentation package,
 which specifies the input types, classes, parameters and output formats. The 
 documentation is available as standard \textbf{R} package reference manual and 
 as vignette.
-
-\subsection{Calculation of the ``Concentration''}
-Reference to ``Supplement''
 
 \subsection{Calculation of the uncertainty}
 
@@ -256,63 +252,15 @@ The uncertainty is dependent on the number of PCR reactions (reference to
 \textit{\textit{dpcR}} functions). … Reference to ``Supplement'' and 
 \textit{dpcR} functions.
 
-\subsubsection{GUI}
+It is possible to analyze the PCR reaction the panels independently (effect on 
+CI and uncertainty) or to pool/aggregate all reactions (effect on CI and 
+uncertainty) to achieve higher sensitivity/certainty.
+
+\subsection{Graphical user interface}
 
 Interactive use and graphical representation with \textit{shiny} \cite{shiny}.
 
 The GUI employs advanced plots based on \textit{ggplot2} \cite{kahle_wickham_2013}.
-
-\subsubsection{Converting qPCRs to dPCRs}
-
-qPCR is a well established and robust technology, which allows precise 
-quantification of DNA material in high throughput fashion. Such systems can be 
-used for dPCR applications. The real-time monitoring of the PCR product 
-formation enables to determine quantification points (Cq). The Cq are strictly 
-related to the input quantity. A simple arithmetic operation (after logarithmic 
-transformation of the concentration) is sufficient to determine any nucleic acid 
-quantity \cite{huggett_considerations_2014}. The quantification of the 
-amplification is not done by determining a Cq value derived from an 
-amplification curve. However, the quantification by qPCR is challenging at very 
-low and very high concentrations. At low DNA concentration Monte Carlo effect 
-play a role and at high concentration inhibition processes start to dominate the 
-qPCR. Thus, the qPCR is only usable in the working range of the calibrator. In 
-addition, pre-processing and data analysis is a affected by numerous adverse 
-effects \cite{ruijter_2013, pabinger_survey_2014, spiess_impact_2015}.
-
-Figure\ref{qpcr2pp_1}
-
-\begin{figure}[t]
-\begin{center}
-\includegraphics[width=9cm]{qpcr2pp_1.png}
-\end{center}
-\caption{Uncover characteristics of dPCR data. 
-Selected dPCR platforms are qPCR platforms at the same time. The function \textit{qpcr2pp} uses the 
-qPCR amplification curve data and interprets them as dPCR (Poisson process). A) Raw data of The 
-function were B) preprocessed (baselined, smoothed) with functions from the 
-\textit{chipPCR} package and C) finally analyzed (Cq calculation $\rightarrow$ binarize) with the 
-\textit{qpcr2pp} (qPCR to Poisson process) function from the \textit{dpcR} package.} 
-\label{qpcr2pp_1}
-\end{figure}
-
-As described in \cite{ritz_qpcr_2008, perkins_readqpcr_2012, 
-pabinger_survey_2014, rodiger_r_2015}, there numerous methods to import 
-amplification curve data into the \textbf{R} workspace. Prior processing the 
-data for dPCR analysis it is recommended to use dedicated \textbf{R} packages, 
-such as \textit{chipPCR} \cite{roediger2015chippcr}, \textit{MBmca} 
-\cite{rodiger_surface_2013}, \textit{qpcR} \cite{ritz_qpcr_2008}, to 
-pre-process (e.g., removal of missing values, smoothing 
-\cite{spiess_impact_2015}) the raw data.
-
-\subsubsection{Materials subsubsection one.}
-
-qPCR	dPCR
-Number of copies/DNA per volume (e.g., ng/µl, copies/µl)	total number of compartments * ln (...)
-
-Two-sided exact tests and matching confidence intervals for discrete data \cite{fay_2010}
-
-Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing \cite{benjamini_1995}
-
-Interval Estimation for a Binomial Proportion \cite{brown_2001}
 
 \subsection{Integration in third party software}
 
@@ -353,16 +301,17 @@ The proposed framework was evaluated in three Monte Carlo experiments (2.000 tim
 
 \subsection{Import and export of results figures and data}.
 
-
-\subsection{Reading or importing data}
+\subsubsection{Reading or importing data}
 
 \textbf{R} has a rich set of tool to arrange data (reshape \cite{Wickham_2007}) 
 in order to prepare them for the analysis. This is important when it comes to 
-the question how experiments should be treated. It is possible to analyze the 
-PCR reaction the panels independently (effect on CI and uncertainty) or to 
-pool/aggregate all reactions (effect on CI and uncertainty) to achieve higher 
-sensitivity/certainty.
+the question how experiments should be treated.
 
+Most \textit{dpcR} import functions take a data matrix of annotated numeric 
+(e.g, fluorescence amplitude) and integer values (e.g., counts) as input. The 
+\textit{raw\_data} input was implemented  make data input easier for the end 
+user (see Supplement). Such input files can be manually created in a spreadsheet 
+program or text editor.
 
 (see Table \ref{table_formats}).
 
@@ -390,7 +339,7 @@ by the \textbf{R} environment (see \cite{rodiger_r_2015}). CSV, comma separated
 values.}
 \end{table}
 
-\subsection{\textit{De novo} creation of dpcR objects from raw data}
+\subsubsection{\textit{De novo} creation of dpcR objects from raw data}
 
 In experimental setups user have the need to transform their raw data in a 
 processable format. Since the \textbf{R} environment is cross-platform an 
@@ -398,14 +347,14 @@ ubiquitously used we aimed to ease this creation. In particular, this is
 relevant for reproducible research. The \textit{dpcR} framework covers the types 
 typically used in laboratories.
 
-\subsection{Public data sets}
+\subsubsection{Public data sets}
 
 \textit{dpcR} includes data sets or refers to additional R packages for testing 
 purposes. The data originate from different dPCR and qPCR systems and were 
 either published previously \cite{whale_comparison_2012, roediger2015chippcr, 
 white_digital_2009, rodiger_r_2015} or \textit{de novo} generated.
 
-\subsection{Export of analysis results}
+\subsubsection{Export of analysis results}
 
 Since \textit{dpcR} is based on the \textbf{R} environment all facilities for a 
 report generation are usable as described before \cite{rodiger_r_2015}.
@@ -419,6 +368,59 @@ our default format. \texttt{RData} works across all \textbf{R} environments and
 saves the variable names along the content of multiple variables, which can be 
 restored in any workspace.
 
+
+\subsection{Calculation of the ``Concentration''}
+Reference to ``Supplement''
+
+qPCR	dPCR
+Number of copies/DNA per volume (e.g., ng/µl, copies/µl)	total number of compartments * ln (...)
+
+Two-sided exact tests and matching confidence intervals for discrete data \cite{fay_2010}
+
+Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing \cite{benjamini_1995}
+
+Interval Estimation for a Binomial Proportion \cite{brown_2001}
+
+\subsection{Converting qPCRs to dPCRs}
+
+qPCR is a well established and robust technology, which allows precise 
+quantification of DNA material in high throughput fashion. Such systems can be 
+used for dPCR applications. The real-time monitoring of the PCR product 
+formation enables to determine quantification points (Cq). The Cq are strictly 
+related to the input quantity. A simple arithmetic operation (after logarithmic 
+transformation of the concentration) is sufficient to determine any nucleic acid 
+quantity \cite{huggett_considerations_2014}. The quantification of the 
+amplification is not done by determining a Cq value derived from an 
+amplification curve. However, the quantification by qPCR is challenging at very 
+low and very high concentrations. At low DNA concentration Monte Carlo effect 
+play a role and at high concentration inhibition processes start to dominate the 
+qPCR. Thus, the qPCR is only usable in the working range of the calibrator. In 
+addition, pre-processing and data analysis is a affected by numerous adverse 
+effects \cite{ruijter_2013, pabinger_survey_2014, spiess_impact_2015}.
+
+Figure\ref{qpcr2pp_1}
+
+\begin{figure}[t]
+\begin{center}
+\includegraphics[width=9cm]{qpcr2pp_1.png}
+\end{center}
+\caption{Uncover characteristics of dPCR data. 
+Selected dPCR platforms are qPCR platforms at the same time. The function \textit{qpcr2pp} uses the 
+qPCR amplification curve data and interprets them as dPCR (Poisson process). A) Raw data of The 
+function were B) preprocessed (baselined, smoothed) with functions from the 
+\textit{chipPCR} package and C) finally analyzed (Cq calculation $\rightarrow$ binarize) with the 
+\textit{qpcr2pp} (qPCR to Poisson process) function from the \textit{dpcR} package.} 
+\label{qpcr2pp_1}
+\end{figure}
+
+As described in \cite{ritz_qpcr_2008, perkins_readqpcr_2012, 
+pabinger_survey_2014, rodiger_r_2015}, there numerous methods to import 
+amplification curve data into the \textbf{R} workspace. Prior processing the 
+data for dPCR analysis it is recommended to use dedicated \textbf{R} packages, 
+such as \textit{chipPCR} \cite{roediger2015chippcr}, \textit{MBmca} 
+\cite{rodiger_surface_2013}, \textit{qpcR} \cite{ritz_qpcr_2008}, to 
+pre-process (e.g., removal of missing values, smoothing 
+\cite{spiess_impact_2015}) the raw data.
 
 \section{RESULTS}
 
