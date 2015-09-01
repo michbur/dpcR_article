@@ -269,6 +269,15 @@ Most \textit{dpcR} import functions take a data matrix of annotated numeric
 user (see Supplement). Such input files can be manually created in a spreadsheet 
 program or text editor.
 
+As described in \cite{ritz_qpcr_2008, perkins_readqpcr_2012, 
+pabinger_survey_2014, rodiger_r_2015}, there numerous methods to import 
+amplification curve data into the \textbf{R} workspace. Prior processing the 
+data for dPCR analysis it is recommended to use dedicated \textbf{R} packages, 
+such as \textit{chipPCR} \cite{roediger2015chippcr}, \textit{MBmca} 
+\cite{rodiger_surface_2013}, \textit{qpcR} \cite{ritz_qpcr_2008}, to pre-process 
+(e.g., removal of missing values, smoothing \cite{spiess_impact_2015}) the raw 
+data.
+
 (see Table \ref{table_formats}).
 
 \begin{table}[b]
@@ -364,45 +373,98 @@ high-performing simulation in assumptions similar to Dube~\textit{et al.}~2008.
 
 \subsubsection[]{Generalized Linear Models -- GLM}
 
-Generalized Linear Models (GLM) are linear models for data, where the response variables may have non-normal distributions (as binomially distributed positive partitions in digital PCR experiments). We propose a model reflecting relationships in results of digital PCR as given by:
+Generalized Linear Models (GLM) are linear models for data, where the response 
+variables may have non-normal distributions (as binomially distributed positive 
+partitions in digital PCR experiments). We employ a simplistic model reflecting 
+relationships in results of digital PCR as given by:
+
 \begin{equation}
 \log{Y} = \beta^T X
 \end{equation}
-where $Y$ are counts, $X$ are experiments names (categorical data) and $\beta$ are linear model coefficients for every experiment. Moreover, $\exp{\beta} = \lambda$.   
-Estimated means copies per partitions obtained from the model are compared each other using multiple t-test~\citep{bretz_2010}.
 
-
+where $Y$ are counts, $X$ are experiments names (categorical data) and $\beta$ 
+are coefficients for every run. Moreover, $\exp{\beta} = 
+\lambda$. Estimated means copies per partitions obtained from the model are 
+compared each other using multiple t-test~\citep{bretz_2010}.
 
 \subsubsection[]{Multiple testing}
 
-The dPCR experimentes are compared pairwise using the uniformly most powerful (UMP) ratio test~\citep{fay_2010}. Furthermore, computed p-values are adjusted using Benjamini & Hochberg correction~\citep{benjamini_1995} to control family-wise error rate.
-
-The UMP ratio test has following null-hypothesis:
+The dPCR experiments are compared pairwise using the uniformly most powerful 
+(UMP) ratio test~\citep{fay_2010}. Furthermore, computed p-values are adjusted 
+using Benjamini-Hochberg correction~\citep{benjamini_1995} to control 
+family-wise error rate. The UMP ratio test has following null-hypothesis:
 \begin{equation}
 H_0: \frac{\lambda_1}{\lambda_2} = 1
 \end{equation}
 
-
-The Wilson's confidence intervals~\citep{brown_2001} are calculated independently for every dPCR experiment and adjusted using Dunn~--~\v{S}id\'{a}k correction, where:
+The Wilson's confidence intervals~\citep{brown_2001} are calculated 
+independently for every dPCR experiment and adjusted using Dunn~--~\v{S}id\'{a}k 
+correction, where:
 
 \begin{equation}
 \alpha_{\text{adj}} = 1 - (1 - \alpha)^\frac{1}{T}
 \end{equation}
 
-Such intervals are wider then usual, but ensure that confidence intervals simultaneously contain true value of lambda.
+Such intervals are wider then usual, but ensure that confidence intervals 
+simultaneously contain the true value of $\lambda$. For example, the 0.95 CI 
+means that with with 0.95 probability of $\lambda$ is in the range of the 
+confidence intervals.
 
+\subsection{Spatial distribution}
 
-\subsubsection{Materials subsection Statistical power - Monte Carlo simulations}
+Array based dPCR experiments provide information about spatial distribution of 
+partitions. Procedures belonging to spatial statistics verify if the status 
+(positive, negative) of partition depends on its location. To address such 
+questions, we implemented a Complete Spatial Randomness test for dPCR arrays. 
+Moreover, we provide functionalities to export array dPCR data to \textbf{R} 
+packages specialized in spatial statistics as described in 
+\cite{Baddeley_Turner_2005}.
 
-The proposed framework was evaluated in three Monte Carlo experiments (2.000 
-times repetitions each) with accordingly 1.000, 5.000 (results not shown) and 
-10.000 partitions. During each repetition of the Monte Carlo scheme, a set of 
-partitions was randomly generated~\cite{dube_mathematical_2008} with a 
-determined number of molecules ('Base number of molecules' on X-axis). The set 
-was copied and a number of molecules ('Added number of molecules' on Y-axis) was 
-added to randomly chosen partitions. Two obtained arrays were compared using the 
-proposed method. The mean p-values alongside with their standard deviation are 
-presented in the chart below.
+\subsection{Converting qPCRs to dPCRs}
+
+High-Throughput qPCR is a well established and robust technology, which allows 
+precise quantification of DNA material in high throughput fashion. However, the 
+quantification by qPCR is challenging at very low and very high concentrations. 
+In addition, pre-processing and data analysis is a affected by numerous adverse 
+effects \cite{ruijter_2013, pabinger_survey_2014, spiess_impact_2015}. But the 
+amplification curve real-time monitoring of the PCR product formation enables to 
+determine quantification points (Cq), which can be binarized and analysed in the 
+same way as dPCR experiments. This functionality is integral part of the 
+\textit{dpcR} package.
+
+Figure\ref{qpcr2pp_1}
+
+\begin{figure}[t]
+\begin{center}
+\includegraphics[width=9cm]{qpcr2pp_1.png}
+\end{center}
+\caption{Uncover characteristics of dPCR data. 
+Selected dPCR platforms are qPCR platforms at the same time. The function \textit{qpcr2pp} uses the 
+qPCR amplification curve data and interprets them as dPCR (Poisson process). A) Raw data of The 
+function were B) preprocessed (baselined, smoothed) with functions from the 
+\textit{chipPCR} package and C) finally analysed (Cq calculation $\rightarrow$ binarize) with the 
+\textit{qpcr2pp} (qPCR to Poisson process) function from the \textit{dpcR} package.} 
+\label{qpcr2pp_1}
+\end{figure}
+
+\section{RESULTS}
+
+In the following section we show applications of the \textit{dpcR} package.
+
+\subsection{Evaluation methods of comparing dPCR experiments}
+
+\subsubsection{Statistical power - Monte Carlo simulations}
+
+Two proposed methods on comparing dPCR experiments were evaluated by Monte Carlo 
+simulations (2.000 repetitions each) with accordingly 1.000, 5.000 (results not 
+shown) and 10.000 partitions (Figure~\ref{mc_figures-1}). During each repetition 
+of the Monte Carlo scheme, a set of partitions was randomly 
+generated~\cite{dube_mathematical_2008} with a determined number of molecules 
+('Base number of molecules' on X-axis). The set was copied and a number of 
+molecules ('Added number of molecules' on Y-axis) was added to randomly chosen 
+partitions. Two obtained arrays were compared using the proposed method. The 
+mean p-values alongside with their standard deviation are presented in the chart 
+below.
 
 \begin{figure}[t]
 \begin{center}
@@ -416,85 +478,49 @@ controlled through the whole analysis.}
 \label{mc_figures-1}
 \end{figure}
 
-
-\subsection{Spatial distribution}
-
-\subsection{Converting qPCRs to dPCRs}
-
-qPCR is a well established and robust technology, which allows precise 
-quantification of DNA material in high throughput fashion. Such systems can be 
-used for dPCR applications. The real-time monitoring of the PCR product 
-formation enables to determine quantification points (Cq). The Cq are strictly 
-related to the input quantity. A simple arithmetic operation (after logarithmic 
-transformation of the concentration) is sufficient to determine any nucleic acid 
-quantity \cite{huggett_considerations_2014}. The quantification of the 
-amplification is not done by determining a Cq value derived from an 
-amplification curve. However, the quantification by qPCR is challenging at very 
-low and very high concentrations. At low DNA concentration Monte Carlo effect 
-play a role and at high concentration inhibition processes start to dominate the 
-qPCR. Thus, the qPCR is only usable in the working range of the calibrator. In 
-addition, pre-processing and data analysis is a affected by numerous adverse 
-effects \cite{ruijter_2013, pabinger_survey_2014, spiess_impact_2015}.
-
-Figure\ref{qpcr2pp_1}
-
-\begin{figure}[t]
-\begin{center}
-\includegraphics[width=9cm]{qpcr2pp_1.png}
-\end{center}
-\caption{Uncover characteristics of dPCR data. 
-Selected dPCR platforms are qPCR platforms at the same time. The function \textit{qpcr2pp} uses the 
-qPCR amplification curve data and interprets them as dPCR (Poisson process). A) Raw data of The 
-function were B) preprocessed (baselined, smoothed) with functions from the 
-\textit{chipPCR} package and C) finally analyzed (Cq calculation $\rightarrow$ binarize) with the 
-\textit{qpcr2pp} (qPCR to Poisson process) function from the \textit{dpcR} package.} 
-\label{qpcr2pp_1}
-\end{figure}
-
-As described in \cite{ritz_qpcr_2008, perkins_readqpcr_2012, 
-pabinger_survey_2014, rodiger_r_2015}, there numerous methods to import 
-amplification curve data into the \textbf{R} workspace. Prior processing the 
-data for dPCR analysis it is recommended to use dedicated \textbf{R} packages, 
-such as \textit{chipPCR} \cite{roediger2015chippcr}, \textit{MBmca} 
-\cite{rodiger_surface_2013}, \textit{qpcR} \cite{ritz_qpcr_2008}, to 
-pre-process (e.g., removal of missing values, smoothing 
-\cite{spiess_impact_2015}) the raw data.
-
-\section{RESULTS}
-
-In the following section we show two case studies for the use of the \textit{dpcR} package.
-
-We implemented numerous statistical methods for dPCR and suggest the 
-introduction of a standardized nomenclature for dPCR. The package enables the 
-simulations and predictions of dPCR reactions and the analysis of previously run 
-dPCRs.
-
-\subsection{Evaluation methods of comparing dPCR experiments}
-
 \subsection{Simultaneous confidence intervals}
+
+
 
 \subsection{Graphical user interface}
 
-Interactive use and graphical representation with \textit{shiny} \cite{shiny}.
-
-The GUI employs advanced plots based on \textit{ggplot2} \cite{kahle_wickham_2013}.
-
-\subsection{Integration in third party software}
-
+The critical functionalities of \textit{dpcR} package are implemented in the \textit{dpcReport} GUI.
 We aimed for a form factor (e.g., smart phone, tablet, desktop PCR) and 
 operating system independent implementation of a graphical user interface. 
 \textit{dpcReport} is based on \textit{shiny} technology and offers an intuitive 
 user interface, which can be accessed by browsers (e.g., Google Chrome, Mozilla 
-Firefox).  An interesting feature of the \textit{shiny} technology is the 
-automatic integration in environments, which support \texttt{HTML5} and 
-\texttt{ECMAScript}. This can be a modern web~browser or an \textbf{R} IDE/GUI 
-such as \textbf{RKWard} (Figure~\ref{GUI_RKWard_1}) \cite{rodiger_rkward_2012} 
-or \textbf{RStudio}. \textit{dpcReport} is a GUI tool for dPCR data mining and 
-report generation. User can interact via a poin-and-click interface on different 
-tabs, which contain widgets such as sliders, input fields and check boxes. The 
-tabs cover relevant analysis steps for the report generation.  An important 
-feature of \textit{dpcReport} is that the source code used for the report 
-generation is provided to the user.
+Firefox). The advanced plots are based on \textit{ggplot2} 
+\cite{Wickham_2009}.
+
+The first panel ``Input file'' is responsible for loading the input data. Here 
+part of data input structure (e.g., ID of experiments) may be accessed and 
+modified during the analysis in the GUI. The second panel ``Data summary'' 
+presents descriptive summary of the data in form of interactive tables and 
+plots, offering filtering and selecting of individual runs. The third panel 
+``Comparison of runs'' compares all runs of the experiment data. The fourth 
+panel ``Advanced analysis'' consists of more specialized functionalities as 
+testing individual arrays. All statistical methods used in the GUI are integral 
+part of the \textit{dpcR} package and described in the methods section. The last 
+panel enables flexible report generation. The report can be customized by 
+including various sections, which are equivalents of the GUI panels.
+
+An interesting feature of the \textit{shiny} 
+technology is the automatic integration in environments, which support 
+\texttt{HTML5} and \texttt{ECMAScript}. The \textit{dpcReport} integrates into 
+Integration in third party software. This can be a modern web~browser or an 
+\textbf{R} IDE/GUI such as \textbf{RKWard} (Figure~\ref{GUI_RKWard_1}) 
+\cite{rodiger_rkward_2012} or \textbf{RStudio}. \textit{dpcReport} is a GUI tool 
+for dPCR data mining and report generation. User can interact via a 
+point-and-click interface on different tabs, which contain widgets such as 
+sliders, input fields and check boxes. Other 
+user input, such as parameters of test performed in GUI, are preserved and 
+returned in the report to increase the reproducibility of the research study. 
+The tabs cover relevant analysis steps for the report generation. An important 
+option of \textit{dpcReport} is an export of the \textbf{R} source code used for 
+the report generation is provided to the user. This code can be used for 
+recreating the analysis in the \textbf{R} environment or prototyping more 
+complicated workflows.
+
 
 \begin{figure*}[t]
 \begin{center}
