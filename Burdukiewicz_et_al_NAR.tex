@@ -387,6 +387,11 @@ are coefficients for every run. Moreover, $\exp{\beta} =
 \lambda$. Estimated means copies per partitions obtained from the model are 
 compared each other using multiple t-test~\citep{bretz_2010}.
 
+Since the digital PCR data is binomial, we advise to use binomial regression. It is 
+also possible to choose the Poisson regression, but such usage should be limited to 
+experimental settings where the concentration of template molecules in samples is 
+small (positive partitions contain very rarely more than 1 template particle). 
+
 \subsubsection[]{Multiple testing}
 
 The dPCR experiments are compared pairwise using the uniformly most powerful 
@@ -468,30 +473,6 @@ It is worth to monetion that, a single GLM comparison took roughly 183 times lon
 \label{ratiovsGLM}
 \end{figure*}
 
-\subsubsection{Statistical power of dPCR comparison methods}
-
-Two proposed methods on comparing dPCR experiments were evaluated by Monte Carlo 
-simulations (2.000 repetitions each) with accordingly 1.000, 5.000 (results not 
-shown) and 10.000 partitions (Figure~\ref{mc_figures-1}). During each repetition 
-of the Monte Carlo scheme, a set of partitions was randomly 
-generated~\cite{dube_mathematical_2008} with a determined number of molecules 
-('Base number of molecules' on X-axis). The set was copied and a number of 
-molecules ('Added number of molecules' on Y-axis) was added to randomly chosen 
-partitions. Two obtained arrays were compared using the proposed method. The 
-mean p-values alongside with their standard deviation are presented in the chart 
-below.
-
-\begin{figure}[t]
-\begin{center}
-\includegraphics[width=9cm]{mc_figures-1.pdf}
-\end{center}
-\caption{Our method, based on GLM, predicts estimated means copies per 
-partitions using Poisson or binomial regression. Afterwards, estimates are 
-compared against themselves using t-test. Obtained p-values and confidence 
-intervals do not require further correction, because the familywise error is 
-controlled through the whole analysis.}
-\label{mc_figures-1}
-\end{figure}
 
 \subsection{Simultaneous confidence intervals}
 
