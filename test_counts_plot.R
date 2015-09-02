@@ -1,7 +1,7 @@
 library(ggplot2)
 library(reshape2)
 
-size_mod <- -5
+size_mod <- -1
 cool_theme <- theme(plot.background=element_rect(fill = "transparent",
                                                  colour = "transparent"),
                     panel.grid.major = element_line(colour="lightgrey", linetype = "dashed"),
@@ -20,16 +20,17 @@ cool_theme <- theme(plot.background=element_rect(fill = "transparent",
 
 load("test_count_eval.RData")
 
-
 pdf(file = "ratiovsGLM.pdf", pointsize = 1)
 ggplot(data=madpcr_comp, aes(x = value, fill = method)) +
   geom_density(alpha = 0.3) + 
-  scale_fill_discrete("Multiple comparision f
-ramework:") + 
+  scale_fill_discrete("Multiple comparisons\nframework:") + 
   scale_y_continuous("Density") + 
   scale_x_continuous("Fraction of wrongly assigned experiments") + 
+  geom_vline(x = mean(madpcr_comp[["value"]]))
   cool_theme
 dev.off()
+
+levels(m_coverage2[["method"]]) <- c("Adjusted\n(this study)", "Bhat", "Dube")
 
 pdf(file = "coverage.pdf", pointsize = 1)
 ggplot(m_coverage2, aes(x = prop, y = value, fill = method)) +

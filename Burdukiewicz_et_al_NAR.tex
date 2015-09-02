@@ -68,7 +68,7 @@ presentation, as framework for novel technical developments and as reference for
 statistical methods in dPCR analysis. Features such as functions to estimate the 
 underlying Poisson process, calculation of confidence intervals based on single 
 samples as well as on replicates, a novel Generalized Linear Model-based 
-procedure to compare digital PCR experiments and a spatial randomness test for 
+procedure to compare dPCR experiments and a spatial randomness test for 
 assessing plate effects have been integrated. We use a plug-in like architecture 
 and abstraction layers to make the framework usable for droplets and (real-time) 
 chamber based technologies.
@@ -95,7 +95,7 @@ based on isothermal amplification were also developed
 approach and the use of the Poisson distribution to quantify the number of 
 molecules on a ``sample'' was shown by Ruano \textit{et al.} 1990 (PNAS) with 
 the single molecule dilution (SMD) PCR \cite{ruano_haplotype_1990}. In 1999 
-Vogelstein \textit{et al.} (PNAS) described the first true digital PCR 
+Vogelstein \textit{et al.} (PNAS) described the first true dPCR 
 \cite{vogelstein_digital_1999}. In contrast to qPCR, the amplification reaction 
 does not take place in a single reaction chamber. Rather its a process of clonal 
 amplification in small separate ``partitions'' (e.g., nl volume droplets of 
@@ -104,7 +104,7 @@ partition in relation to the number of total partitions. By applying Poisson
 statistics it is possible to determine the number of the starting material in 
 given volume. Therefore, the dPCR does not require an external calibration 
 \cite{selck_increased_2013, rodiger_r_2015}. Since approximately ten years the 
-digital PCR (dPCR) is gaining momentum in the mainstream user-base and will 
+dPCR is gaining momentum in the mainstream user-base and will 
 likely have the same impact as the qPCR methodology \cite{huggett_qpcr_2015, 
 morley_digital_2014, rodiger_r_2015}. There is an intensive research on dPCR 
 platforms with the overall aim to make to technology broadly usable, cheap, 
@@ -375,8 +375,8 @@ high-performing simulation in assumptions similar to Dube~\textit{et al.}~2008.
 
 Generalized Linear Models (GLM) are linear models for data, where the response 
 variables may have non-normal distributions (as binomially distributed positive 
-partitions in digital PCR experiments). We employ a simplistic model reflecting 
-relationships in results of digital PCR as given by:
+partitions in dPCR experiments). We employ a simplistic model reflecting 
+relationships in results of dPCR as given by:
 
 \begin{equation}
 \log{Y} = \beta^T X
@@ -387,7 +387,7 @@ are coefficients for every run. Moreover, $\exp{\beta} =
 \lambda$. Estimated means copies per partitions obtained from the model are 
 compared each other using multiple t-test~\citep{bretz_2010}.
 
-Since the digital PCR data is binomial, we advise to use binomial regression. It is 
+Since the dPCR data is binomial, we advise to use binomial regression. It is 
 also possible to choose the Poisson regression, but such usage should be limited to 
 experimental settings where the concentration of template molecules in samples is 
 small (positive partitions contain very rarely more than 1 template particle). 
@@ -458,11 +458,19 @@ In the following section we show applications of the \textit{dpcR} package.
 
 \subsection{Evaluation of dPCR comparison methods}
 
-Two implemented approaches, GLM and multiple testing (MT) were compared over 150 000 simulated array dPCR experiments. Each simulation contained six reactions. Three of them had roughly the same amount of molecules per plate and other three had experiments with 10 to 50 molecules more. The GLM approach used binomial model and multiple testing framework employed ratio test.
+Two implemented approaches, GLM and multiple testing (MT) were compared over 
+150.000 simulated array dPCR experiments. Each simulation contained six 
+reactions. Three of them had roughly the same amount of molecules per plate and 
+other three had experiments with 10 to 50 molecules more. The GLM approach used 
+binomial model and multiple testing framework employed ratio test.
 
-On average, 2.03 and 1.98 reactions were assessed to a wrong group by respectively GLM and MT.
+A single GLM comparison took roughly 183 times 
+longer than MT (on average 1.10 seconds versus 0.006 seconds on the Intel 
+i7-2600 processor). The difference growths with the number of experiments and 
+number of partitions (data not shown).
 
-It is worth to monetion that, a single GLM comparison took roughly 183 times longer than MT (on average 1.10 seconds versus 0.006 seconds on the Intel i7-2600 processor). The difference growths with the number of experiments and number of partitions (data not shown).
+On average, 2.03 and 1.98 reactions were assessed to a wrong group by 
+respectively GLM and MT (Figure~\ref{ratiovsGLM}).
 
 
 \begin{figure}[t]
@@ -476,29 +484,38 @@ It is worth to monetion that, a single GLM comparison took roughly 183 times lon
 
 \subsection{Simultaneous confidence intervals}
 
-Average covarage probability is the proportion of the time that the interval contains the true value of $\lambda$.
-  
-In the example below, we simulated 1\e{6} droplet dPCR experiments (2\e{4} droplets each) for each level of $\lambda$ (1.2\e{7} experiments total). We computed average probability coverage of CI obtained by three methods: Dube's~\citep{dube_mathematical_2008}, Bhat's~\citep{bhat_single_2009} and by our MT ($\alpha = 0.95$).
-  
-To assess simultaneous coverage probability, we randomly divided experiments into 2000 groups (500 experiments each) for each possible value of $\lambda$. We counted frequency of groups in which all confidence intervals contain the true value of $\lambda$.
-  
+Average coverage probability is the proportion of the time that the interval 
+contains the true value of $\lambda$.
+
+In Figure~\ref{coverage}, we show the results of simulated 1\e{6} droplet dPCR experiments (2\e{4} 
+droplets each) for each level of $\lambda$ (1.2\e{7} experiments total). We 
+computed average probability coverage of CI obtained by three methods: 
+Dube's~\citep{dube_mathematical_2008}, Bhat's~\citep{bhat_single_2009} and by 
+our MT ($\alpha = 0.95$).
+
+To assess simultaneous coverage probability, we randomly divided experiments 
+into 2.000 groups (500 experiments each) for each possible value of $\lambda$. We 
+counted frequency of groups in which all confidence intervals contain the true 
+value of $\lambda$.
 
 \begin{figure}[t]
 \begin{center}
 \includegraphics[width=9cm]{coverage.pdf}
 \end{center}
-\caption{Evaluation of confidence intervals implemented in the \textit{dpcR} package.. Average covarage probability is the proportion of the time that the interval contains the true value of $\lambda$.}
+\caption{Evaluation of confidence intervals implemented in the \textit{dpcR} 
+package. Average coverage probability is the proportion of the time that the 
+interval contains the true value of $\lambda$.}
 \label{coverage}
 \end{figure*}
 
 \subsection{Graphical user interface}
 
-The critical functionalities of \textit{dpcR} package are implemented in the \textit{dpcReport} GUI.
-We aimed for a form factor (e.g., smart phone, tablet, desktop PCR) and 
-operating system independent implementation of a graphical user interface. 
-\textit{dpcReport} is based on \textit{shiny} technology and offers an intuitive 
-user interface, which can be accessed by browsers (e.g., Google Chrome, Mozilla 
-Firefox). The advanced plots are based on \textit{ggplot2} 
+The critical functionalities of \textit{dpcR} package are implemented in the 
+\textit{dpcReport} GUI. We aimed for a form factor (e.g., smart phone, tablet, 
+desktop PCR) and operating system independent implementation of a graphical user 
+interface. \textit{dpcReport} is based on \textit{shiny} technology and offers 
+an intuitive user interface, which can be accessed by browsers (e.g., Google 
+Chrome, Mozilla Firefox). The advanced plots are based on \textit{ggplot2} 
 \cite{Wickham_2009}.
 
 The first panel ``Input file'' is responsible for loading the input data. Here 
@@ -573,7 +590,7 @@ analysis, plotting of the results and simple report generation.
 
 \section{CONCLUSION}
 
-In conclusion, \textit{dpcR} provides means to understand how digital PCR works, 
+In conclusion, \textit{dpcR} provides means to understand how dPCR works, 
 to design, simulate and analyze experiments, and to verify their results (e.g., 
 confidence interval estimation), which should ultimately improve 
 reproducibility. We have built what we believe to be the first unified, 
