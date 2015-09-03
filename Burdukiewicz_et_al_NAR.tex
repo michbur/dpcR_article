@@ -92,7 +92,7 @@ frequencies, single-cell analysis, gene expression analysis and absolute quantif
 products. The chemical basis (e.g., buffer, primer) of the dPCR and thermal 
 cycling is similar to the real-time quantitative qPCR (qPCR). Though, approaches 
 based on isothermal amplification were also developed 
-\cite{pabinger_survey_2014, ludlow_2014, rodiger_r_2015}. A first proposal for a dPCR like 
+\cite{pabinger_survey_2014, ludlow_2014, rodiger_r_2015}. A first proposal for a dPCR-like 
 approach and the use of the Poisson distribution to quantify the number of 
 molecules on a ``sample'' was shown by Ruano \textit{et al.} 1990 (PNAS) with 
 the single molecule dilution (SMD) PCR \cite{ruano_haplotype_1990}. In 1999 
@@ -118,20 +118,20 @@ robust and to enable high sample throughput.
 % **************************************************************
   
 The dPCR has some principle assumptions and fundamental properties. First of all 
-the chemical reaction should be not affected by inhibitors. The distribution of 
+the chemical reaction should be unaffected by inhibitors. The distribution of 
 the single molecule target regions follows a Poission distribution. The Poisson 
 distribution appears like a normal distribution but without negative values and 
-being zero the lowest. First a large number (n) of amplifications reactions as 
-required to have a high statistical power. Therefore, a 
-high number of PCR reactions is needed. For Poission distributions an n of XY 
-(get reference from table/text book form statistics/biostatistics?) is 
-considered large. Second that the molecules required for the amplification 
-amplifications reactions are randomly distributed in the compartments. Visual 
-analysis, Ripley's K functions or ??? can be used to test for randomness of the 
-reaction and thus to exclude the clustering of of positive reactions. A 
+being zero the lowest. First, a large number (n) of amplifications reactions as 
+required to have a high statistical power. Therefore, a high number of PCR 
+reactions is needed. For Poission distributions an n of XY (get reference from 
+table/text book form statistics/biostatistics?) is considered large. Second, that 
+the molecules required for the amplification amplifications reactions are 
+randomly distributed in the compartments. Visual analysis and statistical 
+analysis can be used to test for randomness of the reaction and thus to exclude 
+the clustering of of positive reactions \cite{Baddeley_Turner_2005, Baddeley_2015}. A 
 clustering of positive wells might be due to sample loading or analysis process 
-(systematical error). The outcome of an amplification can be no amplification at 
-all (less than 1 copy per volume), an unsaturated reaction with a 
+(systematic error). The outcome of an amplification can be no amplification 
+(less than 1 target copy per volume), an unsaturated reaction with a 
 binary/``multinary'' amplification (usable to calculate the ``concentration'') 
 or a saturated reaction where virtually all compartments are positive.
 
