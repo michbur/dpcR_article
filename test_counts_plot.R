@@ -1,7 +1,7 @@
 library(ggplot2)
 library(reshape2)
 
-size_mod <- -1
+size_mod <- 0
 cool_theme <- theme(plot.background=element_rect(fill = "transparent",
                                                  colour = "transparent"),
                     panel.grid.major = element_line(colour="lightgrey", linetype = "dashed"),
