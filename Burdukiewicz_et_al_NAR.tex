@@ -460,34 +460,32 @@ In the following section we show applications of the \textit{dpcR} package.
 
 \subsection{Evaluation of dPCR comparison methods}
 
-Two implemented approaches, GLM and multiple testing (MT) were compared over 
-<<<<<<< HEAD
-150.000 simulated array dPCR experiments. Each simulation contained six 
-runs. Three of them had roughly the same amount of molecules per run and 
-other three had 10 to 50 template molecules more. The GLM approach used 
-=======
-15\e{5} simulated array dPCR experiments. Each simulation contained six 
-reactions. Three of them had roughly the same amount of molecules per plate and 
-other three had experiments with 10 to 50 molecules more. The GLM approach used 
->>>>>>> 856a69c8e496cb4b4dd1a06ce96eb129bcc6f8c5
-binomial model and multiple testing framework employed ratio test.
+Two implemented approaches, GLM and \testit{multiple testing} (\testit{MT}) were compared over 
+5\e{4} simulated array dPCR experiments. Each simulation contained two runs that
+had the same amount of molecules per run and both frameworks were used to compare them. The 
+simulation was repeated 500 times on 10 different starting numbers of template molecules.
+The GLM approach used binomial model and \testit{MT} framework employed \textit{ratio test}.
 
-A single GLM comparison took roughly 183 times 
-longer than MT (on average 1.10 seconds versus 0.006 seconds on the Intel 
-i7-2600 processor). The difference growths with the number of experiments and 
-number of partitions (data not shown).
+\begin{figure}[t]
+\begin{center}
+\includegraphics[width=9cm]{success_rate.pdf}
+\end{center}
+\caption{Results of simulation. Multiple testing (MT) and generalized linear model (GLM) were compared in simulation study.}
+\label{ratiovsGLM}
+\end{figure}
+
+Both framework
+
+% A single GLM comparison took roughly 183 times 
+% longer than MT (on average 1.10 seconds versus 0.006 seconds on the Intel 
+% i7-2600 processor). The difference growths with the number of experiments and 
+% number of partitions (data not shown).
 
 On average, 2.03 and 1.98 reactions were assessed to a wrong group by 
 respectively GLM and MT (Figure~\ref{ratiovsGLM}).
 
 
-\begin{figure}[t]
-\begin{center}
-\includegraphics[width=9cm]{ratiovsGLM.pdf}
-\end{center}
-\caption{Results of simulation. Multiple testing (MT) and generalized linear model (GLM) were compared in simulation study. Vertical lines mark the average fraction of wrongly assigned experiments for both types of frameworks.}
-\label{ratiovsGLM}
-\end{figure}
+
 
 
 \subsection{Simultaneous confidence intervals}
