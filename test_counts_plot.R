@@ -20,15 +20,25 @@ cool_theme <- theme(plot.background=element_rect(fill = "transparent",
 
 load("test_count_eval.RData")
 
+
+# ratiovsGLM plot --------------------------
+
+vline_data <- aggregate(value ~ method, data = madpcr_comp, FUN = mean)
+
 pdf(file = "ratiovsGLM.pdf", pointsize = 1)
-ggplot(data=madpcr_comp, aes(x = value, fill = method)) +
-  geom_density(alpha = 0.3) + 
-  scale_fill_discrete("Multiple comparisons\nframework:") + 
+ggplot(data=madpcr_comp, aes(x = value, fill = method, colour = method)) +
+  geom_density(alpha = 0.5, size = 1.2) + 
+  scale_fill_discrete("Multiple comparisons framework:") + 
+  scale_colour_discrete("Multiple comparisons framework:") + 
   scale_y_continuous("Density") + 
   scale_x_continuous("Fraction of wrongly assigned experiments") + 
-  geom_vline(x = mean(madpcr_comp[["value"]]))
+  geom_vline(data = vline_data, mapping = aes(xintercept = value, colour = method), 
+             size = 1.2, alpha = 0.9) +
   cool_theme
 dev.off()
+
+
+# coverage plot --------------------------
 
 levels(m_coverage2[["method"]]) <- c("Adjusted\n(this study)", "Bhat", "Dube")
 
@@ -38,7 +48,7 @@ ggplot(m_coverage2, aes(x = prop, y = value, fill = method)) +
   scale_y_continuous("Probability coverage") + 
   scale_x_discrete(expression(lambda)) +
   scale_fill_discrete("Confidence intervals:") + 
-  geom_hline(y = 0.95, colour = "black", size = 2, linetype = 5) +
+  geom_hline(y = 0.95, colour = "black", size = 1.2, linetype = 5) +
   facet_wrap(~ coverage, nrow = 2) + 
   cool_theme
 dev.off()

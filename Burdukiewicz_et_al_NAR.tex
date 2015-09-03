@@ -460,8 +460,8 @@ In the following section we show applications of the \textit{dpcR} package.
 
 Two implemented approaches, GLM and multiple testing (MT) were compared over 
 150.000 simulated array dPCR experiments. Each simulation contained six 
-reactions. Three of them had roughly the same amount of molecules per plate and 
-other three had experiments with 10 to 50 molecules more. The GLM approach used 
+runs. Three of them had roughly the same amount of molecules per run and 
+other three had 10 to 50 template molecules more. The GLM approach used 
 binomial model and multiple testing framework employed ratio test.
 
 A single GLM comparison took roughly 183 times 
@@ -477,7 +477,7 @@ respectively GLM and MT (Figure~\ref{ratiovsGLM}).
 \begin{center}
 \includegraphics[width=9cm]{ratiovsGLM.pdf}
 \end{center}
-\caption{Results of simulation. Multiple testing (MT) and generalized linear model (GLM) were compared in simulation study.}
+\caption{Results of simulation. Multiple testing (MT) and generalized linear model (GLM) were compared in simulation study. Vertical lines mark the average fraction of wrongly assigned experiments for both types of frameworks.}
 \label{ratiovsGLM}
 \end{figure*}
 
