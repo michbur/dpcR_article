@@ -373,49 +373,8 @@ high-performing simulation in assumptions similar to Dube~\textit{et al.}~2008.
 
 \subsection{Comparison of dPCR experiments}
 
-\subsubsection[]{Generalized Linear Models -- GLM}
-
-Generalized Linear Models (GLM) are linear models for data, where the response 
-variables may have non-normal distributions (as binomially distributed positive 
-partitions in dPCR experiments). We employ a simplistic model reflecting 
-relationships in results of dPCR as given by:
-
-\begin{equation}
-\log{Y} = \beta^T X
-\end{equation}
-
-where $Y$ are counts, $X$ are experiments names (categorical data) and $\beta$ 
-are coefficients for every run. Moreover, $\exp{\beta} = 
-\lambda$. Estimated means copies per partitions obtained from the model are 
-compared each other using multiple t-test~\citep{bretz_2010}.
-
-Since the dPCR data is binomial, we advise to use binomial regression. It is 
-also possible to choose the Poisson regression, but such usage should be limited to 
-experimental settings where the concentration of template molecules in samples is 
-small (positive partitions contain very rarely more than 1 template particle). 
-
-\subsubsection[]{Multiple testing}
-
-The dPCR experiments are compared pairwise using the uniformly most powerful 
-(UMP) ratio test~\citep{fay_2010}. Furthermore, computed p-values are adjusted 
-using Benjamini-Hochberg correction~\citep{benjamini_1995} to control 
-family-wise error rate. The UMP ratio test has following null-hypothesis:
-\begin{equation}
-H_0: \frac{\lambda_1}{\lambda_2} = 1
-\end{equation}
-
-The Wilson's confidence intervals~\citep{brown_2001} are calculated 
-independently for every dPCR experiment and adjusted using Dunn~--~\v{S}id\'{a}k 
-correction, where:
-
-\begin{equation}
-\alpha_{\text{adj}} = 1 - (1 - \alpha)^\frac{1}{T}
-\end{equation}
-
-Such intervals are wider then usual, but ensure that confidence intervals 
-simultaneously contain the true value of $\lambda$. For example, the 0.95 CI 
-means that with with 0.95 probability of $\lambda$ is in the range of the 
-confidence intervals.
+In \cite{Burdukiewicz_tba} We implemented statistics based on Generalized Linear Models (GLM) and 
+\textit{multiple ratio testing} (\textit{MRT}) to compare dPCR experiments. 
 
 \subsection{Spatial distribution}
 
@@ -460,59 +419,7 @@ In the following section we show applications of the \textit{dpcR} package.
 
 \subsection{Evaluation of dPCR comparison methods}
 
-Two implemented approaches, GLM and \textit{multiple testing} (\textit{MT}) were compared over 
-5\e{4} simulated array dPCR experiments. Each simulation contained two runs that
-had the same amount of molecules per run and both frameworks were used to compare them. The 
-simulation was repeated 500 times on 10 different starting numbers of template molecules.
-The GLM approach used binomial model and \textit{MT} framework employed \textit{ratio test}.
-
-\begin{figure}[t]
-\begin{center}
-\includegraphics[width=9cm]{success_rate.pdf}
-\end{center}
-\caption{Results of simulation. Multiple testing (MT) and generalized linear model (GLM) were compared in simulation study.}
-\label{ratiovsGLM}
-\end{figure}
-
-Both framework
-
-% A single GLM comparison took roughly 183 times 
-% longer than MT (on average 1.10 seconds versus 0.006 seconds on the Intel 
-% i7-2600 processor). The difference growths with the number of experiments and 
-% number of partitions (data not shown).
-
-On average, 2.03 and 1.98 reactions were assessed to a wrong group by 
-respectively GLM and MT (Figure~\ref{ratiovsGLM}).
-
-
-
-
-
-\subsection{Simultaneous confidence intervals}
-
-Average coverage probability is the proportion of the time that the interval 
-contains the true value of $\lambda$.
-
-In Figure~\ref{coverage}, we show the results of simulated 1\e{6} droplet dPCR experiments (2\e{4} 
-droplets each) for each level of $\lambda$ (1.2\e{7} experiments total). We 
-computed average probability coverage of CI obtained by three methods: 
-Dube's~\citep{dube_mathematical_2008}, Bhat's~\citep{bhat_single_2009} and by 
-our MT ($\alpha = 0.95$).
-
-To assess simultaneous coverage probability, we randomly divided experiments 
-into 2.000 groups (500 experiments each) for each possible value of $\lambda$. We 
-counted frequency of groups in which all confidence intervals contain the true 
-value of $\lambda$.
-
-\begin{figure}[t]
-\begin{center}
-\includegraphics[width=9cm]{coverage.pdf}
-\end{center}
-\caption{Evaluation of confidence intervals implemented in the \textit{dpcR} 
-package. Average coverage probability is the proportion of the time that the 
-interval contains the true value of $\lambda$.}
-\label{coverage}
-\end{figure}
+TBD
 
 \subsection{Graphical user interface}
 
