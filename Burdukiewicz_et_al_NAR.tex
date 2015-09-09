@@ -123,7 +123,7 @@ the single molecule target regions follows a Poission distribution. The Poisson
 distribution appears like a normal distribution but without negative values and 
 being zero the lowest. First, a large number (n) of amplifications reactions as 
 required to have a high statistical power. Therefore, a high number of PCR 
-reactions is needed. For Poission distributions an n of XY (get reference from 
+reactions is needed. For Poisson distributions an n of XY (get reference from 
 table/text book form statistics/biostatistics?) is considered large. Second, that 
 the molecules required for the amplification amplifications reactions are 
 randomly distributed in the compartments. Visual analysis and statistical 
@@ -189,7 +189,7 @@ complex network of recursive dependencies (Figure~\ref{dpcR_framework}A). Core
 packages include \textit{qpcR} \cite{ritz_qpcr_2008}, \textit{shiny} 
 \cite{shiny}, \textit{MBmca} \cite{rodiger_surface_2013}, \textit{chipPCR} 
 \cite{roediger2015chippcr}. A basic design decision was to structure specific 
-properties of dPCR systems (dropet vs. chamber) in auxiliary functions. Selected 
+properties of dPCR systems (droplet vs. chamber) in auxiliary functions. Selected 
 chamber dPCR systems rely on the proper preprocessing of qPCR data. This 
 functionality is inherited from the \textit{qpcR} \textbf{R} package.
 
@@ -558,7 +558,7 @@ complicated workflows.
 \begin{center}
 \includegraphics[width=17cm]{GUI_RKWard_1.png}
 \end{center}
-\caption{\textit{dpcrReport()} function running in the graphical user interface and integrated development environment \textbf{RKWard}.}
+\caption{\textit{dpcReport()} function running in the graphical user interface and integrated development environment \textbf{RKWard}.}
 \label{GUI_RKWard_1}
 \end{figure*}
 
@@ -566,8 +566,8 @@ complicated workflows.
 
 In \cite{rodiger_r_2015} we gave an example where we re-analyze droplet dPCR 
 data from a Bio-Rad QX100 system with an early implementation of the 
-\textit{dpcR} package.
-
+\textit{dpcR} package. As recommended in the dMIQE guidelines 
+\cite{huggett_digital_2013} we included key elements in the report.
 \subsection{Availability}
 
 The \textit{dpcR} framework is available as open source software package (GPL-3 
@@ -601,7 +601,7 @@ to design, simulate and analyze experiments, and to verify their results (e.g.,
 confidence interval estimation), which should ultimately improve 
 reproducibility. We have built what we believe to be the first unified, 
 cross-platform, dMIQE compliant, open source software framework for 
-analyzing dPCR experiments. Our \textit{dpcR} framework is 
+analysing dPCR experiments. Our \textit{dpcR} framework is 
 targeted at a broad user base including end users in clinics, academics, 
 developers, and educators. We implemented existing statistical methods for dPCR 
 and suggest the introduction of a standardized dPCR nomenclature. Our 
@@ -613,7 +613,7 @@ technical developments, (III) as platform for teaching this new technology and
 dPCR experiments. The framework enables the simulations and predictions of Poisson 
 distribution for dPCR scenarios, the analysis of previously run dPCRs. Due to 
 the plug-in structure of the software it is possible to build custom-made 
-analyzers.
+analysers.
 
 We decided not to implement algorithms for clustering and ``rain'' (positive 
 droplets) definition of droplet dPCR data. This is because, there are several 
