@@ -89,24 +89,23 @@ frequencies, single-cell analysis, gene expression analysis and absolute quantif
 products. The chemical basis (e.g., buffer, primer) of the dPCR and thermal 
 cycling is similar to the real-time quantitative qPCR (qPCR). Though, approaches 
 based on isothermal amplification were also developed 
-\cite{pabinger_survey_2014, ludlow_2014, rodiger_r_2015}. A first proposal for a dPCR-like 
-approach and the use of the Poisson distribution to quantify the number of 
-molecules on a ``sample'' was shown by Ruano \textit{et al.} 1990 (PNAS) with 
-the single molecule dilution (SMD) PCR \cite{ruano_haplotype_1990}. In 1999 
-Vogelstein \textit{et al.} (PNAS) described the first true dPCR 
+\cite{pabinger_survey_2014, ludlow_2014, rodiger_r_2015}. A first proposal for a 
+dPCR-like approach and the use of the Poisson distribution to quantify the 
+number of molecules on a ``sample'' was shown by Ruano \textit{et al.} 1990 
+(PNAS) with the single molecule dilution (SMD) PCR \cite{ruano_haplotype_1990}. 
+In 1999 Vogelstein \textit{et al.} (PNAS) described the first true dPCR 
 \cite{vogelstein_digital_1999}. In contrast to qPCR, the amplification reaction 
 does not take place in a single reaction chamber. Rather its a process of clonal 
 amplification in small separate ``partitions'' (e.g., nl volume droplets of 
 water oil emulsions, chambers on micro structured chips). The number of positive 
 partition in relation to the number of total partitions. By applying Poisson 
 statistics it is possible to determine the number of the starting material in 
-given volume. Therefore, the dPCR does not require an external calibration 
-\cite{selck_increased_2013, rodiger_r_2015}. Since approximately ten years the 
-dPCR is gaining momentum in the mainstream user-base and will 
-likely have the same impact as the qPCR methodology \cite{huggett_qpcr_2015, 
-morley_digital_2014, rodiger_r_2015}. There is an intensive research on dPCR 
+given volume. Therefore, the dPCR does not require an external calibration. Since approximately ten years the 
+dPCR is gaining momentum in the mainstream user-base and will likely have the 
+same impact as the qPCR methodology. There is an intensive research on dPCR 
 platforms with the overall aim to make to technology broadly usable, cheap, 
-robust and to enable high sample throughput.
+robust and to enable high sample throughput \cite{selck_increased_2013, huggett_qpcr_2015, 
+morley_digital_2014, rodiger_r_2015}.
 
 % **************************************************************
 % Keep this command to avoid text of first page running into the
@@ -125,7 +124,7 @@ table/text book form statistics/biostatistics?) is considered large. Second, tha
 the molecules required for the amplification amplifications reactions are 
 randomly distributed in the compartments. Visual analysis and statistical 
 analysis can be used to test for randomness of the reaction and thus to exclude 
-the clustering of of positive reactions \cite{Baddeley_Turner_2005, Baddeley_2015}. A 
+the clustering of of positive reactions \cite{Baddeley_2015}. A 
 clustering of positive wells might be due to sample loading or analysis process 
 (systematic error). The outcome of an amplification can be no amplification 
 (less than 1 target copy per volume), an unsaturated reaction with a 
@@ -134,7 +133,7 @@ or a saturated reaction where virtually all compartments are positive.
 
 Chambers or emulsion based droplets are the dominant technical approaches to 
 create partitions for dPCR  reactions \cite{morley_digital_2014}. However, other 
-approaches based on beads were shown too \cite{shuga_2013}. Chamber based dPCR 
+approaches based on beads were shown too \cite{shuga_single_2013}. Chamber based dPCR 
 systems have fixed geometries, including the volume of the reaction chambers. 
 Despite the fact that dPCRs is an endpoint analysis the chamber based 
 technologies allow generally the real-time monitoring of the amplification 
@@ -156,7 +155,7 @@ dobnik_multiplex_2015}. Recently, Mathew \textit{et al.} published the open
 access bioinformatic pipeline, designated \textbf{definetherain} 
 \cite{jones_low_2014}. The tool is coded in JavaScript and has been made 
 available for free in a web browser. However, this is of limited use, since the 
-solutions are tied to a specific dPCR platform (e.g., droplet dPCR by Bio-Rad), 
+solutions are tied to the droplet dPCR by Bio-Rad, 
 operating system platform for data analysis and only usable for a single task. 
 Moreover, we found no software packages with GUIs and bindings to a 
 sophisticated statistical computing environment for reproducible research. 
@@ -166,12 +165,14 @@ sophisticated statistical computing environment for reproducible research.
 % first page footnotes
 %\enlargethispage{-65.1pt}
 % **************************************************************
-We have developed the framework \textit{dpcR} to perform analysis of dPCR 
-experiments for \textbf{R} software that is widely used for statistical analysis 
-of biomedical data and is freely available for the MacOS, Linux/Unix and Windows 
+In 2013 we started the developmen of the \textit{dpcR} framework to perform 
+analysis of dPCR experiments for \textbf{R} software 
+\citep{burdukiewicz_dpcr:_2013}. R is widely used for statistical analysis of 
+biomedical data and is freely available for the MacOS, Linux/Unix and Windows 
 operating systems. \textit{dpcR}  may be used in conjunction with literate 
 programming \textbf{R} packages (e.g., \textit{knitR}) and tools for 
-reproducible research (e.g.,  \textit{rctrack}) \cite{liu_r_2014, rodiger_r_2015}. 
+reproducible research (e.g.,  \textit{rctrack}) \cite{liu_r_2014, 
+rodiger_r_2015}. 
 
 \section{MATERIALS AND METHODS}
 
@@ -258,9 +259,9 @@ package source code.
 
 \subsubsection{Reading or importing data}
 
-\textbf{R} has a rich set of tool to arrange data (reshape \cite{Wickham_2007}) 
-in order to prepare them for the analysis. This is important when it comes to 
-the question how experiments should be treated.
+\textbf{R} has a rich set of tool to arrange data in order to prepare them for 
+the analysis. This is important when it comes to the question how experiments 
+should be treated \citep{rodiger_r_2015}.
 
 Most \textit{dpcR} import functions take a data matrix of annotated numeric 
 (e.g, fluorescence amplitude) and integer values (e.g., counts) as input. The 
@@ -268,14 +269,13 @@ Most \textit{dpcR} import functions take a data matrix of annotated numeric
 user (see Supplement). Such input files can be manually created in a spreadsheet 
 program or text editor.
 
-As described in \cite{ritz_qpcr_2008, perkins_readqpcr_2012, 
-pabinger_survey_2014, rodiger_r_2015}, there numerous methods to import 
-amplification curve data into the \textbf{R} workspace. Prior processing the 
-data for dPCR analysis it is recommended to use dedicated \textbf{R} packages, 
-such as \textit{chipPCR} \cite{roediger2015chippcr}, \textit{MBmca} 
-\cite{rodiger_surface_2013}, \textit{qpcR} \cite{ritz_qpcr_2008}, to pre-process 
-(e.g., removal of missing values, smoothing \cite{spiess_impact_2015}) the raw 
-data.
+There numerous methods to import amplification curve data into the \textbf{R} 
+workspace \cite{perkins_readqpcr_2012, pabinger_survey_2014, rodiger_r_2015}. 
+Prior processing the data for dPCR analysis it is recommended to use dedicated 
+\textbf{R} packages, such as \textit{chipPCR} \cite{roediger2015chippcr}, 
+\textit{MBmca} \cite{rodiger_surface_2013}, \textit{qpcR} \cite{ritz_qpcr_2008}, 
+to pre-process (e.g., removal of missing values, smoothing 
+\cite{spiess_impact_2015}) the raw data.
 
 (see Table \ref{table_formats}).
 
@@ -484,7 +484,7 @@ code is available from  https://github.com/michbur/dpcR.
 Currently, there exist different dPCR analysis software solutions provided by 
 the vendors. But most of the software packages are black boxes, which 
 prevent deep insight into the data processing step. Other and we think that 
-scientific software should be open \cite{morin_shining_2012, ince_case_2012, 
+scientific software should be open \cite{ince_case_2012, 
 rodiger_r_2015}. In addition, most of the software solutions are aimed to be 
 used in very specific scenarios and a mutual exclusive to alternative platforms 
 (e.g., droplet vs. chamber-based). We have chosen \textbf{R} because it is the 
