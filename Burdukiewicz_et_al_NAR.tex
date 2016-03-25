@@ -184,8 +184,8 @@ it is possible to track numerical errors \cite{rodiger_rkward_2012,
 rodiger_r_2015}. Most \textbf{R} packages depend on other packages 
 \cite{ooms_2013}. The same holds true for \textit{dpcR}. This results in a 
 complex network of recursive dependencies (Figure~\ref{dpcR_framework}A). Core 
-packages include \textit{qpcR} \cite{ritz_qpcr_2008}, \textit{shiny} 
-\cite{shiny}, \textit{MBmca} \cite{rodiger_surface_2013}, \textit{chipPCR} 
+packages include \textit{qpcR} \cite{ritz_qpcr_2008}, \textit{shiny}, 
+\textit{MBmca} \cite{rodiger_surface_2013}, \textit{chipPCR} 
 \cite{roediger2015chippcr}. A basic design decision was to structure specific 
 properties of dPCR systems (droplet vs. chamber) in auxiliary functions. Selected 
 chamber dPCR systems rely on the proper preprocessing of qPCR data. This 
@@ -381,7 +381,7 @@ partitions. Procedures belonging to spatial statistics verify if the status
 questions, we implemented a Complete Spatial Randomness test for dPCR arrays. 
 Moreover, we provide functionalities to export array dPCR data to \textbf{R} 
 packages specialized in spatial statistics as described in 
-\cite{Baddeley_Turner_2005}.
+\cite{Baddeley_2015}.
 
 \subsection{Converting qPCRs to dPCRs}
 
@@ -425,8 +425,7 @@ The critical functionalities of \textit{dpcR} package are implemented in the
 desktop PCR) and operating system independent implementation of a graphical user 
 interface. \textit{dpcReport} is based on \textit{shiny} technology and offers 
 an intuitive user interface, which can be accessed by browsers (e.g., Google 
-Chrome, Mozilla Firefox). The advanced plots are based on \textit{ggplot2} 
-\cite{Wickham_2009}.
+Chrome, Mozilla Firefox). The advanced plots are based on \textit{ggplot2} (see Supplement).
 
 The first panel ``Input file'' is responsible for loading the input data. Here 
 part of data input structure (e.g., ID of experiments) may be accessed and 
@@ -465,6 +464,16 @@ complicated workflows.
 \caption{\textit{dpcReport()} function running in the graphical user interface and integrated development environment \textbf{RKWard}.}
 \label{GUI_RKWard_1}
 \end{figure*}
+
+\subsection{Vendor independent data analysis}
+
+QX100 series is no longer available. Instead, the newer version QX200
+protocol
+consisting of the QX200 droplet generator (Bio-Rad, cat. no. 186-4002) and
+the QX200 droplet reader (Bio-Rad, cat. no. 186-4003) can be purchased,
+for which the protocol can be applied without changes. Alternative dPCR
+devices available from, e.g., RainDance Technologies, Life Technologies or
+JN Medsys \citep{mock_digital_2016}.
 
 \subsection{Automatic report generation}
 
@@ -522,7 +531,7 @@ analysers.
 We decided not to implement algorithms for clustering and ``rain'' (positive 
 droplets) definition of droplet dPCR data. This is because, there are several 
 \textbf{R} packages from flow-cytometer research. Implementations range from 
-manual to automatic clustering \cite{le_meur_computational_2013, Malek15022015, 
+manual to automatic clustering \cite{le_meur_computational_2013, milbury_determining_2014, Malek15022015, 
 trypsteen_ddpcrquant_2015}. Moreover, discussion with our peers and the 
 literature suggest that a consensus of an appropriate method for dPCR is not 
 available \cite{trypsteen_ddpcrquant_2015}.
