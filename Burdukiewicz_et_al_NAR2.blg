@@ -1,0 +1,46 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: Burdukiewicz_et_al_NAR2.aux
+The style file: plain.bst
+Database file #1: dpcr.bib
+You've used 41 entries,
+            2118 wiz_defined-function locations,
+            743 strings with 13884 characters,
+and the built_in function-call counts, 17259 in all, are:
+= -- 1609
+> -- 1184
+< -- 0
++ -- 471
+- -- 426
+* -- 1611
+:= -- 3000
+add.period$ -- 124
+call.type$ -- 41
+change.case$ -- 335
+chr.to.int$ -- 0
+cite$ -- 41
+duplicate$ -- 451
+empty$ -- 1066
+format.name$ -- 426
+if$ -- 3337
+int.to.chr$ -- 0
+int.to.str$ -- 41
+missing$ -- 42
+newline$ -- 209
+num.names$ -- 82
+pop$ -- 258
+preamble$ -- 1
+purify$ -- 295
+quote$ -- 0
+skip$ -- 289
+stack$ -- 0
+substring$ -- 1069
+swap$ -- 41
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 162
+warning$ -- 0
+while$ -- 150
+width$ -- 43
+write$ -- 455

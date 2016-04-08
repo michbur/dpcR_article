@@ -12,7 +12,7 @@
 
 \begin{document}
 
-\title{\textit{dpcR} a Swiss-army knife for the analysis of digital PCR 
+\title{\textit{dpcR}: web server and R package for analysis of digital PCR 
 experiments}
 
 \author{%
@@ -95,76 +95,54 @@ open framework, which can be easily adapted to the growing knowledge in dPCR.
 The digital PCR (dPCR) is an important contender for precise nucleic acids 
 quantifications. Application of the dPCR include investigation of allele 
 frequencies, single-cell analysis, gene expression analysis and absolute 
-quantification of PCR products. The chemical basis (e.g., buffer, primer) of 
-the 
+quantification of PCR products. The chemical basis (e.g., buffer, primer) of the 
 dPCR and thermal cycling is similar to the real-time quantitative qPCR (qPCR). 
 Though, approaches based on isothermal amplification were also developed 
-\cite{pabinger_survey_2014, ludlow_2014, rodiger_r_2015}. A first proposal for 
-a 
+\cite{pabinger_survey_2014, ludlow_2014, rodiger_r_2015}. A first proposal for a 
 dPCR-like approach and the use of the Poisson distribution to quantify the 
 number of molecules on a ``sample'' was shown by Ruano \textit{et al.} 1990 
 (PNAS) with the single molecule dilution (SMD) PCR \cite{ruano_haplotype_1990}. 
 In 1999 Vogelstein \textit{et al.} (PNAS) described the first true dPCR 
-\cite{vogelstein_digital_1999}. In contrast to qPCR, the amplification reaction 
-does not take place in a single reaction chamber. Rather its a process of 
-clonal 
-amplification in small separate ``partitions'' (e.g., nl volume droplets of 
-water oil emulsions, chambers on micro structured chips). The number of 
-positive 
-partition in relation to the number of total partitions. By applying Poisson 
-statistics it is possible to determine the number of the starting material in 
-given volume. Therefore, the dPCR does not require an external calibration. 
-Since approximately ten years the dPCR is gaining momentum in the mainstream 
-user-base and will likely have the same impact as the qPCR methodology. There 
-is 
-an intensive research on dPCR platforms with the overall aim to make to 
-technology broadly usable, cheap, robust and to enable high sample throughput 
-\cite{selck_increased_2013, huggett_qpcr_2015, morley_digital_2014, 
-rodiger_r_2015}.
+\cite{vogelstein_digital_1999}. Since approximately ten years the dPCR is 
+rapidly gaining momentum in the mainstream user-base and will likely have the 
+same impact as the qPCR methodology. There is an intensive research on dPCR 
+platforms with the overall aim to make to technology broadly usable, cheap, 
+robust and to enable high sample throughput \cite{selck_increased_2013, 
+huggett_qpcr_2015, morley_digital_2014}. 
 
 % **************************************************************
 % Keep this command to avoid text of first page running into the
 % first page footnotes
 \enlargethispage{-65.1pt}
 % **************************************************************
-  
-The dPCR has some principle assumptions and fundamental properties. First of 
-all 
-the chemical reaction should be unaffected by inhibitors. The distribution of 
-the single molecule target regions follows a Poission distribution. The Poisson 
-distribution appears like a normal distribution but without negative values and 
-being zero the lowest. First, a large number (n) of amplifications reactions as 
-required to have a high statistical power. Therefore, a high number of PCR 
-reactions is needed. For Poisson distributions an n of XY (get reference from 
-table/text book form statistics/biostatistics?) is considered large. Second, 
-that the molecules required for the amplification amplifications reactions are 
-randomly distributed in the compartments. Visual analysis and statistical 
-analysis can be used to test for randomness of the reaction and thus to exclude 
-the clustering of of positive reactions \cite{Baddeley_2015}. A clustering of 
-positive wells might be due to sample loading or analysis process (systematic 
-error). The outcome of an amplification can be no amplification (less than 1 
-target copy per volume), an unsaturated reaction with a binary/``multinary'' 
-amplification (usable to calculate the ``concentration'') or a saturated 
-reaction where virtually all compartments are positive.
 
-Chambers or emulsion based droplets are the dominant technical approaches to 
-create partitions for dPCR  reactions \cite{morley_digital_2014}. However, 
-other 
-approaches based on beads were shown too \cite{shuga_single_2013}. Chamber 
-based 
-dPCR systems have fixed geometries, including the volume of the reaction 
-chambers. Despite the fact that dPCRs is an endpoint analysis the chamber based 
-technologies allow generally the real-time monitoring of the amplification 
-reaction and subsequent confirmation of the amplification reaction be melting 
-curve analysis \cite{mojtahedi_2014}. Thus, such technologies enable easier 
-trouble shooting and quality management of the data. However, the downside of 
-these technologies is the fixed limited number of compartments and the price. 
-The emulsion based dPCRs are easier to perform since the compartments are 
-generated by microfluidic technologies and have practically no limitation 
-regarding the number of compartments. This results in a higher statistical 
-power 
-to quantify small differences in sample quantities. The emulsion chambers are 
-made of water-in-oil emulsions with similar sizes.
+On the opposite to qPCR, dPCR consists of multiple amplifications occurring in 
+numerous small ``partitions'' (e.g., nl volume droplets of water oil 
+emulsions, chambers on micro structured chips). The result of dPCR is a binary 
+vector describing states of partitions (positive in case of detected 
+amplification, negative otherwise). The amplification in positive partitions 
+indicates the presence of one or more template molecules. It is assumed that 
+distribution of template molecules over partitions is described appropriately 
+by the Poisson distribution. This probability distribution is parametrized 
+using only single parameter, $\lambda$, which may be interpreted as the mean 
+number of template molecules per partition. The relationship between 
+$\lambda$, the number of positive partitions $k$ and the total number of 
+partitions $n$ is as follows:
+\begin{equation}
+ \lambda = -\log{\left( 1 - \frac{k}{n} \right)}
+\end{equation}
+
+Knowing the $\lambda$ and volume of the single partition, the computation of 
+the concentration of a template in the sample seems to be trivial, yet methods 
+of analysis of dPCR results are still emerging.
+
+PARAGRAPH FOR METHODS
+
+The variety of existing methods is disproportionate to the number of software 
+packages dedicated to analysis of dPCR experiments. Most of the software is 
+distributed by vendors of dPCR systems and directly tied to their hardware. 
+The lack of an uniform framework hinders a comparison of results from different 
+systems.
 
 There is a need for an vendor independent data analysis. For example, others 
 have written custom made scripts for data analysis in \textbf{Mathematica} 

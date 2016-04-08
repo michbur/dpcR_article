@@ -1,0 +1,278 @@
+\begin{thebibliography}{10}
+
+\bibitem{Baaaath_2012}
+Rasmus B{\aa}{\aa}th.
+\newblock {The State of Naming Conventions in {R}}.
+\newblock {\em {The R Journal}}, 4(2):74--75, December 2012.
+
+\bibitem{Baddeley_2015}
+Adrian Baddeley, Ege Rubak, and Rolf Turner.
+\newblock {\em Spatial Point Patterns: Methodology and Applications with {R}}.
+\newblock Chapman and Hall/CRC Press, London, 2015.
+\newblock In press.
+
+\bibitem{bhat_single_2009}
+Somanath Bhat, Jan Herrmann, Paul Armishaw, Philippe Corbisier, and Kerry~R
+  Emslie.
+\newblock Single molecule detection in nanofluidic digital array enables
+  accurate measurement of {DNA} copy number.
+\newblock {\em {Analytical and Bioanalytical Chemistry}}, 394(2):457--467, May
+  2009.
+
+\bibitem{brown_2001}
+Lawrence~D. Brown, T.~Tony Cai, and Anirban DasGupta.
+\newblock Interval estimation for a binomial proportion.
+\newblock {\em Statist. Sci.}, 16(2):101--133, May 2001.
+
+\bibitem{Burdukiewicz_tba}
+Micha\l{} Burdukiewicz, Stefan R\"{o}diger, Piotr Sobczyk, Peter Schierack, and
+  Pawe\l{} Mackiewicz.
+\newblock Methods of comparing digital {PCR} experiments.
+\newblock {\em Biomolecular Detection and Quantification}, 28(NN):NN--NN, tba.
+
+\bibitem{burdukiewicz_dpcr:_2013}
+Micha\l{} Burdukiewicz, Andrej-Nikolai Spiess, Peter Schierack, and Stefan
+  R\"{o}diger.
+\newblock {dpcR}: an {R} package for the analysis of digital {PCR}.
+\newblock {\em F1000Research}, 5, September 2013.
+
+\bibitem{dobnik_multiplex_2015}
+David Dobnik, Bjørn Spilsberg, Alexandra Bogožalec~Košir, Arne Holst-Jensen,
+  and Jana Žel.
+\newblock Multiplex {Quantification} of 12 {European} {Union} {Authorized}
+  {Genetically} {Modified} {Maize} {Lines} with {Droplet} {Digital}
+  {Polymerase} {Chain} {Reaction}.
+\newblock {\em Analytical Chemistry}, 87(16):8218--8226, August 2015.
+
+\bibitem{dorazio_statistical_2015}
+Robert~M. Dorazio and Margaret~E. Hunter.
+\newblock Statistical {Models} for the {Analysis} and {Design} of {Digital}
+  {Polymerase} {Chain} {Reaction} ({dPCR}) {Experiments}.
+\newblock {\em Analytical Chemistry}, 87(21):10886--10893, November 2015.
+
+\bibitem{dreo_optimising_2014}
+Tanja Dreo, Manca Pirc, Živa Ramšak, Jernej Pavšič, Mojca Milavec, Jana
+  Žel, and Kristina Gruden.
+\newblock Optimising droplet digital {PCR} analysis approaches for detection
+  and quantification of bacteria: a case study of fire blight and potato brown
+  rot.
+\newblock {\em Analytical and Bioanalytical Chemistry}, 406(26):6513--6528,
+  August 2014.
+
+\bibitem{dube_mathematical_2008}
+Simant Dube, Jian Qin, and Ramesh Ramakrishnan.
+\newblock Mathematical analysis of copy number variation in a {DNA} sample
+  using digital {PCR} on a nanofluidic device.
+\newblock {\em {PloS} one}, 3(8):e2876, 2008.
+
+\bibitem{gentleman_2004}
+Robert~C Gentleman, Vincent~J Carey, Douglas~M Bates, Ben Bolstad, Marcel
+  Dettling, Sandrine Dudoit, Byron Ellis, Laurent Gautier, Yongchao Ge, Jeff
+  Gentry, Kurt Hornik, Torsten Hothorn, Wolfgang Huber, Stefano Iacus, Rafael
+  Irizarry, Friedrich Leisch, Cheng Li, Martin Maechler, Anthony~J Rossini,
+  Gunther Sawitzki, Colin Smith, Gordon Smyth, Luke Tierney, Jean Y~H Yang, and
+  Jianhua Zhang.
+\newblock {Bioconductor: open software development for computational biology
+  and bioinformatics}.
+\newblock {\em Genome biology}, 5(10):R80, 2004.
+
+\bibitem{huggett_digital_2013}
+Jim~F Huggett, Carole~A Foy, Vladimir Benes, Kerry Emslie, Jeremy~A Garson,
+  Ross Haynes, Jan Hellemans, Mikael Kubista, Reinhold~D Mueller, Tania Nolan,
+  Michael~W Pfaffl, Gregory~L Shipley, Jo~Vandesompele, Carl~T Wittwer, and
+  Stephen~A Bustin.
+\newblock The digital {MIQE} guidelines: Minimum information for publication of
+  quantitative digital {PCR} experiments.
+\newblock {\em {Clinical Chemistry}}, 59(6):892--902, June 2013.
+
+\bibitem{huggett_qpcr_2015}
+Jim~F. Huggett, Justin O’Grady, and Stephen Bustin.
+\newblock {qPCR}, {dPCR}, {NGS} – {A} journey.
+\newblock {\em Biomolecular Detection and Quantification}, 3:A1--A5, March
+  2015.
+
+\bibitem{ince_case_2012}
+Darrel~C. Ince, Leslie Hatton, and John Graham-Cumming.
+\newblock The case for open computer programs.
+\newblock {\em Nature}, 482(7386):485--488, February 2012.
+
+\bibitem{jacobs_2014}
+Bart~KM Jacobs, Els Goetghebeur, and Lieven Clement.
+\newblock Impact of variance components on reliability of absolute
+  quantification using digital pcr.
+\newblock {\em {BMC Bioinformatics}}, 15(1):283, 2014.
+
+\bibitem{jones_low_2014}
+Mathew Jones, James Williams, Kathleen G\"{a}rtner, Rodney Phillips, Jacob
+  Hurst, and John Frater.
+\newblock Low copy target detection by {Droplet} {Digital} {PCR} through
+  application of a novel open access bioinformatic pipeline,
+  ‘definetherain’.
+\newblock {\em Journal of Virological Methods}, 202(100):46--53, June 2014.
+
+\bibitem{le_meur_computational_2013}
+Nolwenn Le~Meur.
+\newblock Computational methods for evaluation of cell-based data
+  assessment—{Bioconductor}.
+\newblock {\em Current Opinion in Biotechnology}, 24(1):105--111, February
+  2013.
+
+\bibitem{liu_r_2014}
+Zhifa Liu, Stan Pounds, Zhifa Liu, and Stan Pounds.
+\newblock An {R} package that automatically collects and archives details for
+  reproducible computing.
+\newblock {\em BMC Bioinformatics}, 15(1):138, May 2014.
+
+\bibitem{ludlow_2014}
+Andrew~T. Ludlow, Jerome~D. Robin, Mohammed Sayed, Claudia~M. Litterst,
+  Dawne~N. Shelton, Jerry~W. Shay, and Woodring~E. Wright.
+\newblock Quantitative telomerase enzyme activity determination using droplet
+  digital {PCR} with single cell resolution.
+\newblock {\em {Nucleic Acids Research}}, 42(13):e104--e104, July 2014.
+
+\bibitem{Malek15022015}
+Mehrnoush Malek, Mohammad~Jafar Taghiyar, Lauren Chong, Greg Finak, Raphael
+  Gottardo, and Ryan~R. Brinkman.
+\newblock flowdensity: reproducing manual gating of flow cytometry data by
+  automated density-based cell population identification.
+\newblock {\em Bioinformatics}, 31(4):606--607, 2015.
+
+\bibitem{milbury_determining_2014}
+Coren~A. Milbury, Qun Zhong, Jesse Lin, Miguel Williams, Jeff Olson, Darren~R.
+  Link, and Brian Hutchison.
+\newblock Determining lower limits of detection of digital {PCR} assays for
+  cancer-related gene mutations.
+\newblock {\em Biomolecular Detection and Quantification}, 1(1):8--22,
+  September 2014.
+
+\bibitem{mock_digital_2016}
+Ulrike Mock, Ilona Hauber, and Boris Fehse.
+\newblock Digital {PCR} to assess gene-editing frequencies ({GEF}-{dPCR})
+  mediated by designer nucleases.
+\newblock {\em Nature Protocols}, 11(3):598--615, March 2016.
+
+\bibitem{mojtahedi_2014}
+Mitra Mojtahedi, Aymeric Fouquier d'Hérouël, and Sui Huang.
+\newblock Direct elicitation of template concentration from quantification
+  cycle ({Cq}) distributions in digital {PCR}.
+\newblock {\em {Nucleic Acids Research}}, 42(16):e126--e126, September 2014.
+
+\bibitem{morley_digital_2014}
+Alexander~A. Morley.
+\newblock Digital {PCR}: {A} brief history.
+\newblock {\em {Biomolecular Detection and Quantification}}, 1(1):1--2, 2014.
+
+\bibitem{ooms_2013}
+Jeroen Ooms.
+\newblock Directions for improved dependency versioning in {R}.
+\newblock {\em The R Journal}, 5(1):197--207, 2013.
+
+\bibitem{pabinger_survey_2014}
+Stephan Pabinger, Stefan R\"{o}diger, Albert Kriegner, Klemens Vierlinger, and
+  Andreas Weinh\"{a}usel.
+\newblock A survey of tools for the analysis of quantitative {PCR} ({qPCR})
+  data.
+\newblock {\em {Biomolecular Detection and Quantification}}, 1(1):23--33, 2014.
+
+\bibitem{perkins_readqpcr_2012}
+James~R. Perkins, John~M. Dawes, Steve~B. McMahon, David~LH Bennett, Christine
+  Orengo, and Matthias Kohl.
+\newblock {ReadqPCR} and {NormqPCR}: {R} packages for the reading, quality
+  checking and normalisation of {RT}-{qPCR} quantification cycle ({Cq}) data.
+\newblock {\em BMC Genomics}, 13(1):296, July 2012.
+
+\bibitem{ritz_qpcr_2008}
+Christian Ritz and Andrej-Nikolai Spiess.
+\newblock {qpcR}: an {R} package for sigmoidal model selection in quantitative
+  real-time polymerase chain reaction analysis.
+\newblock {\em {Bioinformatics}}, 24(13):1549--1551, January 2008.
+
+\bibitem{rodiger_surface_2013}
+Stefan R\"{o}diger, Alexander B\"{o}hm, and Ingolf Schimke.
+\newblock Surface {Melting} {Curve} {Analysis} with {R}.
+\newblock {\em {The R Journal}}, 5(2):37--53, December 2013.
+
+\bibitem{rodiger_r_2015}
+Stefan R\"{o}diger, Micha\l{} Burdukiewicz, Konstantin~A. Blagodatskikh, and
+  Peter Schierack.
+\newblock R as an {Environment} for the {Reproducible} {Analysis} of {DNA}
+  {Amplification} {Experiments}.
+\newblock {\em {The R Journal}}, 7(2):127--150, 2015.
+
+\bibitem{roediger2015chippcr}
+Stefan R{\"o}diger, Micha{\l} Burdukiewicz, and Peter Schierack.
+\newblock {chipPCR: an R package to pre-process raw data of amplification
+  curves}.
+\newblock {\em Bioinformatics}, 31(17):2900--2902, 2015.
+
+\bibitem{rodiger_rkward_2012}
+Stefan R{\"o}diger, Thomas Friedrichsmeier, Prasenjit Kapat, and Meik Michalke.
+\newblock {{RKWard:} A Comprehensive Graphical User Interface and Integrated
+  Development Environment for Statistical Analysis with {R}}.
+\newblock {\em Journal of Statistical Software}, 49(9):1--34, 2012.
+
+\bibitem{ruano_haplotype_1990}
+G.~Ruano, K.~K. Kidd, and J.~C. Stephens.
+\newblock Haplotype of multiple polymorphisms resolved by enzymatic
+  amplification of single {DNA} molecules.
+\newblock {\em Proceedings of the National Academy of Sciences},
+  87(16):6296--6300, January 1990.
+
+\bibitem{ruijter_2013}
+Jan~M Ruijter, Michael~W Pfaffl, Sheng Zhao, Andrej~N Spiess, Gregory Boggy,
+  Jochen Blom, Robert~G Rutledge, Davide Sisti, Antoon Lievens, Katleen {De
+  Preter}, Stefaan Derveaux, Jan Hellemans, and Jo~Vandesompele.
+\newblock {Evaluation of {qPCR} curve analysis methods for reliable biomarker
+  discovery: bias, resolution, precision, and implications}.
+\newblock {\em Methods (San Diego, Calif.)}, 59(1):32--46, 2013.
+
+\bibitem{selck_increased_2013}
+David~A. Selck, Mikhail~A. Karymov, Bing Sun, and Rustem~F. Ismagilov.
+\newblock Increased {Robustness} of {Single}-{Molecule} {Counting} with
+  {Microfluidics}, {Digital} {Isothermal} {Amplification}, and a {Mobile}
+  {Phone} versus {Real}-{Time} {Kinetic} {Measurements}.
+\newblock {\em {Analytical Chemistry}}, 85(22):11129--11136, November 2013.
+
+\bibitem{spiess_impact_2015}
+Andrej-Nikolai Spiess, Claudia Deutschmann, Micha\l{} Burdukiewicz, Ralf
+  Himmelreich, Katharina Klat, Peter Schierack, and Stefan R\"{o}diger.
+\newblock Impact of {Smoothing} on {Parameter} {Estimation} in {Quantitative}
+  {DNA} {Amplification} {Experiments}.
+\newblock {\em {Clinical Chemistry}}, 61(2):379--388, January 2015.
+
+\bibitem{strain_highly_2013}
+Matthew~C Strain, Steven~M Lada, Tiffany Luong, Steffney~E Rought, Sara
+  Gianella, Valeri~H Terry, Celsa~A Spina, Christopher~H Woelk, and Douglas~D
+  Richman.
+\newblock Highly precise measurement of {HIV} {DNA} by droplet digital {PCR}.
+\newblock {\em {PloS} one}, 8(4):e55943, 2013.
+
+\bibitem{trypsteen_ddpcrquant_2015}
+Wim Trypsteen, Matthijs Vynck, Jan De~Neve, Pawel Bonczkowski, Maja Kiselinova,
+  Eva Malatinkova, Karen Vervisch, Olivier Thas, Linos Vandekerckhove, and Ward
+  De~Spiegelaere.
+\newblock {ddpcRquant}: threshold determination for single channel droplet
+  digital {PCR} experiments.
+\newblock {\em Analytical and Bioanalytical Chemistry}, 407(19):5827--5834,
+  July 2015.
+
+\bibitem{vogelstein_digital_1999}
+Bert Vogelstein and Kenneth~W Kinzler.
+\newblock Digital {PCR}.
+\newblock {\em {Proceedings of the National Academy of Sciences of the United
+  States of America}}, 96(16):9236--9241, August 1999.
+
+\bibitem{whale_comparison_2012}
+Alexandra~S Whale, Jim~F Huggett, Simon Cowen, Valerie Speirs, Jacqui Shaw,
+  Stephen Ellison, Carole~A Foy, and Daniel~J Scott.
+\newblock Comparison of microfluidic digital {PCR} and conventional
+  quantitative {PCR} for measuring copy number variation.
+\newblock {\em {Nucleic Acids Research}}, 40(11):e82, June 2012.
+
+\bibitem{white_digital_2009}
+Richard~A White, 3rd, Paul~C Blainey, H~Christina Fan, and Stephen~R Quake.
+\newblock Digital {PCR} provides sensitive and absolute calibration for high
+  throughput sequencing.
+\newblock {\em {BMC} genomics}, 10:116, 2009.
+
+\end{thebibliography}
