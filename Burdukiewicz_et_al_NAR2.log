@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.3.1)  8 APR 2016 14:40
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.3.1)  9 APR 2016 13:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -583,198 +583,142 @@ LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <7.5> not available
 
 
 ]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 185.
+Underfull \hbox (badness 1152) in paragraph at lines 147--157
+\OT1/ptm/m/n/10 in \OT1/ptm/b/n/10 Mathematica \OT1/ptm/m/n/10 (Wolfram Researc
+h) ([]), \OT1/ptm/b/n/10 MS EXCEL
+ []
 
+
+Underfull \hbox (badness 2521) in paragraph at lines 147--157
+\OT1/ptm/m/n/10 (Microsoft) ([]) or \OT1/ptm/b/n/10 R \OT1/ptm/m/n/10 ([], []).
+ In addition, web-servers
+ []
+
+
+Underfull \hbox (badness 2990) in paragraph at lines 147--157
+\OT1/ptm/m/n/10 for analysis of dPCR data are emerging as the open
+ []
+
+
+Underfull \hbox (badness 4819) in paragraph at lines 158--162
+\OT1/ptm/m/n/10 dPCR data. The absence of graphical user interfaces
+ []
+
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 195.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-! Undefined control sequence.
-\reserved@b ->\artdir 
-                      
-l.202 width=17cm]{dpcR_analysis.pdf}
-                                    
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\reserved@b ->\artdir 
-                      
-l.202 width=17cm]{dpcR_analysis.pdf}
-                                    
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-LaTeX Warning: File `dpcR_analysis.pdf' not found on input line 202.
-
-
-! Package pdftex.def Error: File `dpcR_analysis.pdf' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.202 width=17cm]{dpcR_analysis.pdf}
-                                    
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 210.
-! Undefined control sequence.
-\reserved@b ->\artdir 
-                      
-l.217 width=17cm]{dpcR_analysis.pdf}
-                                    
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 220.
 
-! Undefined control sequence.
-\reserved@b ->\artdir 
-                      
-l.217 width=17cm]{dpcR_analysis.pdf}
-                                    
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-LaTeX Warning: File `dpcR_analysis.pdf' not found on input line 217.
-
-
-! Package pdftex.def Error: File `dpcR_analysis.pdf' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.217 width=17cm]{dpcR_analysis.pdf}
-                                    
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Underfull \hbox (badness 1127) in paragraph at lines 224--237
+Underfull \hbox (badness 1127) in paragraph at lines 234--247
 []\OT1/ptm/m/n/10 Figure 2[] provides an overview of important functions
  []
 
 
-Underfull \hbox (badness 2512) in paragraph at lines 240--244
+Underfull \hbox (badness 2512) in paragraph at lines 250--254
 \OT1/ptm/m/n/10 and output formats. The documentation is available as
  []
 
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 248.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 258.
 
-Underfull \hbox (badness 10000) in paragraph at lines 253--255
+Underfull \hbox (badness 10000) in paragraph at lines 263--265
 []\OT1/ptm/m/n/10 The following convention was kept, both in the
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 304--304
+Underfull \hbox (badness 10000) in alignment at lines 314--314
 [][][][] 
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 304--304
+Underfull \hbox (badness 10000) in alignment at lines 314--314
 [][][][] 
  []
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 304.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 314.
 
-Underfull \hbox (badness 4108) in paragraph at lines 309--315
+Underfull \hbox (badness 4108) in paragraph at lines 319--325
  \OT1/ptm/m/it/10 De novo creation of dpcR objects from raw data[] \OT1/ptm/m/n
 /10 In
  []
 
 [2]
-Underfull \hbox (badness 1721) in paragraph at lines 331--337
+Underfull \hbox (badness 1721) in paragraph at lines 341--347
 \OT1/ptm/m/n/10 for reproducible research. So far no cross-platform and
  []
 
 
-Underfull \hbox (badness 1292) in paragraph at lines 349--355
+Underfull \hbox (badness 1292) in paragraph at lines 359--365
 \OT1/ptm/m/n/10 follow the Poisson distribution. We implemented several
  []
 
 
-Underfull \hbox (badness 1596) in paragraph at lines 357--365
+Underfull \hbox (badness 1596) in paragraph at lines 367--375
 \OT1/ptm/m/n/10 than $\OML/cmm/m/it/10 m$\OT1/ptm/m/n/10 . They are beneficial 
 for uncertainty calculation,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 368--375
+Underfull \hbox (badness 10000) in paragraph at lines 378--385
 \OT1/ptm/m/n/10 elsewhere in peer-reviewed publications. The method
  []
 
 
-Underfull \hbox (badness 6348) in paragraph at lines 368--375
+Underfull \hbox (badness 6348) in paragraph at lines 378--385
 \OT1/ptm/m/n/10 template molecules over partitions. The procedure in
  []
 
 
-Underfull \hbox (badness 5091) in paragraph at lines 368--375
+Underfull \hbox (badness 5091) in paragraph at lines 378--385
 \OT1/ptm/m/n/10 including such phenomena as ``rain''. We also added
  []
 
-[3]
-Underfull \hbox (badness 1052) in paragraph at lines 395--406
+
+Underfull \hbox (badness 1052) in paragraph at lines 405--416
 \OT1/ptm/m/n/10 High-Throughput qPCR is a well established and robust
  []
 
 
-Underfull \hbox (badness 1546) in paragraph at lines 395--406
+Underfull \hbox (badness 1546) in paragraph at lines 405--416
 \OT1/ptm/m/n/10 technology, which allows precise quantification of DNA
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 395--406
+Underfull \hbox (badness 10000) in paragraph at lines 405--416
 \OT1/ptm/m/n/10 material in high throughput fashion. However, the
  []
 
 
-Underfull \hbox (badness 1675) in paragraph at lines 395--406
+Underfull \hbox (badness 1675) in paragraph at lines 405--416
 \OT1/ptm/m/n/10 quantification by qPCR is challenging at very low and
  []
 
-<qpcr2pp_1.png, id=31, 486.618pt x 481.8pt>
+<qpcr2pp_1.png, id=28, 486.618pt x 481.8pt>
 File: qpcr2pp_1.png Graphic file (type png)
  <use qpcr2pp_1.png>
-Package pdftex.def Info: qpcr2pp_1.png used on input line 411.
+Package pdftex.def Info: qpcr2pp_1.png used on input line 421.
 (pdftex.def)             Requested size: 256.0748pt x 253.54427pt.
 
-Overfull \hbox (9.0748pt too wide) in paragraph at lines 411--412
+Overfull \hbox (9.0748pt too wide) in paragraph at lines 421--422
  [] 
  []
 
-
-Underfull \hbox (badness 1210) in paragraph at lines 442--454
+[3]
+Underfull \hbox (badness 1210) in paragraph at lines 452--464
 []\OT1/ptm/m/n/10 The first panel ``Input file'' is responsible for loading
  []
 
 
-Underfull \hbox (badness 2088) in paragraph at lines 442--454
+Underfull \hbox (badness 2088) in paragraph at lines 452--464
 \OT1/ptm/m/n/10 analysis'' consists of more specialized functionalities as
  []
 
 
-Underfull \hbox (badness 1527) in paragraph at lines 455--471
+Underfull \hbox (badness 1527) in paragraph at lines 465--481
 []\OT1/ptm/m/n/10 An interesting feature of the \OT1/ptm/m/it/10 shiny \OT1/ptm
 /m/n/10 technology is the
  []
@@ -782,45 +726,47 @@ Underfull \hbox (badness 1527) in paragraph at lines 455--471
 <GUI_RKWard_1.png, id=33, 963.6pt x 730.22812pt>
 File: GUI_RKWard_1.png Graphic file (type png)
  <use GUI_RKWard_1.png>
-Package pdftex.def Info: GUI_RKWard_1.png used on input line 475.
+Package pdftex.def Info: GUI_RKWard_1.png used on input line 485.
 (pdftex.def)             Requested size: 483.69684pt x 366.55052pt.
 
-[4 <./qpcr2pp_1.png>]
-Underfull \hbox (badness 2556) in paragraph at lines 500--504
+Underfull \hbox (badness 2556) in paragraph at lines 510--514
 \OT1/ptm/m/n/10 package (GPL-3 or later) as part of the Bioconductor
  []
 
 
-Underfull \hbox (badness 6396) in paragraph at lines 500--504
+Underfull \hbox (badness 6396) in paragraph at lines 510--514
 \OT1/ptm/m/n/10 project.org/web/packages/dpcR and the source code is
  []
 
 
-Underfull \hbox (badness 3158) in paragraph at lines 507--521
+Underfull \hbox (badness 3158) in paragraph at lines 517--531
 \OT1/ptm/m/n/10 Currently, there exist different dPCR analysis software
  []
 
 
-Underfull \hbox (badness 2027) in paragraph at lines 522--524
+Underfull \hbox (badness 2027) in paragraph at lines 532--534
 []\OT1/ptm/m/n/10 Functions included may be used to simulate dPCRs,
  []
 
-
-Underfull \hbox (badness 1867) in paragraph at lines 527--544
+[4 <./qpcr2pp_1.png>]
+Underfull \hbox (badness 1867) in paragraph at lines 537--554
 \OT1/ptm/m/n/10 dMIQE compliant, open source software framework for
  []
 
 
-Underfull \hbox (badness 3492) in paragraph at lines 527--544
+Underfull \hbox (badness 3492) in paragraph at lines 537--554
 \OT1/ptm/m/n/10 methods for dPCR and suggest the introduction of a
  []
 
 
-Underfull \hbox (badness 1354) in paragraph at lines 527--544
+Underfull \hbox (badness 1354) in paragraph at lines 537--554
 \OT1/ptm/m/n/10 statistical methods with a standardized nomenclature for
  []
 
-[5 <./GUI_RKWard_1.png>] (./Burdukiewicz_et_al_NAR2.bbl
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5 <./GUI_RKWard_1.png>] (./Burdukiewicz_et_al_NAR2.bbl
 Underfull \hbox (badness 1603) in paragraph at lines 34--38
 \OT1/ptm/m/n/8 R[]odiger.  dpcR: an R package for the analysis of digital PCR.
  []
@@ -930,32 +876,32 @@ tm/m/it/8 BMC
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [6]
-Underfull \hbox (badness 4001) in paragraph at lines 203--207
+Underfull \hbox (badness 4001) in paragraph at lines 208--212
 \OT1/ptm/m/n/8 an R package to pre-process raw data of amplification curves.
  []
 
 
-Underfull \hbox (badness 2941) in paragraph at lines 215--220
+Underfull \hbox (badness 2941) in paragraph at lines 220--225
 \OT1/ptm/m/n/8 molecules.  \OT1/ptm/m/it/8 Proceedings of the National Academy 
 of Sciences\OT1/ptm/m/n/8 ,
  []
 
 
-Underfull \hbox (badness 1584) in paragraph at lines 222--228
+Underfull \hbox (badness 1584) in paragraph at lines 227--233
 []\OT1/ptm/m/n/8 Jan M Ruijter, Michael W Pfaffl, Sheng Zhao, Andrej N Spiess,
  []
 
 
-Underfull \hbox (badness 2057) in paragraph at lines 251--258
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6]
+Underfull \hbox (badness 2057) in paragraph at lines 256--263
 \OT1/ptm/m/n/8 determination for single channel droplet digital PCR experiments
 .
  []
 
 
-Underfull \hbox (badness 1253) in paragraph at lines 266--271
+Underfull \hbox (badness 1253) in paragraph at lines 271--276
 \OT1/ptm/m/n/8 of microfluidic digital PCR and conventional quantitative PCR fo
 r
  []
@@ -973,9 +919,9 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
  ) 
 Here is how much of TeX's memory you used:
  4155 strings out of 495028
- 53650 string characters out of 6181498
- 131237 words of memory out of 5000000
- 7211 multiletter control sequences out of 15000+600000
+ 53648 string characters out of 6181498
+ 133253 words of memory out of 5000000
+ 7212 multiletter control sequences out of 15000+600000
  34134 words of font info for 85 fonts, out of 8000000 for 9000
  23 hyphenation exceptions out of 8191
  38i,19n,34p,628b,350s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -997,7 +943,7 @@ t/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb
 i8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/s
 hare/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Burdukiewicz_et_al_NAR2.pdf (7 pages, 763687 bytes).
+Output written on Burdukiewicz_et_al_NAR2.pdf (7 pages, 763759 bytes).
 PDF statistics:
  109 PDF objects out of 1000 (max. 8388607)
  77 compressed objects within 1 object stream

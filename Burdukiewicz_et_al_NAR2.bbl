@@ -181,6 +181,11 @@ James~R. Perkins, John~M. Dawes, Steve~B. McMahon, David~LH Bennett, Christine
   checking and normalisation of {RT}-{qPCR} quantification cycle ({Cq}) data.
 \newblock {\em BMC Genomics}, 13(1):296, July 2012.
 
+\bibitem{Rcitation}
+{R Core Team}.
+\newblock {\em R: A Language and Environment for Statistical Computing}.
+\newblock R Foundation for Statistical Computing, Vienna, Austria, 2016.
+
 \bibitem{ritz_qpcr_2008}
 Christian Ritz and Andrej-Nikolai Spiess.
 \newblock {qpcR}: an {R} package for sigmoidal model selection in quantitative
