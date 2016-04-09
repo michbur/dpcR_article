@@ -176,32 +176,65 @@ stand-alone software.
 
 \section{MATERIALS AND METHODS}
 
-\subsection{Implementation}
+\subsection{Implementation of \textit{dpcR}}
 
-We have chosen \textbf{R} because it is cross-platform and the \textit{lingua 
-franca} in applied statistical bioinformatics. Since all software is open 
-source 
-it is possible to track numerical errors \cite{rodiger_rkward_2012, 
-rodiger_r_2015}. Most \textbf{R} packages depend on other packages 
-\cite{ooms_2013}. The same holds true for \textit{dpcR}. This results in a 
-complex network of recursive dependencies (Figure~\ref{dpcR_framework}A). Core 
-packages include \textit{qpcR} \cite{ritz_qpcr_2008}, \textit{shiny}, 
-\textit{MBmca} \cite{rodiger_surface_2013}, \textit{chipPCR} 
-\cite{roediger2015chippcr}. A basic design decision was to structure specific 
-properties of dPCR systems (droplet vs. chamber) in auxiliary functions. 
+%\textit{MBmca} \cite{rodiger_surface_2013} 
+The \textit{dpcR} package is an open source extension to \textbf{R} and derives 
+from \textbf{R} packages devoted to analysis of qPCR: \textit{qpcR} 
+\cite{ritz_qpcr_2008} and \textit{chipPCR} \cite{roediger2015chippcr}. It 
+employs object-oriented programming paradigm and the \texttt{underscore\_sep} 
+naming convention \cite{Baaaath_2012}.
+
+The results of dPCR experiments are stored using in the same class of 
+objects regardless of their origin. This enables comparison of data 
+from different systems using exactly the same framework. Subclasses further 
+define the more specific features of objects as the spatial organization of 
+chambers in case of the array-based dPCR.
+
+
+
+Since the RDML format for dPCR is not yet established, we wrote several 
+functions streamlining the data import from several systems (see Table 
+\ref{table_formats}). To cover systems not yet included in the package, we 
+created a ''raw data'' format. The user can manually arrange his data in this 
+format and import it to the \textit{dpcR} package. Such input files can be 
+created in a spreadsheet program or a text editor.
+
+
+\begin{table}[b]
+\tableparts{%
+\caption{Structured vendor export data formats handled by \textit{dpcR}~v.~0.5 
+and later.} 
+\label{table_formats}%
+}{%
+\begin{tabular*}{\columnwidth}{@{}llll@{}}
+\toprule
+Vendor & System & Format & Type
+\\
+\colrule
+Bio-Rad & QX100 \& QX200 & CSV & Summary export
+\\
+Fluidigm & BioMark & CSV & Summary export
+\\
+Formulatrix & Constellation Digital PCR & CSV & Summary export
+\\
+\botrule
+\end{tabular*}%
+} {The number of structured export data formats handled by \textit{dpcR} is 
+growing. CSV, comma separated values.}
+\end{table}
+
 Selected chamber dPCR systems rely on the proper preprocessing of qPCR data. 
 This functionality is inherited from the \textit{qpcR} \textbf{R} package.
 
-The naming convention of \textit{dpcR} is \texttt{underscore\_sep} 
-\cite{Baaaath_2012}. The main \textit{dpcR} functions (e.g., for analysis, 
+The main \textit{dpcR} functions (e.g., for analysis, 
 simulations, plotting), several auxiliary functions (e.g., data import) and 
 datasets of different dPCR systems are shown in the workflow of Figure 
 \ref{workflow}. Figure~\ref{dpcR_framework}B illustrates the implementation of 
 the \textit{dpcR} package. The function \textit{read\_dpcr}, \textit{qpcr2pp} 
 and \textit{sim\_dpcr}, sets the input for all objects in the \texttt{dpcr} 
 class. Central calculation specific to Poisson statistics in are performed 
-independently in main functions. This class manages details of the dPCR 
-analysis 
+independently in main functions. This class manages details of the dPCR analysis 
 that are subsequently processed by \textit{dpcR} functions (e.g., 
 reading/writing). Further details are explained in the supplementary 
 information.
@@ -271,12 +304,7 @@ package source code.
 the analysis. This is important when it comes to the question how experiments 
 should be treated \citep{rodiger_r_2015}.
 
-Most \textit{dpcR} import functions take a data matrix of annotated numeric 
-(e.g, fluorescence amplitude) and integer values (e.g., counts) as input. The 
-\textit{raw\_data} input was implemented  make data input easier for the end 
-user (see Supplement). Such input files can be manually created in a 
-spreadsheet 
-program or text editor.
+
 
 There numerous methods to import amplification curve data into the \textbf{R} 
 workspace \cite{perkins_readqpcr_2012, pabinger_survey_2014, rodiger_r_2015}. 
@@ -287,32 +315,9 @@ Prior processing the data for dPCR analysis it is recommended to use dedicated
 to pre-process (e.g., removal of missing values, smoothing 
 \cite{spiess_impact_2015}) the raw data.
 
-(see Table \ref{table_formats}).
 
-\begin{table}[b]
-\tableparts{%
-\caption{Structured vendor export data formats handled by \textit{dpcR}~v.~0.5 
-and later.} 
-\label{table_formats}%
-}{%
-\begin{tabular*}{\columnwidth}{@{}llll@{}}
-\toprule
-Vendor & System & Format & Type
-\\
-\colrule
-Bio-Rad & QX100 \& QX200 & CSV & Summary export
-\\
-Fluidigm & BioMark & CSV & Summary export
-\\
-Formulatrix & Constellation Digital PCR & CSV & Summary export
-\\
-\botrule
-\end{tabular*}%
-} {The number of structured export data formats handled by \textit{dpcR} is 
-growing. Numerous data formats can be processed with the functionality provided 
-by the \textbf{R} environment (see \cite{rodiger_r_2015}). CSV, comma separated 
-values.}
-\end{table}
+
+
 
 \subsubsection{\textit{De novo} creation of dpcR objects from raw data}
 
