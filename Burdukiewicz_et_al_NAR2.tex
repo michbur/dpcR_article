@@ -312,6 +312,75 @@ function from the \textit{dpcR} package.}
 \label{qpcr2pp_1}
 \end{figure}
 
+\subsection{Statistical analysis}
+
+\subsection{Calculation of the uncertainty}
+
+To determine the uncertainty of the estimated $\lambda$ we employ two previously 
+published peer-reviewed methods \cite{dube_mathematical_2008, bhat_single_2009}. 
+These methods are available through the \textit{summary} function.
+
+\subsubsection{Moments}
+\begin{table}[b]
+\tableparts{
+\caption{Empirical and theoretical moments.}
+\label{moments}
+}{
+\begin{tabular*}{\columnwidth}{r|c|c}
+\toprule
+Moment & Empirical & Theoretical \\
+\\
+\colrule
+Mean & $\frac{1}{n}\sum^n_{i = 1} x_i $ & $\lambda$ \\ \hline
+Variance & $\frac{1}{n}\sum^n_{i = 1} \left( x_i  - \frac{1}{n}\sum^n_{i = 
+1} x_i \right)^2 $ & $\lambda$  \\ \hline
+Skewness & $
+\frac{\frac{1}{n}\sum^n_{i = 1} \left( x_i  - \frac{1}{n}\sum^n_{i = 
+1} x_i \right)^3}
+{\left( \frac{1}{n}\sum^n_{i = 1} \left( x_i  - \frac{1}{n}\sum^n_{i = 1} 
+x_i \right)^2 \right)^\frac{3}{2}}
+           $
+ & 
+$\frac{1}{\sqrt{\lambda}}$ \\ \hline
+Kurtosis & $
+\frac{\frac{1}{n}\sum^n_{i = 1} \left( x_i  - \frac{1}{n}\sum^n_{i = 
+1} x_i \right)^4}
+{\left( \frac{1}{n}\sum^n_{i = 1} \left( x_i  - \frac{1}{n}\sum^n_{i = 1} 
+x_i \right)^2 \right)^2} - 3
+           $ & $\frac{1}{\lambda}$ \\ 
+\botrule
+\end{tabular*}
+} {}
+\end{table}
+
+
+
+It is assumed that the Poisson distribution describes the distribution of 
+template molecules over partitions. The \textit{dpcR} package enables 
+computation of four first moments (mean, variance, skewness, kurtosis) of the 
+distribution from which the data is sampled. It is also possible to compare 
+these empirical moments with theoretical moments of the Poisson distribution 
+calculated using the estimated $\lambda$.
+
+
+
+\subsection{Comparison of dPCR experiments}
+
+In \cite{Burdukiewicz_tba} We implemented statistics based on Generalized 
+Linear 
+Models (GLM) and \textit{multiple ratio testing} (\textit{MRT}) to compare dPCR 
+experiments. 
+
+\subsection{Spatial distribution}
+
+Array based dPCR experiments provide information about spatial distribution of 
+partitions. Procedures belonging to spatial statistics verify if the status 
+(positive, negative) of partition depends on its location. To address such 
+questions, we implemented a Complete Spatial Randomness test for dPCR arrays. 
+Moreover, we provide functionalities to export array dPCR data to \textbf{R} 
+packages specialized in spatial statistics as described in 
+\cite{Baddeley_2015}.
+
 
 \subsubsection{Public data sets}
 
@@ -352,8 +421,6 @@ package source code.
 Since \textit{dpcR} is based on the \textbf{R} environment all facilities for a 
 report generation are usable as described before \cite{rodiger_r_2015}.
 
-(see Table \ref{table_formats}).
-
 A commonly available data exchange format is a perquisite for reproducible 
 research. So far no cross-platform and system-independent format has been 
 introduced for dPCR experiments. Therefore, we decided to use \texttt{RData} as 
@@ -361,56 +428,9 @@ our default format. \texttt{RData} works across all \textbf{R} environments and
 saves the variable names along the content of multiple variables, which can be 
 restored in any workspace.
 
-\subsection{Calculation of the uncertainty}
-
-To determine the uncertainty of the estimated $\lambda$ we employ two 
-previously 
-published peer-reviewed methods \cite{dube_mathematical_2008, bhat_single_2009}.
-The former is
-
-\subsection{Poisson distribution}
-
-
-\subsubsection{Moments}
-It is assumed that results from the dPCR reaction follow the Poisson 
-distribution. We implemented several functions for computation of the four 
-first 
-moments (mean, variance, skewness, kurtosis) of the distribution from which the 
-data is sampled. They can be calculated empirically from the sample data or as 
-functions of the estimated $\lambda$.
-
-\subsubsection{Binomial approximation}
-Since dPCR data contain binarized Poisson 
-counts (all counts than zero are grouped together) it is possible to use 
-methods 
-appropriate for Binomial distribution. We employ several methods of computing 
-confidence intervals (CI) for $\lambda$ value (e.g., Wilson method, 
-Agresti-Coull method). They especially advantageous when $k$ is considerably 
-smaller than $m$. They are beneficial for uncertainty calculation, because 
-yielded CIs are not oscillating in such scenarios \cite{brown_2001}.
-
-\subsection{Simulation}
 
 
 
-\subsection{Comparison of dPCR experiments}
-
-In \cite{Burdukiewicz_tba} We implemented statistics based on Generalized 
-Linear 
-Models (GLM) and \textit{multiple ratio testing} (\textit{MRT}) to compare dPCR 
-experiments. 
-
-\subsection{Spatial distribution}
-
-Array based dPCR experiments provide information about spatial distribution of 
-partitions. Procedures belonging to spatial statistics verify if the status 
-(positive, negative) of partition depends on its location. To address such 
-questions, we implemented a Complete Spatial Randomness test for dPCR arrays. 
-Moreover, we provide functionalities to export array dPCR data to \textbf{R} 
-packages specialized in spatial statistics as described in 
-\cite{Baddeley_2015}.
-
-\subsection{Converting qPCRs to dPCRs}
 
 
 

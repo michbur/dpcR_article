@@ -3,44 +3,44 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Burdukiewicz_et_al_NAR2.aux
 The style file: plain.bst
 Database file #1: dpcr.bib
-You've used 41 entries,
+You've used 40 entries,
             2118 wiz_defined-function locations,
-            744 strings with 13930 characters,
-and the built_in function-call counts, 17165 in all, are:
-= -- 1598
-> -- 1184
+            737 strings with 13753 characters,
+and the built_in function-call counts, 16799 in all, are:
+= -- 1561
+> -- 1166
 < -- 0
-+ -- 471
-- -- 426
-* -- 1598
-:= -- 2988
-add.period$ -- 124
-call.type$ -- 41
-change.case$ -- 334
++ -- 464
+- -- 420
+* -- 1565
+:= -- 2927
+add.period$ -- 121
+call.type$ -- 40
+change.case$ -- 328
 chr.to.int$ -- 0
-cite$ -- 41
-duplicate$ -- 449
-empty$ -- 1057
-format.name$ -- 426
-if$ -- 3318
+cite$ -- 40
+duplicate$ -- 438
+empty$ -- 1030
+format.name$ -- 420
+if$ -- 3245
 int.to.chr$ -- 0
-int.to.str$ -- 41
-missing$ -- 41
-newline$ -- 209
-num.names$ -- 82
-pop$ -- 260
+int.to.str$ -- 40
+missing$ -- 40
+newline$ -- 204
+num.names$ -- 80
+pop$ -- 256
 preamble$ -- 1
-purify$ -- 295
+purify$ -- 290
 quote$ -- 0
-skip$ -- 287
+skip$ -- 280
 stack$ -- 0
-substring$ -- 1044
-swap$ -- 42
+substring$ -- 1014
+swap$ -- 41
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 162
+type$ -- 158
 warning$ -- 0
-while$ -- 148
-width$ -- 43
-write$ -- 455
+while$ -- 144
+width$ -- 42
+write$ -- 444
