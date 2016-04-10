@@ -91,24 +91,21 @@ open framework, which can be easily adapted to the growing knowledge in dPCR.
 
 
 \section{Introduction}
-
 The digital PCR (dPCR) is an important contender for precise nucleic acids 
-quantifications. Application of the dPCR include investigation of allele 
-frequencies, single-cell analysis, gene expression analysis and absolute 
-quantification of PCR products. The chemical basis (e.g., buffer, primer) of the 
-dPCR and thermal cycling is similar to the real-time quantitative qPCR (qPCR). 
-Though, approaches based on isothermal amplification were also developed 
-\cite{pabinger_survey_2014, ludlow_2014, rodiger_r_2015}. A first proposal for a 
-dPCR-like approach and the use of the Poisson distribution to quantify the 
-number of molecules on a ``sample'' was shown by Ruano \textit{et al.} 1990 
-(PNAS) with the single molecule dilution (SMD) PCR \cite{ruano_haplotype_1990}. 
-In 1999 Vogelstein \textit{et al.} (PNAS) described the first true dPCR 
-\cite{vogelstein_digital_1999}. Since approximately ten years the dPCR is 
-rapidly gaining momentum in the mainstream user-base and will likely have the 
-same impact as the qPCR methodology. There is an intensive research on dPCR 
-platforms with the overall aim to make to technology broadly usable, cheap, 
-robust and to enable high sample throughput \cite{selck_increased_2013, 
-huggett_qpcr_2015, morley_digital_2014}. 
+quantifications. Applications include investigation of allele frequencies, 
+single-cell analysis, gene expression analysis and absolute quantification of 
+PCR products. The chemical basis (e.g., buffer, primer) of the dPCR and thermal 
+cycling is similar to PCR.  Approaches based on isothermal amplification were 
+also developed \cite{pabinger_survey_2014, ludlow_2014, rodiger_r_2015}. A first 
+proposal for a dPCR-like approach and the use of the Poisson distribution to 
+quantify the number of molecules on a ``sample'' was shown by Ruano \textit{et 
+al.} 1990 (PNAS) with the single molecule dilution (SMD) PCR 
+\cite{ruano_haplotype_1990}. In 1999 Vogelstein \textit{et al.} (PNAS) described 
+the first true dPCR \cite{vogelstein_digital_1999}. Since approximately ten 
+years the dPCR is rapidly gaining momentum in the mainstream user-base. There is an intensive 
+research on dPCR platforms with the overall aim to make to technology broadly 
+usable, cheap, robust and to enable high sample throughput 
+\cite{selck_increased_2013, huggett_qpcr_2015, morley_digital_2014}. 
 
 % **************************************************************
 % Keep this command to avoid text of first page running into the
@@ -116,7 +113,7 @@ huggett_qpcr_2015, morley_digital_2014}.
 \enlargethispage{-65.1pt}
 % **************************************************************
 
-On the opposite to qPCR, dPCR consists of multiple amplifications occurring in 
+A dPCR reaction consists of multiple amplifications occurring in 
 numerous small ``partitions'' (e.g., nL volume droplets of water oil 
 emulsions, chambers on micro structured chips). The result of dPCR is a binary 
 vector describing states of partitions (positive in case of detected 
@@ -170,7 +167,7 @@ supports literate programming (e.g., \textit{knitr}) and tools for reproducible
 research (e.g., \textit{rctrack}) \cite{liu_r_2014}. 
 
 Since the R's command-line interface might not meet the needs of all potential 
-users, we added also a web server \textit{dpcReport} using the \textit{shiny} 
+users, we added a web server \textit{dpcReport} using the \textit{shiny} 
 package. It allows access to the most of \textit{dpcR} functionalities through 
 the Graphical User Interface (GUI). \textit{dpcReport} can be also installed as 
 the stand-alone software.
