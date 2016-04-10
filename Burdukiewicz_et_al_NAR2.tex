@@ -169,11 +169,11 @@ freely available for the MacOS, Linux/Unix and Windows operating systems. It
 supports literate programming (e.g., \textit{knitr}) and tools for reproducible 
 research (e.g., \textit{rctrack}) \cite{liu_r_2014}. 
 
-Since the R's command-line interface might not meet the need of all potential 
+Since the R's command-line interface might not meet the needs of all potential 
 users, we added also a web server \textit{dpcReport} using the \textit{shiny} 
 package. It allows access to the most of \textit{dpcR} functionalities through 
-the Graphical User Interface. \textit{dpcReport} can be also installed as the 
-stand-alone software.
+the Graphical User Interface (GUI). \textit{dpcReport} can be also installed as 
+the stand-alone software.
 
 \section{MATERIALS AND METHODS}
 
@@ -314,13 +314,14 @@ function from the \textit{dpcR} package.}
 
 \subsection{Statistical analysis}
 
-\subsection{Calculation of the uncertainty}
-
+\subsubsection{Calculation of the uncertainty}
+MORE WORDS
 To determine the uncertainty of the estimated $\lambda$ we employ two previously 
 published peer-reviewed methods \cite{dube_mathematical_2008, bhat_single_2009}. 
 These methods are available through the \textit{summary} function.
 
 \subsubsection{Moments}
+
 \begin{table}[b]
 \tableparts{
 \caption{Empirical and theoretical moments.}
@@ -353,71 +354,35 @@ x_i \right)^2 \right)^2} - 3
 } {}
 \end{table}
 
-
-
 It is assumed that the Poisson distribution describes the distribution of 
 template molecules over partitions. The \textit{dpcR} package enables 
 computation of four first moments (mean, variance, skewness, kurtosis) of the 
 distribution from which the data is sampled. It is also possible to compare 
 these empirical moments with theoretical moments of the Poisson distribution 
-calculated using the estimated $\lambda$.
+calculated using the estimated $\lambda$ (Table \ref{moments}).
 
+\subsubsection{Comparison of dPCR experiments}
+MORE WORDS
+The \textit{dpcR} package covers also peer-reviewed methods of comparing 
+multiple experiments. We implemented two methods based on GLM and one using  
+multiple ratio test \cite{Burdukiewicz_tba, dorazio_statistical_2015}. To 
+keep the analysis statistically sound, the results consider appropriate 
+corrections for multiple comparison problem. All functions for comparison of 
+multiple runs are accessible using \textit{test\_counts} function.
 
-
-\subsection{Comparison of dPCR experiments}
-
-In \cite{Burdukiewicz_tba} We implemented statistics based on Generalized 
-Linear 
-Models (GLM) and \textit{multiple ratio testing} (\textit{MRT}) to compare dPCR 
-experiments. 
-
-\subsection{Spatial distribution}
+\subsubsection{Spatial distribution}
 
 Array based dPCR experiments provide information about spatial distribution of 
 partitions. Procedures belonging to spatial statistics verify if the status 
 (positive, negative) of partition depends on its location. To address such 
 questions, we implemented a Complete Spatial Randomness test for dPCR arrays. 
 Moreover, we provide functionalities to export array dPCR data to \textbf{R} 
-packages specialized in spatial statistics as described in 
+packages specialized in spatial statistics as described elsewhere 
 \cite{Baddeley_2015}.
 
 
-\subsubsection{Public data sets}
-
-\textit{dpcR} includes data sets or refers to additional R packages for testing 
-purposes. The data originate from different dPCR and qPCR systems and were 
-either published previously \cite{whale_comparison_2012, roediger2015chippcr, 
-white_digital_2009, rodiger_r_2015, dorazio_statistical_2015} or \textit{de 
-novo} generated.
-
-Figure~\ref{workflow} provides an overview of important functions available at 
-each step of a dPCR analysis. The first step is to import sample data into the 
-\textbf{R} session. \textit{dpcR} accepts various data structures. This includes 
-matrices of raw data and predefined structures provided by the different vendors 
-(see Table \ref{table_formats}). 
-
-\subsection{Documentation}
-
-All functions of the \textit{dpcR} package have its own documentation package, 
-which specifies the input types, classes, parameters and output formats. The 
-documentation is available as standard \textbf{R} package reference manual and 
-as vignette.
-
-According to the dMIQE guidelines \cite{huggett_digital_2013} we used following 
-notation:
-\begin{itemize}
- \item $\lambda$: average molecule numbers per partition,
- \item $k$: number of molecules per partition,
- \item $m$: total number of the molecules.
-\end{itemize}
-
-The following convention was kept, both in the documentation and in the 
-package source code.
-
-\subsection{Import and export of results figures and data}
-
-\subsubsection{Export of analysis results}
-
+\subsection{Export of analysis results}
+REDUNDANT
 Since \textit{dpcR} is based on the \textbf{R} environment all facilities for a 
 report generation are usable as described before \cite{rodiger_r_2015}.
 
@@ -429,59 +394,106 @@ saves the variable names along the content of multiple variables, which can be
 restored in any workspace.
 
 
+\subsection{Public datasets}
+
+\textit{dpcR} includes datasets or refers to additional R packages for testing 
+purposes. The data originate from different dPCR and qPCR systems and were 
+either published previously \cite{whale_comparison_2012, roediger2015chippcr, 
+white_digital_2009, rodiger_r_2015, dorazio_statistical_2015} or \textit{de 
+novo} generated.
+
+Figure~\ref{workflow} provides an overview of important functions available at 
+each step of a dPCR analysis. The first step is to import sample data into the 
+\textbf{R} session. \textit{dpcR} accepts various data structures. This 
+includes 
+matrices of raw data and predefined structures provided by the different 
+vendors 
+(see Table \ref{table_formats}). 
 
 
+\subsection{Documentation}
+
+The concise documentation of all functions and classes included in the 
+\textit{dpcR} package helps users in adapting our work to their needs. We use 
+included datasets to create meaningful examples showing the input and output of 
+implented procedures. The documentation is available as standard \textbf{R} 
+package reference manual and as a vignette, additional guide helping in 
+understanding the basics of the package.
+
+According to the dMIQE guidelines \cite{huggett_digital_2013} we used following 
+notation:
+\begin{itemize}
+ \item $\lambda$: average molecule numbers per partition,
+ \item $k$: number of molecules per partition,
+ \item $m$: total number of the molecules.
+\end{itemize}
+
+The following convention was kept in the documentation, the source code and the 
+outputs of all functions.
 
 
+\subsection{dpcReport: graphical user interface}
 
-\section{RESULTS}
+For the convinience of researchers less familiar with \textbf{R}, we 
+implemented the core functionalities of \textit{dpcR} package in form of 
+the graphical user interface (GUI).
 
-In the following section we show applications of the \textit{dpcR} package.
-
-\subsection{Evaluation of dPCR comparison methods}
-
-TBD
-
-\subsection{Graphical user interface}
-
-The critical functionalities of \textit{dpcR} package are implemented in the 
-\textit{dpcReport} GUI. We aimed for a form factor (e.g., smart phone, tablet, 
-desktop PCR) and operating system independent implementation of a graphical 
-user 
-interface. \textit{dpcReport} is based on \textit{shiny} technology and offers 
-an intuitive user interface, which can be accessed by browsers (e.g., Google 
-Chrome, Mozilla Firefox). Semi-interactive charts are based on \textit{ggplot2} 
-(see Supplement).
-
-The first panel ``Input file'' is responsible for loading the input data. Here 
-part of data input structure (e.g., ID of experiments) may be accessed and 
-modified during the analysis in the GUI. The second panel ``Data summary'' 
-presents descriptive summary of the data in form of interactive tables and 
-plots, offering filtering and selecting of individual runs. The third panel 
-``Comparison of runs'' compares all runs of the experiment data. The fourth 
-panel ``Advanced analysis'' consists of more specialized functionalities as 
-testing individual arrays. All statistical methods used in the GUI are integral 
-part of the \textit{dpcR} package and described in the methods section. The 
-last 
-panel enables flexible report generation. The report can be customized by 
-including various sections, which are equivalents of the GUI panels.
+We aimed for a form factor (e.g., smart phone, tablet, desktop PCR) and 
+operating system independent implementation of a graphical user interface. 
+\textit{dpcReport} is based on \textit{shiny} technology and offers an intuitive 
+user interface, which can be accessed by browsers (e.g., Google Chrome, Mozilla 
+Firefox). Semi-interactive charts are based on \textit{ggplot2} (see 
+Supplemental Files). All tables are also interactive, facilitating filtering 
+and selecting specific records.
 
 An interesting feature of the \textit{shiny} technology is the automatic 
 integration in environments, which support \texttt{HTML5} and 
-\texttt{ECMAScript}. The \textit{dpcReport} integrates into Integration in 
-third 
-party software. This can be a modern web~browser or an \textbf{R} IDE/GUI such 
-as \textbf{RKWard} (Figure~\ref{GUI_RKWard_1}) \cite{rodiger_rkward_2012} or 
-\textbf{RStudio}. \textit{dpcReport} is a GUI tool for dPCR data mining and 
-report generation. User can interact via a point-and-click interface on 
-different tabs, which contain widgets such as sliders, input fields and check 
-boxes. Other user input, such as parameters of test performed in GUI, are 
-preserved and returned in the report to increase the reproducibility of the 
-research study. The tabs cover relevant analysis steps for the report 
-generation. An important option of \textit{dpcReport} is an export of the 
-\textbf{R} source code used for the report generation is provided to the user. 
-This code can be used for recreating the analysis in the \textbf{R} environment 
-or prototyping more complicated workflows.
+\texttt{ECMAScript}. The \textit{dpcReport} integrates not only into modern 
+web~browsers, but also \textbf{R} Integrated development environments (IDEs) 
+such as \textbf{RKWard} (Figure~\ref{GUI_RKWard_1}) \cite{rodiger_rkward_2012} 
+or \textbf{RStudio}.
+
+The first panel of GUI, ``Input file'', is responsible for loading the input 
+data. Since it utilizes \textit{dpcR} functions, it is as versatile as data 
+import functionalities of our package. Moreover, it is possible to edit the 
+input dataset using the mini-spreadsheet included in the panel. All important 
+features, starting with experiment names and ending with results, can be freely 
+modified allowing manual correction of the input.
+
+The descriptive summary of the data in form of interactive tables and plots is 
+included in the panel ``Data summary''. Estimated $\lambda$ values and their 
+uncertainties are computed using the \textit{summary} function. Box-and-whisker 
+diagrams cumulatively describe relationships between experiments and their 
+$\lambda$ value or concentration of the template, while scatter charts allow 
+individual representation of runs.
+
+The third panel ``Comparison of runs'' facilitates comparison of multiple runs 
+contained by the input data set. It employs \textit{dpcR} function 
+\textit{test\_counts} to provide user with information about significantly 
+different values of $\lambda$. The proposed groups of runs are presented in 
+tabular format and in charts.
+
+The ``Advanced analysis'' panel consists of more specialized 
+functionalities. Here an user may test the array data for randomness of 
+spatial distribution of positive droplets. The interactive visualization of the 
+array allows analysis of whole plate or manually selected region. The second 
+part of the ``Advanced analysis'' panel is devoted to the investigation of 
+distribution of the positive droplets in individual runs via computation of 
+its confidence intervals and its moments. The highly customizable 
+functionalities allows choice between few implemented methods of confidence 
+interval estimation for binomial variable.
+
+The last panel enables flexible report generation. The report can be customized 
+by including various sections, which are equivalents of the GUI panels. The 
+complete user input, including manually adjusted parameters of test performed in 
+GUI, are preserved and returned in the report to increase the reproducibility of 
+the research study. An important option of \textit{dpcReport} is an export of 
+the \textbf{R} source code used for the report generation. This code can be used 
+for recreating the analysis in the \textbf{R} environment or prototyping more 
+complicated workflows.
+
+
+
 
 
 \begin{figure*}[t]
@@ -492,6 +504,13 @@ or prototyping more complicated workflows.
 and integrated development environment \textbf{RKWard}.} 
 \label{GUI_RKWard_1}
 \end{figure*}
+
+
+
+
+\section{RESULTS}
+
+In the following section we show applications of the \textit{dpcR} package.
 
 \subsection{Vendor independent data analysis}
 
@@ -519,19 +538,18 @@ code is available from  https://github.com/michbur/dpcR.
 \section{DISCUSSION}
 
 Currently, there exist different dPCR analysis software solutions provided by 
-the vendors. But most of the software packages are black boxes, which 
-prevent deep insight into the data processing step. Other and we think that 
-scientific software should be open \cite{ince_case_2012, 
-rodiger_r_2015}. In addition, most of the software solutions are aimed to be 
-used in very specific scenarios and a mutual exclusive to alternative platforms 
-(e.g., droplet vs. chamber-based). We have chosen \textbf{R} because it is the 
-\textit{lingua franca} in biostatistics and broadly used in other disciplines 
-\cite{rodiger_r_2015}. We developed the \textit{dpcR} package, which is a 
-software framework for analysis of dPCR. \textit{dpcR} provides the scientific 
-community a broadly applicable tool for teaching purposes, data analysis and 
-theoretical research based on simulations. Our software framework can be used 
-to 
-accelerate the development of new approaches to dPCR.
+the vendors. But most of the software packages are black boxes, which prevent 
+deep insight into the data processing step. Other and we think that scientific 
+software should be open \cite{ince_case_2012, rodiger_r_2015}. In addition, most 
+of the software solutions are aimed to be used in very specific scenarios and a 
+mutual exclusive to alternative platforms (e.g., droplet vs. chamber-based). We 
+have chosen \textbf{R} because it is the \textit{lingua franca} in biostatistics 
+and broadly used in other disciplines \cite{rodiger_r_2015}. We developed the 
+\textit{dpcR} package, which is a software framework for analysis of dPCR. 
+\textit{dpcR} provides the scientific community a broadly applicable tool for 
+teaching purposes, data analysis and theoretical research based on simulations. 
+Our software framework can be used to accelerate the development of new 
+approaches to dPCR.
 
 Functions included may be used to simulate dPCRs, perform statistical data 
 analysis, plotting of the results and simple report generation. 
@@ -556,14 +574,20 @@ simulations and predictions of Poisson distribution for dPCR scenarios, the
 analysis of previously run dPCRs. Due to the plug-in structure of the software 
 it is possible to build custom-made analysers.
 
-We decided not to implement algorithms for clustering and ``rain'' (positive 
-droplets) definition of droplet dPCR data. This is because, there are several 
-\textbf{R} packages from flow-cytometer research. Implementations range from 
-manual to automatic clustering \cite{le_meur_computational_2013, 
-milbury_determining_2014, Malek15022015, trypsteen_ddpcrquant_2015}. Moreover, 
-discussion with our peers and the literature suggest that a consensus of an 
-appropriate method for dPCR is not available \cite{trypsteen_ddpcrquant_2015}.
+Instead of implementing algorithms for clustering and ``rain'' (positive 
+droplets) definition of droplet dPCR data, we focused on more specific and not 
+yet well-accessible functionalities. We chose not to duplicate existing works 
+and instead provide users of dPCR technology with a flexible workflow that 
+incorporate most fundamental needs: estimation of the $\lambda$ value, 
+comparison of template concentration among several runs and quality control. For 
+clustering of ddPCR data, we refer to \textbf{R} packages dedicated to 
+flow-cytometer research. Implementations range from manual to automatic 
+clustering \cite{le_meur_computational_2013, milbury_determining_2014, 
+Malek15022015, trypsteen_ddpcrquant_2015}. 
 
+Moreover, discussion with our peers 
+and the literature suggest that a consensus of an appropriate method for dPCR is 
+not available \cite{trypsteen_ddpcrquant_2015}.
 Our open framework includes to invitation to the scientific community to join 
 and support the development of \textit{dpcR}.
 
