@@ -163,8 +163,10 @@ shifting their focus from an investigation to programming.
 In 2013 we started the development of the \textit{dpcR} framework to perform 
 analysis of dPCR experiments \cite{burdukiewicz_dpcr:_2013}. We have chosen R 
 software environment \cite{Rcitation}, because it is already extensively used 
-for studies of qPCR data \cite{ritz_qpcr_2008, rodiger_r_2015}. Furthermore, R 
-is freely available for the MacOS, Linux/Unix and Windows operating systems. It 
+in studies of qPCR data \cite{pabinger_survey_2014, rodiger_r_2015}, both 
+pre-processing (\cite{roediger2015chippcr, perkins_readqpcr_2012}) and 
+analysis (\cite{rodiger_surface_2013, ritz_qpcr_2008}). Furthermore, R is 
+freely available for the MacOS, Linux/Unix and Windows operating systems. It 
 supports literate programming (e.g., \textit{knitr}) and tools for reproducible 
 research (e.g., \textit{rctrack}) \cite{liu_r_2014}. 
 
@@ -179,27 +181,49 @@ stand-alone software.
 \subsection{Implementation of \textit{dpcR}}
 
 %\textit{MBmca} \cite{rodiger_surface_2013} 
-The \textit{dpcR} package is an open source extension to \textbf{R} and derives 
-from \textbf{R} packages devoted to analysis of qPCR: \textit{qpcR} 
-\cite{ritz_qpcr_2008} and \textit{chipPCR} \cite{roediger2015chippcr}. It 
+The \textit{dpcR} package is an open source extension to \textbf{R}. It 
 employs object-oriented programming paradigm and the \texttt{underscore\_sep} 
 naming convention \cite{Baaaath_2012}.
 
-The results of dPCR experiments are stored using in the same class of 
-objects regardless of their origin. This enables comparison of data 
-from different systems using exactly the same framework. Subclasses further 
-define the more specific features of objects as the spatial organization of 
-chambers in case of the array-based dPCR.
+Any processing of dpcR data is inevitably tied to the information loss, so we 
+suggest to start analysis with raw data rather than summaries exported by 
+vendor-provided software. If it is not possible, part of \textit{dcpR} 
+functionalities will be not available, but most of the study can be still 
+successfully conducted using the same commands as in the case of unprocessed 
+data. 
 
+Such universality results from the usage of uniform data format in all 
+computations inside the workflow. Datasets, regardless of their origin (array- 
+or droplet-based dPCRs) and type (total number of positive partitions, states of 
+partitions, CQs of partitions), are stored in the standardized class. Subclasses 
+further define the more specific features of objects as the spatial organization 
+of chambers in case of the array-based dPCR.
 
+\begin{figure*}[t]
+\begin{center}
+%\includegraphics[page = 1, trim = 0cm 10cm 0cm 0cm, clip, 
+%width=17cm]{dpcR_analysis.pdf}
+\end{center}
+\caption{\textit{dpcR} workflow. The diagram shows main functions 
+available at each step of a dPCR data analysis.}
+\label{workflow}
+\end{figure*}
 
-Since the RDML format for dPCR is not yet established, we wrote several 
-functions streamlining the data import from several systems (see Table 
-\ref{table_formats}). To cover systems not yet included in the package, we 
-created a ''raw data'' format. The user can manually arrange his data in this 
-format and import it to the \textit{dpcR} package. Such input files can be 
-created in a spreadsheet program or a text editor.
+The workflow of \textit{dpcR} encloses complete data analysis, starting from 
+data import or simulation and ending with report generation (Figure 
+\ref{workflow}). The package employs peer-reviewed methods of computing the 
+$\lambda$ value and assess its uncertainty. We also implemented previously 
+published methods of statistical analysis of dPCR reactions.
 
+\subsubsection{Data import}
+
+Since the RDML format for dPCR is not yet established, we wrote function 
+\textit{read\_dpcr} streamlining data import from several systems (see Table 
+\ref{table_formats}). To cover experimental or not yet included systems, we 
+created a ''raw data'' format (see Supplementary Files for description). The 
+user can manually arrange his data in this format and import it to the 
+\textit{dpcR} package. Such input files can be created in a spreadsheet program 
+or a text editor.
 
 \begin{table}[b]
 \tableparts{%
@@ -224,8 +248,34 @@ Formulatrix & Constellation Digital PCR & CSV & Summary export
 growing. CSV, comma separated values.}
 \end{table}
 
-Selected chamber dPCR systems rely on the proper preprocessing of qPCR data. 
-This functionality is inherited from the \textit{qpcR} \textbf{R} package.
+Moreover, \textit{dpcR} accepts objects from the \textbf{R} workspace, which 
+might be useful if the data required some further pre-processing not covered by 
+the package, as smoothing (e.g., removal of missing values, smoothing 
+\cite{spiess_impact_2015}). Such objects may be integrated with the 
+workflow using the \textit{df2dpcr} or more flexible \textit{create\_dpcr} 
+functions.
+
+
+\subsubsection{Data simulation}
+
+Two methods of simulating results of dPCR were published 
+(\cite{dube_mathematical_2008, jacobs_2014}). The former is based on randomly 
+distributing the specified number of template molecules over defined 
+number of identical partitions. The latter models more complicated situation, 
+where the volume of the droplet is determined by separate probability 
+distribution. We complement these methods with our own, where the number of 
+template molecules distributed over identical partitions is not exactly 
+specified, but determined by the Poisson distribution with specific parameters.
+
+\subsubsection{Public data sets}
+
+\textit{dpcR} includes data sets or refers to additional R packages for testing 
+purposes. The data originate from different dPCR and qPCR systems and were 
+either published previously \cite{whale_comparison_2012, roediger2015chippcr, 
+white_digital_2009, rodiger_r_2015, dorazio_statistical_2015} or \textit{de 
+novo} generated.
+
+
 
 The main \textit{dpcR} functions (e.g., for analysis, 
 simulations, plotting), several auxiliary functions (e.g., data import) and 
@@ -254,15 +304,7 @@ functionality.}
 \label{dpcR_framework}
 \end{figure*}
 
-\begin{figure*}[t]
-\begin{center}
-%\includegraphics[page = 1, trim = 0cm 10cm 0cm 0cm, clip, 
-%width=17cm]{dpcR_analysis.pdf}
-\end{center}
-\caption{\textit{dpcR} workflow. The diagram shows main functions 
-available at each step of a dPCR data analysis.}
-\label{workflow}
-\end{figure*}
+
 
 Figure~\ref{workflow} provides an overview of important functions available at 
 each step of a dPCR analysis. The first step is to import sample data into the 
@@ -270,13 +312,7 @@ each step of a dPCR analysis. The first step is to import sample data into the
 includes 
 matrices of raw data and predefined structures provided by the different 
 vendors 
-(see Table \ref{table_formats}). Moreover, \textit{dpcR} accepts objects from 
-the \textbf{R} workspace, which are converted via the \textit{read\_dpcr} 
-function. Novel raw data structures are processed outside \textit{dpcR} using 
-tools as described elsewhere. The data input to \textit{dpcR} should be raw 
-data 
-preferable, rather than gated summary data. The reasoning it to keep control 
-over information loss for reproducible research.
+(see Table \ref{table_formats}). 
 
 \subsection{Documentation}
 
@@ -298,43 +334,11 @@ package source code.
 
 \subsection{Import and export of results figures and data}
 
-\subsubsection{Reading or importing data}
-
-\textbf{R} has a rich set of tool to arrange data in order to prepare them for 
-the analysis. This is important when it comes to the question how experiments 
-should be treated \citep{rodiger_r_2015}.
-
-
-
-There numerous methods to import amplification curve data into the \textbf{R} 
-workspace \cite{perkins_readqpcr_2012, pabinger_survey_2014, rodiger_r_2015}. 
-Prior processing the data for dPCR analysis it is recommended to use dedicated 
-\textbf{R} packages, such as \textit{chipPCR} \cite{roediger2015chippcr}, 
-\textit{MBmca} \cite{rodiger_surface_2013}, \textit{qpcR} 
-\cite{ritz_qpcr_2008}, 
-to pre-process (e.g., removal of missing values, smoothing 
-\cite{spiess_impact_2015}) the raw data.
-
-
-
-
-
 \subsubsection{\textit{De novo} creation of dpcR objects from raw data}
 
-In experimental setups user have the need to transform their raw data in a 
-processable format. Since the \textbf{R} environment is cross-platform an 
-ubiquitously used we aimed to ease this creation. In particular, this is 
-relevant for reproducible research. The \textit{dpcR} framework covers the 
-types 
-typically used in laboratories.
 
-\subsubsection{Public data sets}
 
-\textit{dpcR} includes data sets or refers to additional R packages for testing 
-purposes. The data originate from different dPCR and qPCR systems and were 
-either published previously \cite{whale_comparison_2012, roediger2015chippcr, 
-white_digital_2009, rodiger_r_2015, dorazio_statistical_2015} or \textit{de 
-novo} generated.
+
 
 \subsubsection{Export of analysis results}
 
