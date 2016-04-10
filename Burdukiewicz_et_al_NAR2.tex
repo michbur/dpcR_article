@@ -148,11 +148,10 @@ The lack of a dedicated software for analysis of dPCR results leads to the rapid
 development of custom scripts in \textbf{Mathematica} (Wolfram Research) 
 \cite{strain_highly_2013}, \textbf{MS EXCEL} (Microsoft) 
 \cite{dobnik_multiplex_2015} or \textbf{R} \cite{trypsteen_ddpcrquant_2015, 
-dreo_optimising_2014}. In addition, web-servers for analysis of dPCR data are 
-emerging as the open access bioinformatics pipeline, designated 
-\textbf{definetherain} \cite{jones_low_2014}. However, these efforts have 
-limited use, since they are tied to a very specific problem. Even if they 
-introduce some level of abstraction, it is not documented well enough to 
+dreo_optimising_2014}. In addition, web-servers for analysis of dPCR data, as 
+the \textbf{definetherain} \cite{jones_low_2014}, are emerging. However, these 
+efforts have limited use, since they are tied to a very specific problem. Even 
+if they introduce some level of abstraction, it is not documented well enough to 
 permit usage in other workflows.
 
 The described situation is unfavorable for studies involving dPCR data. The 
@@ -215,7 +214,12 @@ data import or simulation and ending with report generation (Figure
 $\lambda$ value and assess its uncertainty. We also implemented previously 
 published methods of statistical analysis of dPCR reactions.
 
-\subsubsection{Data import}
+\subsection{Data import}
+
+Import functions limit availability of the package by determining which datasets 
+can be easily processed using the provided framework. To address the needs of 
+potential users, \textit{dpcR} not only covers data import from most popular 
+systems, but also facilities data simulation and conversion of qPCR datasets.
 
 Since the RDML format for dPCR is not yet established, we wrote function 
 \textit{read\_dpcr} streamlining data import from several systems (see Table 
@@ -248,24 +252,66 @@ Formulatrix & Constellation Digital PCR & CSV & Summary export
 growing. CSV, comma separated values.}
 \end{table}
 
-Moreover, \textit{dpcR} accepts objects from the \textbf{R} workspace, which 
-might be useful if the data required some further pre-processing not covered by 
-the package, as smoothing (e.g., removal of missing values, smoothing 
-\cite{spiess_impact_2015}). Such objects may be integrated with the 
-workflow using the \textit{df2dpcr} or more flexible \textit{create\_dpcr} 
-functions.
-
+Moreover, \textit{dpcR} accepts other \textbf{R} objects, which is useful if the 
+data required some further pre-processing not covered by the package (e.g., 
+removal of missing values, smoothing \cite{spiess_impact_2015}). Such objects 
+may be integrated into the workflow using the \textit{df2dpcr} or more flexible 
+\textit{create\_dpcr} functions.
 
 \subsubsection{Data simulation}
 
-Two methods of simulating results of dPCR were published 
-(\cite{dube_mathematical_2008, jacobs_2014}). The former is based on randomly 
-distributing the specified number of template molecules over defined 
-number of identical partitions. The latter models more complicated situation, 
-where the volume of the droplet is determined by separate probability 
-distribution. We complement these methods with our own, where the number of 
-template molecules distributed over identical partitions is not exactly 
-specified, but determined by the Poisson distribution with specific parameters.
+We found two methods of simulating results of dPCR \cite{dube_mathematical_2008, 
+jacobs_2014}. The former is based on randomly distributing the exact number 
+of template molecules over defined number of identical partitions. It results in 
+the vector of partitions with known number of template molecules. 
+
+The procedure in Jacobs~\textit{et al.}~2014 models more complicated situation, 
+fluorescence values of the passing droplets. The number of template molecules in 
+particular partition as well as the volume of the partition are determined by 
+separate probability distributions. The number of molecules per partition is 
+further converted to the fluorescence values considering the random effects 
+affecting amplification efficiency. The simulation also includes such phenomena 
+as ``rain'', droplets that cannot be unambiguously assessed as positive or 
+negative.
+
+We complement these methods with our own, where the number of template molecules 
+distributed over identical partitions is not exactly specified, but determined 
+by the Poisson distribution with specific parameters. It is best described as 
+the variant of procedure introduced elsewhere \cite{dube_mathematical_2008}, but 
+without the assumption of having the constant number of template molecules over 
+all samples. All three methods are available under \textit{sim\_dpcr} 
+command.
+
+\subsubsection{Integration of qPCR data}
+
+High-Throughput qPCR is a well established and robust technology, which allows 
+precise quantification of DNA material in high throughput fashion. However, the 
+quantification by qPCR is challenging at very low and very high concentrations. 
+In addition, pre-processing and data analysis is a affected by numerous adverse 
+effects \cite{ruijter_2013, spiess_impact_2015}. 
+
+The recently proposed solution \cite{mojtahedi_2014} overcomes these 
+complications by using the dPCR methodology to analyze qPCR data. Briefly, 
+quantification points (Cq) are computed using the real-time measurements of 
+several amplification curves. Next, the Cq values are binarized and treated as 
+the status of partitions effectively converting multiple qPCR experiments into a 
+dPCR. This functionality is supported by the \textit{qpcr2pp} function (Figure 
+\ref{qpcr2pp_1}).
+
+\begin{figure}[t]
+\begin{center}
+\includegraphics[width=9cm]{qpcr2pp_1.png}
+\end{center}
+\caption{Uncover characteristics of dPCR data. Selected dPCR platforms are qPCR 
+platforms at the same time. The function \textit{qpcr2pp} uses the qPCR 
+amplification curve data and interprets them as dPCR (Poisson process). A) Raw 
+data of The function were B) preprocessed (baselined, smoothed) with functions 
+from the \textit{chipPCR} package and C) finally analysed (Cq calculation 
+$\rightarrow$ binarize) with the \textit{qpcr2pp} (qPCR to Poisson process) 
+function from the \textit{dpcR} package.} 
+\label{qpcr2pp_1}
+\end{figure}
+
 
 \subsubsection{Public data sets}
 
@@ -275,43 +321,10 @@ either published previously \cite{whale_comparison_2012, roediger2015chippcr,
 white_digital_2009, rodiger_r_2015, dorazio_statistical_2015} or \textit{de 
 novo} generated.
 
-
-
-The main \textit{dpcR} functions (e.g., for analysis, 
-simulations, plotting), several auxiliary functions (e.g., data import) and 
-datasets of different dPCR systems are shown in the workflow of Figure 
-\ref{workflow}. Figure~\ref{dpcR_framework}B illustrates the implementation of 
-the \textit{dpcR} package. The function \textit{read\_dpcr}, \textit{qpcr2pp} 
-and \textit{sim\_dpcr}, sets the input for all objects in the \texttt{dpcr} 
-class. Central calculation specific to Poisson statistics in are performed 
-independently in main functions. This class manages details of the dPCR analysis 
-that are subsequently processed by \textit{dpcR} functions (e.g., 
-reading/writing). Further details are explained in the supplementary 
-information.
-
-\begin{figure*}[t]
-\begin{center}
-%\includegraphics[page = 2, trim = 0cm 1cm 0cm 0cm, clip, 
-%width=17cm]{dpcR_analysis.pdf}
-\end{center}
-\caption{Implementation of the \textit{dpcR} package. \textbf{(B)} Modular 
-software framework structure. \textit{dpcR} is typically run from a desktop 
-computer or a server. The software can be operated by an GUI/IDE application 
-such as \textbf{RStudio} or \textbf{RKWard}. The \textit{dpcR} package has 
-dependencies to other \textbf{R} packages (middle layer). The functionality 
-shared between the packages enables repaid addition and expansion of 
-functionality.}
-\label{dpcR_framework}
-\end{figure*}
-
-
-
 Figure~\ref{workflow} provides an overview of important functions available at 
 each step of a dPCR analysis. The first step is to import sample data into the 
-\textbf{R} session. \textit{dpcR} accepts various data structures. This 
-includes 
-matrices of raw data and predefined structures provided by the different 
-vendors 
+\textbf{R} session. \textit{dpcR} accepts various data structures. This includes 
+matrices of raw data and predefined structures provided by the different vendors 
 (see Table \ref{table_formats}). 
 
 \subsection{Documentation}
@@ -333,12 +346,6 @@ The following convention was kept, both in the documentation and in the
 package source code.
 
 \subsection{Import and export of results figures and data}
-
-\subsubsection{\textit{De novo} creation of dpcR objects from raw data}
-
-
-
-
 
 \subsubsection{Export of analysis results}
 
@@ -384,13 +391,7 @@ yielded CIs are not oscillating in such scenarios \cite{brown_2001}.
 
 \subsection{Simulation}
 
-The package covers two Simulation methods as described elsewhere in 
-peer-reviewed publications. The method proposed by Dube~\textit{et al.}~2008 
-\cite{dube_mathematical_2008} is based on distributing template molecules over 
-partitions. The procedure in Jacobs~\textit{et al.}~2014 \cite{jacobs_2014} is 
-more sophisticated and returns the fluorescence value obtains from droplet dPCR 
-experiment including such phenomena as ``rain''. We also added streamlined and 
-high-performing simulation in assumptions similar to Dube~\textit{et al.}~2008.
+
 
 \subsection{Comparison of dPCR experiments}
 
@@ -411,33 +412,7 @@ packages specialized in spatial statistics as described in
 
 \subsection{Converting qPCRs to dPCRs}
 
-High-Throughput qPCR is a well established and robust technology, which allows 
-precise quantification of DNA material in high throughput fashion. However, the 
-quantification by qPCR is challenging at very low and very high concentrations. 
-In addition, pre-processing and data analysis is a affected by numerous adverse 
-effects \cite{ruijter_2013, pabinger_survey_2014, spiess_impact_2015}. But the 
-amplification curve real-time monitoring of the PCR product formation enables 
-to 
-determine quantification points (Cq), which can be binarized and analysed in 
-the 
-same way as dPCR experiments \cite{mojtahedi_2014}. This functionality is 
-integral part of the \textit{dpcR} package.
 
-Figure\ref{qpcr2pp_1}
-
-\begin{figure}[t]
-\begin{center}
-\includegraphics[width=9cm]{qpcr2pp_1.png}
-\end{center}
-\caption{Uncover characteristics of dPCR data. Selected dPCR platforms are qPCR 
-platforms at the same time. The function \textit{qpcr2pp} uses the qPCR 
-amplification curve data and interprets them as dPCR (Poisson process). A) Raw 
-data of The function were B) preprocessed (baselined, smoothed) with functions 
-from the \textit{chipPCR} package and C) finally analysed (Cq calculation 
-$\rightarrow$ binarize) with the \textit{qpcr2pp} (qPCR to Poisson process) 
-function from the \textit{dpcR} package.} 
-\label{qpcr2pp_1}
-\end{figure}
 
 \section{RESULTS}
 

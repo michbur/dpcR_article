@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.3.1)  10 APR 2016 09:22
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.3.1)  10 APR 2016 11:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -583,219 +583,218 @@ LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <7.5> not available
 
 
 ]
-Underfull \hbox (badness 1152) in paragraph at lines 147--157
+Underfull \hbox (badness 1152) in paragraph at lines 147--156
 \OT1/ptm/m/n/10 in \OT1/ptm/b/n/10 Mathematica \OT1/ptm/m/n/10 (Wolfram Researc
 h) ([]), \OT1/ptm/b/n/10 MS EXCEL
  []
 
 
-Underfull \hbox (badness 2521) in paragraph at lines 147--157
-\OT1/ptm/m/n/10 (Microsoft) ([]) or \OT1/ptm/b/n/10 R \OT1/ptm/m/n/10 ([], []).
- In addition, web-servers
+Underfull \hbox (badness 2435) in paragraph at lines 147--156
+\OT1/ptm/m/n/10 analysis of dPCR data, as the \OT1/ptm/b/n/10 definetherain \OT
+1/ptm/m/n/10 ([]), are
  []
 
 
-Underfull \hbox (badness 2990) in paragraph at lines 147--157
-\OT1/ptm/m/n/10 for analysis of dPCR data are emerging as the open
- []
-
-
-Underfull \hbox (badness 4819) in paragraph at lines 158--162
+Underfull \hbox (badness 4819) in paragraph at lines 157--161
 \OT1/ptm/m/n/10 dPCR data. The absence of graphical user interfaces
  []
 
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 185.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 184.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-Underfull \hbox (badness 2277) in paragraph at lines 184--187
+Underfull \hbox (badness 2277) in paragraph at lines 183--186
 \OT1/ptm/m/n/10 The \OT1/ptm/m/it/10 dpcR \OT1/ptm/m/n/10 package is an open so
 urce extension to \OT1/ptm/b/n/10 R\OT1/ptm/m/n/10 .
  []
 
 
-Underfull \hbox (badness 1173) in paragraph at lines 188--194
+Underfull \hbox (badness 1173) in paragraph at lines 187--193
 \OT1/ptm/m/n/10 data rather than summaries exported by vendor-provided
  []
 
 
-Underfull \hbox (badness 1286) in paragraph at lines 195--201
+Underfull \hbox (badness 1286) in paragraph at lines 194--200
 \OT1/ptm/m/n/10 CQs of partitions), are stored in the standardized class.
  []
 
 
-Underfull \hbox (badness 1199) in paragraph at lines 212--217
+Underfull \hbox (badness 1199) in paragraph at lines 211--216
 \OT1/ptm/m/n/10 reviewed methods of computing the $\OML/cmm/m/it/10 ^^U$ \OT1/p
 tm/m/n/10 value and assess
  []
 
 
-Underfull \hbox (badness 1609) in paragraph at lines 220--227
- \OT1/ptm/m/it/10 Data import[] \OT1/ptm/m/n/10 Since the RDML format for dPCR 
-is not
+Underfull \hbox (badness 4846) in paragraph at lines 219--223
+\OT1/ptm/m/n/10 Import functions limit availability of the package by
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 248--248
+Underfull \hbox (badness 10000) in alignment at lines 252--252
 [][][][] 
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 248--248
+Underfull \hbox (badness 10000) in alignment at lines 252--252
 [][][][] 
  []
 
 
-Underfull \hbox (badness 1997) in paragraph at lines 261--269
-\OT1/ptm/m/n/10 distributing the specified number of template molecules
+Underfull \hbox (badness 2608) in paragraph at lines 263--267
+\OT1/ptm/m/n/10 of dPCR ([], []). The former is based on randomly
  []
 
 
-Underfull \hbox (badness 3058) in paragraph at lines 261--269
-\OT1/ptm/m/n/10 over defined number of identical partitions. The latter
+Underfull \hbox (badness 3724) in paragraph at lines 268--276
+[]\OT1/ptm/m/n/10 The procedure in Jacobs \OT1/ptm/m/it/10 et al. \OT1/ptm/m/n/
+10 2014 models more
  []
 
 
-Underfull \hbox (badness 1540) in paragraph at lines 261--269
-\OT1/ptm/m/n/10 is not exactly specified, but determined by the Poisson
+Underfull \hbox (badness 1152) in paragraph at lines 268--276
+\OT1/ptm/m/n/10 complicated situation, fluorescence values of the passing
+ []
+
+
+Underfull \hbox (badness 4505) in paragraph at lines 268--276
+\OT1/ptm/m/n/10 partition as well as the volume of the partition are
+ []
+
+
+Underfull \hbox (badness 3343) in paragraph at lines 268--276
+\OT1/ptm/m/n/10 of molecules per partition is further converted to the
  []
 
 [2]
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 303.
-
-Underfull \hbox (badness 1127) in paragraph at lines 309--316
-[]\OT1/ptm/m/n/10 Figure 1[] provides an overview of important functions
+Underfull \hbox (badness 1796) in paragraph at lines 277--284
+[]\OT1/ptm/m/n/10 We complement these methods with our own, where
  []
 
 
-Underfull \hbox (badness 2512) in paragraph at lines 319--323
-\OT1/ptm/m/n/10 and output formats. The documentation is available as
- []
-
-LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 327.
-
-Underfull \hbox (badness 10000) in paragraph at lines 332--334
-[]\OT1/ptm/m/n/10 The following convention was kept, both in the
+Underfull \hbox (badness 2073) in paragraph at lines 277--284
+\OT1/ptm/m/n/10 Poisson distribution with specific parameters. It is best
  []
 
 
-Underfull \hbox (badness 1721) in paragraph at lines 350--356
-\OT1/ptm/m/n/10 for reproducible research. So far no cross-platform and
+Underfull \hbox (badness 1014) in paragraph at lines 277--284
+\OT1/ptm/m/n/10 ([]), but without the assumption of having the constant
  []
 
 
-Underfull \hbox (badness 1292) in paragraph at lines 368--374
-\OT1/ptm/m/n/10 follow the Poisson distribution. We implemented several
+Underfull \hbox (badness 1755) in paragraph at lines 287--292
+\OT1/ptm/m/n/10 established and robust technology, which allows precise
  []
 
 
-Underfull \hbox (badness 1596) in paragraph at lines 376--384
-\OT1/ptm/m/n/10 than $\OML/cmm/m/it/10 m$\OT1/ptm/m/n/10 . They are beneficial 
-for uncertainty calculation,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 387--394
-\OT1/ptm/m/n/10 elsewhere in peer-reviewed publications. The method
- []
-
-
-Underfull \hbox (badness 6348) in paragraph at lines 387--394
-\OT1/ptm/m/n/10 template molecules over partitions. The procedure in
- []
-
-
-Underfull \hbox (badness 5091) in paragraph at lines 387--394
-\OT1/ptm/m/n/10 including such phenomena as ``rain''. We also added
- []
-
-
-Underfull \hbox (badness 1052) in paragraph at lines 414--425
-\OT1/ptm/m/n/10 High-Throughput qPCR is a well established and robust
- []
-
-
-Underfull \hbox (badness 1546) in paragraph at lines 414--425
-\OT1/ptm/m/n/10 technology, which allows precise quantification of DNA
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 414--425
-\OT1/ptm/m/n/10 material in high throughput fashion. However, the
- []
-
-
-Underfull \hbox (badness 1675) in paragraph at lines 414--425
-\OT1/ptm/m/n/10 quantification by qPCR is challenging at very low and
+Underfull \hbox (badness 2173) in paragraph at lines 293--300
+[]\OT1/ptm/m/n/10 The recently proposed solution ([]) overcomes these
  []
 
 <qpcr2pp_1.png, id=28, 486.618pt x 481.8pt>
 File: qpcr2pp_1.png Graphic file (type png)
  <use qpcr2pp_1.png>
-Package pdftex.def Info: qpcr2pp_1.png used on input line 430.
+Package pdftex.def Info: qpcr2pp_1.png used on input line 303.
 (pdftex.def)             Requested size: 256.0748pt x 253.54427pt.
 
-Overfull \hbox (9.0748pt too wide) in paragraph at lines 430--431
+Overfull \hbox (9.0748pt too wide) in paragraph at lines 303--304
  [] 
  []
 
-[3]
-Underfull \hbox (badness 1210) in paragraph at lines 461--473
+
+Underfull \hbox (badness 1127) in paragraph at lines 324--329
+[]\OT1/ptm/m/n/10 Figure 1[] provides an overview of important functions
+ []
+
+
+Underfull \hbox (badness 2512) in paragraph at lines 332--336
+\OT1/ptm/m/n/10 and output formats. The documentation is available as
+ []
+
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 340.
+
+Underfull \hbox (badness 10000) in paragraph at lines 345--347
+[]\OT1/ptm/m/n/10 The following convention was kept, both in the
+ []
+
+
+Underfull \hbox (badness 1721) in paragraph at lines 357--363
+\OT1/ptm/m/n/10 for reproducible research. So far no cross-platform and
+ []
+
+
+Underfull \hbox (badness 1292) in paragraph at lines 375--381
+\OT1/ptm/m/n/10 follow the Poisson distribution. We implemented several
+ []
+
+[3 <./qpcr2pp_1.png>]
+Underfull \hbox (badness 1596) in paragraph at lines 383--391
+\OT1/ptm/m/n/10 than $\OML/cmm/m/it/10 m$\OT1/ptm/m/n/10 . They are beneficial 
+for uncertainty calculation,
+ []
+
+
+Underfull \hbox (badness 1210) in paragraph at lines 436--448
 []\OT1/ptm/m/n/10 The first panel ``Input file'' is responsible for loading
  []
 
 
-Underfull \hbox (badness 2088) in paragraph at lines 461--473
+Underfull \hbox (badness 2088) in paragraph at lines 436--448
 \OT1/ptm/m/n/10 analysis'' consists of more specialized functionalities as
  []
 
 
-Underfull \hbox (badness 1527) in paragraph at lines 474--490
+Underfull \hbox (badness 1527) in paragraph at lines 449--465
 []\OT1/ptm/m/n/10 An interesting feature of the \OT1/ptm/m/it/10 shiny \OT1/ptm
 /m/n/10 technology is the
  []
 
-<GUI_RKWard_1.png, id=33, 963.6pt x 730.22812pt>
+<GUI_RKWard_1.png, id=34, 963.6pt x 730.22812pt>
 File: GUI_RKWard_1.png Graphic file (type png)
  <use GUI_RKWard_1.png>
-Package pdftex.def Info: GUI_RKWard_1.png used on input line 494.
+Package pdftex.def Info: GUI_RKWard_1.png used on input line 469.
 (pdftex.def)             Requested size: 483.69684pt x 366.55052pt.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 472.
 
-Underfull \hbox (badness 2556) in paragraph at lines 519--523
+Underfull \hbox (badness 2556) in paragraph at lines 494--498
 \OT1/ptm/m/n/10 package (GPL-3 or later) as part of the Bioconductor
  []
 
 
-Underfull \hbox (badness 6396) in paragraph at lines 519--523
+Underfull \hbox (badness 6396) in paragraph at lines 494--498
 \OT1/ptm/m/n/10 project.org/web/packages/dpcR and the source code is
  []
 
 
-Underfull \hbox (badness 3158) in paragraph at lines 526--540
+Underfull \hbox (badness 3158) in paragraph at lines 501--515
 \OT1/ptm/m/n/10 Currently, there exist different dPCR analysis software
  []
 
-[4 <./qpcr2pp_1.png>]
-Underfull \hbox (badness 2027) in paragraph at lines 541--543
+
+Underfull \hbox (badness 2027) in paragraph at lines 516--518
 []\OT1/ptm/m/n/10 Functions included may be used to simulate dPCRs,
  []
 
-
-Underfull \hbox (badness 1867) in paragraph at lines 546--563
+[4]
+Underfull \hbox (badness 1867) in paragraph at lines 521--538
 \OT1/ptm/m/n/10 dMIQE compliant, open source software framework for
  []
 
 
-Underfull \hbox (badness 3492) in paragraph at lines 546--563
+Underfull \hbox (badness 3492) in paragraph at lines 521--538
 \OT1/ptm/m/n/10 methods for dPCR and suggest the introduction of a
  []
 
 
-Underfull \hbox (badness 1354) in paragraph at lines 546--563
+Underfull \hbox (badness 1354) in paragraph at lines 521--538
 \OT1/ptm/m/n/10 statistical methods with a standardized nomenclature for
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 557--559
+\OT1/ptm/m/n/10 (BMBF) and KMU-innovativ-16 031B0098B (BMBF)
  []
 
 
@@ -953,10 +952,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 4151 strings out of 495028
- 53604 string characters out of 6181498
- 132236 words of memory out of 5000000
- 7209 multiletter control sequences out of 15000+600000
+ 4150 strings out of 495028
+ 53588 string characters out of 6181498
+ 132229 words of memory out of 5000000
+ 7208 multiletter control sequences out of 15000+600000
  32508 words of font info for 83 fonts, out of 8000000 for 9000
  23 hyphenation exceptions out of 8191
  38i,19n,34p,628b,350s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -978,7 +977,7 @@ t/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb
 i8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/s
 hare/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Burdukiewicz_et_al_NAR2.pdf (7 pages, 764621 bytes).
+Output written on Burdukiewicz_et_al_NAR2.pdf (7 pages, 763224 bytes).
 PDF statistics:
  109 PDF objects out of 1000 (max. 8388607)
  77 compressed objects within 1 object stream
