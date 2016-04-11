@@ -127,11 +127,12 @@ $\lambda$, the number of positive partitions $k$ and the total number of
 partitions $n$ is as follows:
 \begin{equation}
  \lambda = -\log{\left( 1 - \frac{k}{n} \right)}
+ \label{lambda_kn}
 \end{equation}
 
-Knowing the $\lambda$ and volume of the single partition, the computation of 
-the concentration of a template in the sample seems to be trivial, yet methods 
-of analysis of dPCR results are still emerging.
+Knowing the $\lambda$ and volume of the single partition, $v$, the computation 
+of the concentration of a template in the sample ($c$) seems to be trivial ($ c 
+= \lambda V $), yet methods of analysis of dPCR results are still emerging.
 
 The variety of existing procedures is disproportionate to the number of 
 software packages dedicated to analysis of dPCR experiments. Most of the 
@@ -147,9 +148,8 @@ development of custom scripts in \textbf{Mathematica} (Wolfram Research)
 \cite{dobnik_multiplex_2015} or \textbf{R} \cite{trypsteen_ddpcrquant_2015, 
 dreo_optimising_2014}. In addition, web-servers for analysis of dPCR data, as 
 the \textbf{definetherain} \cite{jones_low_2014}, are emerging. However, these 
-efforts have limited use, since they are tied to a very specific problem. Even 
-if they introduce some level of abstraction, it is not documented well enough to 
-permit usage in other workflows.
+scattered efforts have limited use, since they are tied to a very specific 
+problem and hard to incorporate into a single workflow.
 
 The described situation is unfavorable for studies involving dPCR data. The 
 absence of graphical user interfaces prohibits majority of researchers from 
@@ -312,42 +312,53 @@ function from the \textit{dpcR} package.}
 \subsection{Statistical analysis}
 
 \subsubsection{Calculation of the uncertainty}
-MORE WORDS
 To determine the uncertainty of the estimated $\lambda$ we employ two previously 
-published peer-reviewed methods \cite{dube_mathematical_2008, bhat_single_2009}. 
-These methods are available through the \textit{summary} function.
+published peer-reviewed methods The first \cite{dube_mathematical_2008} uses the 
+normal approximation to compute the confidence intervals for binomially 
+distributed $\frac{k}{n}$. Next, the confidence intervals are altered using 
+Equation \ref{lambda_kn}.
+
+The other method \cite{bhat_single_2009} is based on the uncertainty of the 
+measurement and includes also the uncertainty caused by the variation of volume.
+The exact formula for the uncertainty of the $\lambda$ value is:
+\begin{equation}
+u_{\lambda} = \sqrt{\frac{k}{n^2 (1 - \frac{k}{n})}}
+\end{equation}
+
+and for the uncertainty of the concentration of the template molecules:
+
+\begin{equation}
+u_{c} = C \sqrt{ \left( \frac{1}{\log{1 - \frac{k}{n} }} 
+\sqrt{\frac{k}{n (n - k)}} \right)^2 
++ \left( \frac{u_V}{V} \right)^2}
+\end{equation}
+
+where
+
+Both methods are implemented in the \textit{summary} function.
 
 \subsubsection{Moments}
 
 \begin{table}[b]
 \tableparts{
-\caption{Empirical and theoretical moments.}
+\caption{Empirical and theoretical moments of the Poisson distribution. 
+$\mu = \frac{1}{n} \sum^n_{i = 1} x_i$.
+$ m_j = \frac{1}{n}\sum^n_{i = 1} \left( x_i  - \mu \right)^j $.
+$ s = \sqrt{m_2} $
+}
 \label{moments}
 }{
-\begin{tabular*}{\columnwidth}{r|c|c}
+\begin{tabular}{r|c|c}
 \toprule
 Moment & Empirical & Theoretical \\
 \\
 \colrule
-Mean & $\frac{1}{n}\sum^n_{i = 1} x_i $ & $\lambda$ \\ \hline
-Variance & $\frac{1}{n}\sum^n_{i = 1} \left( x_i  - \frac{1}{n}\sum^n_{i = 
-1} x_i \right)^2 $ & $\lambda$  \\ \hline
-Skewness & $
-\frac{\frac{1}{n}\sum^n_{i = 1} \left( x_i  - \frac{1}{n}\sum^n_{i = 
-1} x_i \right)^3}
-{\left( \frac{1}{n}\sum^n_{i = 1} \left( x_i  - \frac{1}{n}\sum^n_{i = 1} 
-x_i \right)^2 \right)^\frac{3}{2}}
-           $
- & 
-$\frac{1}{\sqrt{\lambda}}$ \\ \hline
-Kurtosis & $
-\frac{\frac{1}{n}\sum^n_{i = 1} \left( x_i  - \frac{1}{n}\sum^n_{i = 
-1} x_i \right)^4}
-{\left( \frac{1}{n}\sum^n_{i = 1} \left( x_i  - \frac{1}{n}\sum^n_{i = 1} 
-x_i \right)^2 \right)^2} - 3
-           $ & $\frac{1}{\lambda}$ \\ 
+Mean & $ \mu $ & $\lambda$ \\ 
+Variance & $s^2$  & $\lambda$  \\ 
+Skewness & $ \frac{m_3}{s^3} $  & $\frac{1}{\sqrt{\lambda}}$ \\ 
+Kurtosis & $ \frac{m_4}{s^4} $ & $\frac{1}{\lambda}$ \\ 
 \botrule
-\end{tabular*}
+\end{tabular}
 } {}
 \end{table}
 
