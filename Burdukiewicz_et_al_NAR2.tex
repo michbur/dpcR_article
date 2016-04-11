@@ -374,12 +374,20 @@ calculated using the estimated $\lambda$ (Table \ref{moments}).
 
 \subsubsection{Comparison of dPCR experiments}
 MORE WORDS
-The \textit{dpcR} package covers also peer-reviewed methods of comparing 
-multiple experiments. We implemented two methods based on GLM and one using  
+The \textit{dpcR} package covers peer-reviewed methods of comparing 
+multiple experiments. The first method is based on Generalized Linear Models 
+(GLM) and the concentration of the template in all runs belonging to the single 
+experiment \cite{dorazio_statistical_2015}. 
+
+\cite{Burdukiewicz_tba}
+
+
+We implemented two methods based on GLM and one using  
 multiple ratio test \cite{Burdukiewicz_tba, dorazio_statistical_2015}. To 
 keep the analysis statistically sound, the results consider appropriate 
 corrections for multiple comparison problem. All functions for comparison of 
-multiple runs are accessible using \textit{test\_counts} function.
+multiple runs are accessible using \textit{test\_counts} and 
+\textit{test_pooled} functions.
 
 \subsubsection{Spatial distribution}
 
