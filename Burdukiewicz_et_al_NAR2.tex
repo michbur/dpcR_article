@@ -131,8 +131,10 @@ partitions $n$ is as follows:
 \end{equation}
 
 Knowing the $\lambda$ and volume of the single partition, $v$, the computation 
-of the concentration of a template in the sample ($c$) seems to be trivial ($ c 
-= \lambda V $), yet methods of analysis of dPCR results are still emerging.
+of the concentration of a template in the sample ($c$) seems to be 
+straightforward ($ c = \frac{\lambda}{V} $), yet methods of defining the 
+uncertainty of $\lambda$ or concentration are still emerging 
+\cite{dorazio_statistical_2015}.
 
 The variety of existing procedures is disproportionate to the number of 
 software packages dedicated to analysis of dPCR experiments. Most of the 
@@ -148,13 +150,14 @@ development of custom scripts in \textbf{Mathematica} (Wolfram Research)
 \cite{dobnik_multiplex_2015} or \textbf{R} \cite{trypsteen_ddpcrquant_2015, 
 dreo_optimising_2014}. In addition, web-servers for analysis of dPCR data, as 
 the \textbf{definetherain} \cite{jones_low_2014}, are emerging. However, these 
-scattered efforts have limited use, since they are tied to a very specific 
-problem and hard to incorporate into a single workflow.
+efforts have limited use, since they are tied to a specific problem and do not 
+form an unifed framework.
 
 The described situation is unfavorable for studies involving dPCR data. The 
-absence of graphical user interfaces prohibits majority of researchers from 
-using the custom-made frameworks. Others have to implement methods on their own, 
-shifting their focus from an investigation to programming. 
+absence of graphical user interfaces prohibits researchers not comfortable with 
+the command line interfaces from using the custom-made frameworks. Others have 
+to implement methods on their own, shifting their focus from an investigation to 
+programming. 
 
 In 2013 we started the development of the \textit{dpcR} framework to perform 
 analysis of dPCR experiments \cite{burdukiewicz_dpcr:_2013}. We have chosen R 
