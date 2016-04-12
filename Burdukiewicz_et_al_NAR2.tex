@@ -373,21 +373,27 @@ these empirical moments with theoretical moments of the Poisson distribution
 calculated using the estimated $\lambda$ (Table \ref{moments}).
 
 \subsubsection{Comparison of dPCR experiments}
-MORE WORDS
-The \textit{dpcR} package covers peer-reviewed methods of comparing 
-multiple experiments. The first method is based on Generalized Linear Models 
-(GLM) and the concentration of the template in all runs belonging to the single 
-experiment \cite{dorazio_statistical_2015}. 
+The \textit{dpcR} package covers peer-reviewed methods of comparing results of 
+dPCR experiments. Here, by the comparison we understand a procedure, where all 
+data points from all runs are considered and affect the final outcome. 
 
-\cite{Burdukiewicz_tba}
+Two methods, GLM and MRT, conduct such analysis on the run level by comparing 
+individual runs against each other \cite{Burdukiewicz_tba}. Both are accessible 
+using the \textit{test\_counts} function. The GLM method is named after 
+Generalized Linear Model, which is used to estimate the $\lambda$ values for all 
+runs. Next, results are compared against each other using the max-t test. Thanks 
+to the method of computation, the obtained p-values of comparison does not 
+require further comparisons.
 
+The MRT method compares runs using the uniformly most powerful ratio test to 
+compare the value of $\lambda$ between two runs. The uniformly most powerful 
+test has the highest probability of rejecting the false null hypothesis among 
+all tests with the same confidence level. 
 
-We implemented two methods based on GLM and one using  
-multiple ratio test \cite{Burdukiewicz_tba, dorazio_statistical_2015}. To 
-keep the analysis statistically sound, the results consider appropriate 
-corrections for multiple comparison problem. All functions for comparison of 
-multiple runs are accessible using \textit{test\_counts} and 
-\textit{test_pooled} functions.
+Additionally, we also implemented a method for comparing multiple experiments 
+\cite{dorazio_statistical_2015} as the \textit{test\_pooled} function. It uses 
+Generalized Linear Model to compute directly the estimate of the concentration 
+of the template in the sample from the pooled data of replicates. 
 
 \subsubsection{Spatial distribution}
 
