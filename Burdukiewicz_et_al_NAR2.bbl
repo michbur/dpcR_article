@@ -60,17 +60,6 @@ Simant Dube, Jian Qin, and Ramesh Ramakrishnan.
   using digital {PCR} on a nanofluidic device.
 \newblock {\em {PloS} one}, 3(8):e2876, 2008.
 
-\bibitem{gentleman_2004}
-Robert~C Gentleman, Vincent~J Carey, Douglas~M Bates, Ben Bolstad, Marcel
-  Dettling, Sandrine Dudoit, Byron Ellis, Laurent Gautier, Yongchao Ge, Jeff
-  Gentry, Kurt Hornik, Torsten Hothorn, Wolfgang Huber, Stefano Iacus, Rafael
-  Irizarry, Friedrich Leisch, Cheng Li, Martin Maechler, Anthony~J Rossini,
-  Gunther Sawitzki, Colin Smith, Gordon Smyth, Luke Tierney, Jean Y~H Yang, and
-  Jianhua Zhang.
-\newblock {Bioconductor: open software development for computational biology
-  and bioinformatics}.
-\newblock {\em Genome biology}, 5(10):R80, 2004.
-
 \bibitem{huggett_digital_2013}
 Jim~F Huggett, Carole~A Foy, Vladimir Benes, Kerry Emslie, Jeremy~A Garson,
   Ross Haynes, Jan Hellemans, Mikael Kubista, Reinhold~D Mueller, Tania Nolan,

@@ -383,30 +383,37 @@ Two methods, GLM and MRT, conduct such analysis on the run level by comparing
 individual runs against each other \cite{Burdukiewicz_tba}. Both are accessible 
 using the \textit{test\_counts} function. The GLM method is named after 
 Generalized Linear Model, which is used to estimate the $\lambda$ values for all 
-runs. Next, results are compared against each other using the max-t test. Thanks 
-to the method of computation, the obtained p-values of comparison does not 
-require further comparisons.
+runs. Next, results are compared against each other using the max-t test. The 
+obtained p-values of comparison does not require further comparisons.
 
-The MRT method compares runs using the uniformly most powerful ratio test to 
-compare the value of $\lambda$ between two runs. The uniformly most powerful 
-test has the highest probability of rejecting the false null hypothesis among 
-all tests with the same confidence level. 
+The MRT method estimates dissimilarities between runs using the uniformly most 
+powerful ratio test to compare the value of $\lambda$ between two runs. The 
+uniformly most powerful test has the highest probability of rejecting the false 
+null hypothesis among all tests with the same confidence level. 
 
-Additionally, we also implemented a method for comparing multiple experiments 
-\cite{dorazio_statistical_2015} as the \textit{test\_pooled} function. It uses 
-Generalized Linear Model to compute directly the estimate of the concentration 
-of the template in the sample from the pooled data of replicates. 
+Additionally, we also implemented a method for individual dPCR experiments (not 
+runs) \cite{dorazio_statistical_2015} as the \textit{test\_pooled} function. It 
+uses Generalized Linear Model to compute directly the estimate of the 
+concentration of the template in the sample from the pooled data of replicates. 
+This method additionally estimates copy number variation and concentration in 
+serial dilutions.
+
+\subsubsection{Clustering of droplets}
+The \textit{dpcR} packages uses the droplet clustering algorithm ddpcRquant 
+\cite{trypsteen_ddpcrquant_2015}. Briefly, the threshold is computed using the 
+merged NTC data. Next, droplets with baseline-corrected values of fluorescence 
+higher than the threshold are classified as positive. 
+
 
 \subsubsection{Spatial distribution}
 
 Array based dPCR experiments provide information about spatial distribution of 
 partitions. Procedures belonging to spatial statistics verify if the status 
 (positive, negative) of partition depends on its location. To address such 
-questions, we implemented a Complete Spatial Randomness test for dPCR arrays. 
-Moreover, we provide functionalities to export array dPCR data to \textbf{R} 
-packages specialized in spatial statistics as described elsewhere 
-\cite{Baddeley_2015}.
-
+questions, we implemented a Complete Spatial Randomness test for dPCR arrays 
+accessible as the \textit{test\_panel} function. Moreover, we provide 
+functionalities to export array dPCR data to \textbf{R} packages specialized in 
+spatial statistics as described elsewhere \cite{Baddeley_2015}.
 
 \subsection{Export of analysis results}
 A commonly available data exchange format is a perquisite for reproducible 
@@ -415,7 +422,6 @@ introduced for dPCR experiments. Therefore, we decided to use \texttt{RData} as
 our default format. \texttt{RData} works across all \textbf{R} environments and 
 saves the variable names along the content of multiple variables, which can be 
 restored in any workspace.
-
 
 \subsection{Public datasets}
 
@@ -506,10 +512,6 @@ the \textbf{R} source code used for the report generation. This code can be used
 for recreating the analysis in the \textbf{R} environment or prototyping more 
 complicated workflows.
 
-
-
-
-
 \begin{figure*}[t]
 \begin{center}
 \includegraphics[width=17cm]{GUI_RKWard_1.png}
@@ -519,21 +521,23 @@ and integrated development environment \textbf{RKWard}.}
 \label{GUI_RKWard_1}
 \end{figure*}
 
+\section{RESULTS AND DISCUSSION}
 
 
 
-\section{RESULTS}
+The implementation in the \textbf{R} environment enables the usage of additional 
+\textbf{R} functionalities in the analysis of dPCR data. For example, users 
+looking for new methods of clustering droplets in ddPCR experiments may look 
+into packages dedicated to flow-cytometer research 
+\cite{le_meur_computational_2013, milbury_determining_2014, Malek15022015} or 
+use directly any clusterization algorithm provided in \textbf{R}.
 
-In the following section we show applications of the \textit{dpcR} package.
 
-\subsection{Vendor independent data analysis}
+Our open framework includes to invitation to 
+the scientific community to join and support the development of \textit{dpcR}.
 
-QX100 series is no longer available. Instead, the newer version QX200 protocol 
-consisting of the QX200 droplet generator (Bio-Rad, cat. no. 186-4002) and the 
-QX200 droplet reader (Bio-Rad, cat. no. 186-4003) can be purchased, for which 
-the protocol can be applied without changes. Alternative dPCR devices available 
-from, e.g., RainDance Technologies, Life Technologies or JN Medsys 
-\citep{mock_digital_2016}.
+
+\cite{mock_digital_2016}.
 
 \subsection{Automatic report generation}
 
@@ -542,69 +546,52 @@ data from a Bio-Rad QX100 system with an early implementation of the
 \textit{dpcR} package. As recommended in the dMIQE guidelines 
 \cite{huggett_digital_2013} we included key elements in the report.
 
-\subsection{Availability}
-
-The \textit{dpcR} framework is available as open source software package (GPL-3 
-or later) as part of the Bioconductor project \cite{gentleman_2004}. The stable 
-version is hosted at http://cran.r-project.org/web/packages/dpcR and the source 
-code is available from  https://github.com/michbur/dpcR.
-
-\section{DISCUSSION}
-
 Currently, there exist different dPCR analysis software solutions provided by 
 the vendors. But most of the software packages are black boxes, which prevent 
 deep insight into the data processing step. Other and we think that scientific 
 software should be open \cite{ince_case_2012, rodiger_r_2015}. In addition, most 
 of the software solutions are aimed to be used in very specific scenarios and a 
 mutual exclusive to alternative platforms (e.g., droplet vs. chamber-based). We 
-have chosen \textbf{R} because it is the \textit{lingua franca} in biostatistics 
-and broadly used in other disciplines \cite{rodiger_r_2015}. We developed the 
+developed the 
 \textit{dpcR} package, which is a software framework for analysis of dPCR. 
-\textit{dpcR} provides the scientific community a broadly applicable tool for 
-teaching purposes, data analysis and theoretical research based on simulations. 
-Our software framework can be used to accelerate the development of new 
-approaches to dPCR.
+
 
 Functions included may be used to simulate dPCRs, perform statistical data 
 analysis, plotting of the results and simple report generation. 
 
+
+
 \section{CONCLUSION}
 
-In conclusion, \textit{dpcR} provides means to understand how dPCR works, to 
-design, simulate and analyze experiments, and to verify their results (e.g., 
-confidence interval estimation), which should ultimately improve 
+The main focus of our package was to provide users of dPCR technology with a 
+flexible workflow that incorporate most fundamental needs: estimation of the 
+$\lambda$ value, comparison of template concentration among several runs and 
+quality control. The \textit{dpcR} package  provides means to understand how 
+dPCR works, to design, simulate and analyze experiments, and to verify their 
+results (e.g., confidence interval estimation), which should ultimately improve 
 reproducibility. We have built what we believe to be the first unified, 
 cross-platform, dMIQE compliant, open source software framework for analysing 
-dPCR experiments. Our \textit{dpcR} framework is targeted at a broad user base 
-including end users in clinics, academics, developers, and educators. We 
-implemented existing statistical methods for dPCR and suggest the introduction 
-of a standardized dPCR nomenclature. Our framework is suitable for teaching and 
-includes references for an elaborated set of methods for dPCR statistics. Our 
-software can be used for (I) data analysis and visualization in research, (II) 
-as software framework for novel technical developments, (III) as platform for 
+dPCR experiments. Our \textit{dpcR} framework and especially its GUI, 
+\textit{dpcReport} is targeted at a broad user base including end users in 
+clinics, academics, developers, and educators. We implemented existing 
+statistical methods for dPCR and suggest the introduction of a standardized 
+dPCR nomenclature. Our framework is suitable for teaching and includes 
+references for an elaborated set of methods for dPCR statistics. Our software 
+can be used for (I) data analysis and visualization in research, (II) as 
+software framework for novel technical developments, (III) as platform for 
 teaching this new technology and (IV) as reference for statistical methods with 
 a standardized nomenclature for dPCR experiments. The framework enables the 
 simulations and predictions of Poisson distribution for dPCR scenarios, the 
 analysis of previously run dPCRs. Due to the plug-in structure of the software 
 it is possible to build custom-made analysers.
 
-Instead of implementing algorithms for clustering and ``rain'' (positive 
-droplets) definition of droplet dPCR data, we focused on more specific and not 
-yet well-accessible functionalities. We chose not to duplicate existing works 
-and instead provide users of dPCR technology with a flexible workflow that 
-incorporate most fundamental needs: estimation of the $\lambda$ value, 
-comparison of template concentration among several runs and quality control. For 
-clustering of ddPCR data, we refer to \textbf{R} packages dedicated to 
-flow-cytometer research. Implementations range from manual to automatic 
-clustering \cite{le_meur_computational_2013, milbury_determining_2014, 
-Malek15022015, trypsteen_ddpcrquant_2015}. 
 
-Moreover, discussion with our peers 
-and the literature suggest that a consensus of an appropriate method for dPCR is 
-not available \cite{trypsteen_ddpcrquant_2015}.
-Our open framework includes to invitation to the scientific community to join 
-and support the development of \textit{dpcR}.
+\subsection{Availability}
 
+The \textit{dpcR} framework is available as open source software package (GPL-3 
+or later). The stable version is hosted at 
+http://cran.r-project.org/web/packages/dpcR and the source code is available 
+from  https://github.com/michbur/dpcR.
 
 \section{ACKNOWLEDGEMENTS}
 
